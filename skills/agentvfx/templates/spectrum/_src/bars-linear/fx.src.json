@@ -1,0 +1,61 @@
+{
+  "DESCRIPTION": "Thin-line spectrum graph in a framed panel: dashed grid, numbered rows, frequency labels, hairline curve, peak dots, scan cursor; black ground or a full colour field",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["spectrum", "audio", "hud"],
+  "INPUTS": [
+    { "NAME": "bandCount", "TYPE": "long", "MIN": 16, "MAX": 160, "DEFAULT": 120 },
+    { "NAME": "displayMode", "TYPE": "long", "MIN": 0, "MAX": 3, "VALUES": [0, 1, 2, 3], "LABELS": ["line", "steps", "hairline-bars", "dots"], "DEFAULT": 0 },
+    { "NAME": "areaFill", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.35 },
+    { "NAME": "floorHeight", "TYPE": "float", "MIN": 0, "MAX": 10, "DEFAULT": 2 },
+    { "NAME": "scanCursor", "TYPE": "bool", "DEFAULT": true }
+  ],
+  "use": ["pro", "stage", "hud"],
+  "defaults": { "startFreq": 20, "endFreq": 1200, "freqCurve": 2.2, "floorLevel": 0.22, "ceilLevel": 0.7, "expLow": 2.2, "expHigh": 1.5, "releaseMs": 130 },
+  "PASSES": [
+    { "TARGET": "barState", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "bars-linear",
+    "family": "spectrum",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "graph-black": {},
+      "graph-acid": { "$field": "acid" },
+      "graph-ultramarine": { "$field": "ultramarine", "displayMode": 1 },
+      "graph-orange": { "$field": "orange", "displayMode": 2, "bandCount": 96, "areaFill": 0 },
+      "dots-phosphor": { "$field": "phosphor", "displayMode": 3, "bandCount": 64 },
+      "rainbow-glow": { "colorMode": 1, "glow": 1.4, "bandCount": 96, "lineWidth": 2.4 }
+    },
+    "audioBind": { "glow": "bass" },
+    "safeSubstitute": { "params": { "kickZoom": 0, "shake": 0 } },
+    "text": [
+      { "key": "title", "default": "SPECTRUM", "x": 0.045, "y": 0.06, "size": 0.075, "font": "display", "style": "outline", "box": "tab" },
+      { "key": "node", "default": "NODE 7G-75", "x": 0.97, "y": 0.045, "size": 0.085, "font": "tall", "align": "right" },
+      { "key": "tag", "default": "SIG 04 // 20-1200HZ", "x": 0.3, "y": 0.095, "size": 0.017, "font": "mono", "reveal": "type", "revealStart": 0.1, "revealDur": 1.2 },
+      { "key": "f0", "default": "20Hz", "x": 0.16, "y": 0.2, "size": 0.016, "font": "mono", "align": "center" },
+      { "key": "f1", "default": "100Hz", "x": 0.394, "y": 0.2, "size": 0.016, "font": "mono", "align": "center" },
+      { "key": "f2", "default": "250Hz", "x": 0.527, "y": 0.2, "size": 0.016, "font": "mono", "align": "center" },
+      { "key": "f3", "default": "500Hz", "x": 0.675, "y": 0.2, "size": 0.016, "font": "mono", "align": "center" },
+      { "key": "f4", "default": "1200Hz", "x": 0.94, "y": 0.2, "size": 0.016, "font": "mono", "align": "center" },
+      { "key": "r0", "default": "0", "x": 0.125, "y": 0.262, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "r1", "default": "1", "x": 0.125, "y": 0.349, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "r2", "default": "2", "x": 0.125, "y": 0.436, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "r3", "default": "3", "x": 0.125, "y": 0.522, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "r4", "default": "4", "x": 0.125, "y": 0.609, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "r5", "default": "5", "x": 0.125, "y": 0.696, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "r6", "default": "6", "x": 0.125, "y": 0.782, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "code", "default": "KX   7G2   R4   D9\n41A  TQP  118  3  ZRM  80215", "x": 0.16, "y": 0.83, "size": 0.016, "font": "mono", "reveal": "type", "revealStart": 0.4, "revealDur": 1.5 }
+    ],
+    "credits": [
+      "Thin-line analyser panel grammar (framed graph, dashed grid, numbered rows, frequency labels): style description only, no marks, fonts or text copied",
+      "Power-curve bin mapping and peak-preserving neighbour smoothing as described for open-source bar-visualiser recreations (algorithm described, no code used)",
+      "Distance estimate |y - f(x)| / sqrt(1 + f'(x)^2) for a graph, https://iquilezles.org/articles/distance/"
+    ]
+  }
+}

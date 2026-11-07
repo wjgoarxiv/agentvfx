@@ -1,0 +1,39 @@
+{
+  "DESCRIPTION": "Volumetric god rays: radial accumulation from a sun disk and a luminance mask on the footage",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["light"],
+  "INPUTS": [
+    { "NAME": "lightPos", "TYPE": "point2D", "DEFAULT": [0.74, 0.8] },
+    { "NAME": "sunSize", "TYPE": "float", "MIN": 0.01, "MAX": 0.2, "DEFAULT": 0.022 },
+    { "NAME": "rayDecay", "TYPE": "float", "MIN": 0.9, "MAX": 0.99, "DEFAULT": 0.955 },
+    { "NAME": "rayWeight", "TYPE": "float", "MIN": 0.05, "MAX": 1, "DEFAULT": 0.7 },
+    { "NAME": "rayExposure", "TYPE": "float", "MIN": 0.1, "MAX": 6, "DEFAULT": 2.4 },
+    { "NAME": "rayDensity", "TYPE": "float", "MIN": 0.2, "MAX": 2, "DEFAULT": 0.85 },
+    { "NAME": "rayThreshold", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.72 },
+    { "NAME": "paletteMix", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.45 },
+    { "NAME": "tint", "TYPE": "color", "DEFAULT": [1, 0.62, 0.22, 1] },
+    { "NAME": "toneMap", "TYPE": "long", "MIN": 0, "MAX": 1, "VALUES": [0, 1], "LABELS": ["AgX", "ACES"], "DEFAULT": 1 }
+  ],
+  "X_AGENTVFX": {
+    "id": "god-rays",
+    "family": "light",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "golden-hour": { "lightPos": [0.78, 0.82], "tint": [1, 0.55, 0.12, 1], "paletteMix": 0.85, "rayExposure": 2.6, "rayDecay": 0.952, "sunSize": 0.02, "rayThreshold": 0.74, "rayWeight": 0.75, "toneMap": 1 },
+      "occult-hard": { "lightPos": [0.5, 0.72], "sunSize": 0.014, "rayExposure": 3.1, "rayDecay": 0.948, "rayThreshold": 0.78, "tint": [1, 0.95, 0.88, 1], "paletteMix": 0.15, "rayDensity": 1.05, "toneMap": 1 },
+      "side-wash": { "lightPos": [0.08, 0.7], "sunSize": 0.028, "rayDensity": 1.05, "rayExposure": 2.2, "rayThreshold": 0.7, "tint": [0.55, 0.78, 1, 1], "paletteMix": 0.55, "rayDecay": 0.95, "toneMap": 1 },
+      "point-lamp": { "lightPos": [0.5, 0.42], "sunSize": 0.02, "rayExposure": 1.15, "rayDecay": 0.94, "rayDensity": 0.85, "rayThreshold": 0.84, "rayWeight": 0.65, "paletteMix": 0.55, "toneMap": 1 }
+    },
+    "credits": [
+      "Radial light accumulation, GPU Gems 3 chapter 13, https://developer.nvidia.com/gpugems/gpugems3/part-ii-light-and-shadows/chapter-13-volumetric-light-scattering-post-process",
+      "Footage emitter is a luminance mask, the same idea as a Shine/volumetric-light mask",
+      "ACES fitted tone map, Krzysztof Narkowicz, https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/",
+      "AgX display fit, Troy Sobotka, https://github.com/sobotka/AgX"
+    ]
+  }
+}

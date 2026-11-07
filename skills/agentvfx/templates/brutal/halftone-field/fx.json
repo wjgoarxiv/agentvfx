@@ -1,0 +1,474 @@
+{
+  "DESCRIPTION": "Footage as a single-tone dot matrix on a full solid field: dot screen, ordered dither or ASCII cells, hairline frame, pink and cyan micro bars on the image edges and a tall thin headline",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": [
+    "brutal",
+    "halftone",
+    "audio"
+  ],
+  "INPUTS": [
+    {
+      "NAME": "fieldColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.078,
+        0.078,
+        1,
+        1
+      ]
+    },
+    {
+      "NAME": "dotColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.796,
+        0.741,
+        1,
+        1
+      ]
+    },
+    {
+      "NAME": "inkColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.863,
+        0.827,
+        1,
+        1
+      ]
+    },
+    {
+      "NAME": "textColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.91,
+        0.886,
+        1,
+        1
+      ]
+    },
+    {
+      "NAME": "barA",
+      "TYPE": "color",
+      "DEFAULT": [
+        1,
+        0.416,
+        0.835,
+        1
+      ]
+    },
+    {
+      "NAME": "barB",
+      "TYPE": "color",
+      "DEFAULT": [
+        0,
+        0.898,
+        1,
+        1
+      ]
+    },
+    {
+      "NAME": "screenMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 2,
+      "VALUES": [
+        0,
+        1,
+        2
+      ],
+      "LABELS": [
+        "dots",
+        "ordered-dither",
+        "ascii-cells"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "cell",
+      "TYPE": "float",
+      "MIN": 4,
+      "MAX": 28,
+      "DEFAULT": 10
+    },
+    {
+      "NAME": "dotAngle",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1.5708,
+      "DEFAULT": 0.7854
+    },
+    {
+      "NAME": "dotGain",
+      "TYPE": "float",
+      "MIN": 0.5,
+      "MAX": 1.6,
+      "DEFAULT": 1.12
+    },
+    {
+      "NAME": "invert",
+      "TYPE": "bool",
+      "DEFAULT": false
+    },
+    {
+      "NAME": "imgContrast",
+      "TYPE": "float",
+      "MIN": 0.5,
+      "MAX": 3,
+      "DEFAULT": 1.5
+    },
+    {
+      "NAME": "imgBias",
+      "TYPE": "float",
+      "MIN": -0.5,
+      "MAX": 0.5,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "imgX",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 0.8,
+      "DEFAULT": 0.5
+    },
+    {
+      "NAME": "imgY",
+      "TYPE": "float",
+      "MIN": 0.3,
+      "MAX": 0.7,
+      "DEFAULT": 0.5
+    },
+    {
+      "NAME": "imgW",
+      "TYPE": "float",
+      "MIN": 0.4,
+      "MAX": 1,
+      "DEFAULT": 0.9
+    },
+    {
+      "NAME": "imgH",
+      "TYPE": "float",
+      "MIN": 0.4,
+      "MAX": 1,
+      "DEFAULT": 0.86
+    },
+    {
+      "NAME": "frameAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "marks",
+      "TYPE": "bool",
+      "DEFAULT": true
+    },
+    {
+      "NAME": "barAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "barDensity",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.55
+    },
+    {
+      "NAME": "textKnock",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "tearAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.3
+    },
+    {
+      "NAME": "kickGain",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.8
+    },
+    {
+      "NAME": "reactivity",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 2,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "introMs",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 3000,
+      "DEFAULT": 500
+    }
+  ],
+  "X_AGENTVFX": {
+    "id": "halftone-field",
+    "family": "brutal",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": false,
+    "presets": {
+      "ultramarine": {},
+      "ink-blue": {
+        "fieldColor": [
+          0.039,
+          0.039,
+          0.62,
+          1
+        ],
+        "dotColor": [
+          0.769,
+          0.71,
+          0.992,
+          1
+        ],
+        "inkColor": [
+          0.769,
+          0.71,
+          0.992,
+          1
+        ],
+        "textColor": [
+          0.847,
+          0.8,
+          1,
+          1
+        ]
+      },
+      "acid": {
+        "fieldColor": [
+          0.784,
+          1,
+          0,
+          1
+        ],
+        "dotColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "inkColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "textColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "invert": true,
+        "barA": [
+          1,
+          0.18,
+          0.494,
+          1
+        ],
+        "barB": [
+          0.078,
+          0.078,
+          1,
+          1
+        ],
+        "imgContrast": 1.7
+      },
+      "orange": {
+        "fieldColor": [
+          1,
+          0.235,
+          0,
+          1
+        ],
+        "dotColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "inkColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "textColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "invert": true,
+        "barA": [
+          1,
+          0.957,
+          0.878,
+          1
+        ],
+        "barB": [
+          0.078,
+          0.078,
+          1,
+          1
+        ],
+        "imgContrast": 1.7
+      },
+      "phosphor": {
+        "fieldColor": [
+          0.02,
+          0.031,
+          0.02,
+          1
+        ],
+        "dotColor": [
+          0.224,
+          1,
+          0.078,
+          1
+        ],
+        "inkColor": [
+          0.224,
+          1,
+          0.078,
+          1
+        ],
+        "textColor": [
+          0.49,
+          1,
+          0.361,
+          1
+        ],
+        "dotGain": 1
+      },
+      "dither": {
+        "screenMode": 1,
+        "cell": 9,
+        "imgContrast": 1.7
+      },
+      "ascii": {
+        "fieldColor": [
+          0.784,
+          1,
+          0,
+          1
+        ],
+        "dotColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "inkColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "textColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "invert": true,
+        "barA": [
+          1,
+          0.18,
+          0.494,
+          1
+        ],
+        "barB": [
+          0.078,
+          0.078,
+          1,
+          1
+        ],
+        "screenMode": 2,
+        "cell": 8,
+        "imgContrast": 1.8
+      }
+    },
+    "audioBind": {
+      "dotGain": "bass",
+      "barAmount": "bands"
+    },
+    "safeSubstitute": {
+      "params": {
+        "tearAmount": 0,
+        "kickGain": 0
+      }
+    },
+    "text": [
+      {
+        "key": "headline",
+        "default": "PLATE//77",
+        "x": 0.052,
+        "y": 0.105,
+        "size": 0.17,
+        "font": "tall",
+        "style": "fill",
+        "weight": 300,
+        "tracking": 0.03
+      },
+      {
+        "key": "labelA",
+        "default": "NODE 7G-75 // PLATE 0417",
+        "x": 0.05,
+        "y": 0.022,
+        "size": 0.0105,
+        "font": "mono",
+        "reveal": "type",
+        "revealStart": 0.3,
+        "revealDur": 1.2
+      },
+      {
+        "key": "labelB",
+        "default": "LV//VFX  45DEG  4.0S",
+        "x": 0.95,
+        "y": 0.022,
+        "size": 0.0105,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "labelC",
+        "default": "SCREEN 10PX / MONO / 1-TONE",
+        "x": 0.05,
+        "y": 0.9505,
+        "size": 0.0105,
+        "font": "mono"
+      },
+      {
+        "key": "labelD",
+        "default": "FRAME 0417 / 0120",
+        "x": 0.95,
+        "y": 0.9505,
+        "size": 0.0105,
+        "font": "mono",
+        "align": "right"
+      }
+    ],
+    "credits": [
+      "Single-tone halftone / dot-matrix field grammar (original drawing; no images, marks or fonts from other works)",
+      "Dot screen: rotated square lattice, dot area follows tone (classic AM halftone); ordered dither: 8x8 Bayer index matrix (Bryce Bayer, 1973); ASCII cells: original procedural glyphs"
+    ]
+  }
+}

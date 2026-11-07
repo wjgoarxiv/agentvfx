@@ -1,0 +1,1 @@
+{"version":1,"template":"boot-log","preset":"phosphor","input":{"audio":"test-media/beat-132.mp3","startSec":2},"durationSec":4,"seed":61,"labels":{},"out":"boot-log-phosphor"}

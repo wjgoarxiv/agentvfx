@@ -1,0 +1,1 @@
+{"version":1,"template":"spectrogram-scroll","preset":"field-ultramarine","input":{"audio":"test-media/beat-132.mp3","startSec":4},"durationSec":4,"seed":122,"out":"spectrogram-scroll-field-ultramarine"}

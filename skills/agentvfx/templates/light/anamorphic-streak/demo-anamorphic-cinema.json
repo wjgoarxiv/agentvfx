@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "anamorphic-streak",
+  "preset": "anamorphic-cinema",
+  "input": { "video": "test-media/clip-02.mp4" },
+  "palette": "acid-data",
+  "durationSec": 4,
+  "seed": 12,
+  "out": "anamorphic-streak-anamorphic-cinema"
+}

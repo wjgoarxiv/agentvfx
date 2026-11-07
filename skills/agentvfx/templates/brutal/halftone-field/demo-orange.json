@@ -1,0 +1,1 @@
+{"version":1,"template":"halftone-field","preset":"orange","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3","startSec":5},"durationSec":4,"seed":53,"labels":{"headline":"HEAT//31","labelA":"NODE 5C-31 // ORANGE 0031"},"out":"halftone-field-orange"}

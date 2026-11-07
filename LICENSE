@@ -1,0 +1,172 @@
+# agentvfx licence
+
+Copyright (c) 2026 Woojin Go (wjgoarxiv)
+
+Required Notice: Copyright (c) 2026 Woojin Go (https://github.com/wjgoarxiv/agentvfx)
+
+The agentvfx licence has two parts that apply together: the Additional Terms in Part 1, and the licence text in Part 2,
+which is the PolyForm Noncommercial License 1.0.0 reproduced unchanged. Part 1 adds a permission, a credit condition
+and a restriction to Part 2; it does not change any wording of Part 2. "These terms" in Part 2 means Parts 1 and 2
+together, so everything granted in Part 1 is one of "your licenses" and is subject to Acceptance, Patent Defense and
+Violations. To meet "Notices" in Part 2, give each recipient of the software this whole file, or its URL
+(https://github.com/wjgoarxiv/agentvfx/blob/main/LICENSE); the polyformproject.org URL alone is not enough.
+
+## Part 1. Additional Terms
+
+### 1. Creator permission
+
+If you are an individual (a natural person), you may run the software to render video, images and audio ("output"),
+and use that output in your own creative work for any purpose, including commercial purposes. For example, you may
+release your own music video, earn advertising, subscription, sponsorship or tip income on your own channel, or play
+the output in your own live or VJ performance.
+
+For this permission:
+
+- you count as an individual if you are a sole proprietor (for example a registered 개인사업자) or self-employed,
+  as long as the work is your own;
+- several individuals making a work together under their own names, such as a band, count as individuals together,
+  as long as none of them acts for a company or other organisation in doing so;
+- sponsored content on your own channel or in your own work is covered.
+
+This permission does not cover:
+
+- work for an employer, or on behalf of a company or other organisation (a noncommercial organisation keeps only the
+  permissions it already has in Part 2);
+- output made for someone else to publish or use as theirs, such as a client's advertisement or a deliverable for a
+  label or a brand;
+- selling, licensing or offering the software, its templates or presets, or rendering as a service, or offering output
+  on its own as a product (stock footage, loops, packs, NFTs); output may be sold only as part of a larger work of
+  your own.
+
+Any other commercial use needs a commercial licence from the licensor. Ask at
+https://github.com/wjgoarxiv/agentvfx/issues.
+
+### 2. No AI training
+
+Under any permission, you may not use the software, its source, shaders, templates or presets to train, fine-tune or
+evaluate a machine-learning model, or to build a dataset for that purpose. Using an AI agent to operate the software
+for your own use is not training and is allowed.
+
+### 3. Output
+
+As far as the law allows, you own the output you make. The licensor claims no rights in your output except in any part
+of the software or templates that the output contains. People who only watch, host, stream or receive output need no
+licence from the licensor, and they are not bound by these terms. You are, and you remain responsible for what you
+publish or hand over.
+
+### 4. Credit
+
+If you publish, stream, publicly show or give anyone output made with agentvfx, under any permission, including
+Part 2, you must credit agentvfx.
+
+By default every render burns a small "agentvfx" credit into a corner of the frame. While that credit is visible in
+what you publish, you need nothing more; do not crop, cover or edit it out.
+
+If you switch it off in the score (`"credit": { "overlay": false }`), or the output carries no on-screen credit (for
+example a web export), you must instead credit agentvfx in text where viewers can reasonably find it (the description,
+caption, credits, or a page the output links to):
+
+    Made with agentvfx by Woojin Go - https://github.com/wjgoarxiv/agentvfx
+
+Where space is short, `VFX: agentvfx (github.com/wjgoarxiv/agentvfx)` is enough. Every render writes the text credit
+to CREDIT.txt next to the film and into the MP4 metadata; leave both in place.
+
+When you give output to someone who will publish it, pass the credit on with it: leave the on-screen credit in the
+frame, or give them the text line and CREDIT.txt. The credit is a condition of every licence under these terms. A
+missing credit can be added within the period that "Violations" in Part 2 allows.
+
+### 5. Web export
+
+If you use scripts/export-web.mjs, keep the LICENSE file it writes with the exported folder.
+
+### 6. Names
+
+These terms give no right to use the name "agentvfx", the name "Woojin Go" or the agentvfx logo, except to give the
+credit in section 4 and to say truthfully where a work comes from. If you share a changed copy of the software (a fork),
+you must give it a name that does not contain "agentvfx", you must not present it as agentvfx or as made or endorsed by
+the licensor, and you must say that it is changed from agentvfx, with a link to https://github.com/wjgoarxiv/agentvfx.
+
+### 7. Earlier copies and third-party portions
+
+Copies obtained under the MIT License before 5 November 2026 keep that licence for those copies only. Every version
+this repository publishes is under these terms. Portions adapted from mexicat/pdoom-video remain under their own
+MIT License, and the capture engine copied from lit-typographic-motion is MIT in its own repository; see
+skills/agentvfx/NOTICE for the files and the notice.
+
+---
+
+Part 2 follows, unchanged.
+
+# PolyForm Noncommercial License 1.0.0
+
+<https://polyformproject.org/licenses/noncommercial/1.0.0>
+
+## Acceptance
+
+In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+
+## Copyright License
+
+The licensor grants you a copyright license for the software to do everything you might do with the software that would otherwise infringe the licensor's copyright in it for any permitted purpose.  However, you may only distribute the software according to [Distribution License](#distribution-license) and make changes or new works based on the software according to [Changes and New Works License](#changes-and-new-works-license).
+
+## Distribution License
+
+The licensor grants you an additional copyright license to distribute copies of the software.  Your license to distribute covers distributing the software with changes and new works permitted by [Changes and New Works License](#changes-and-new-works-license).
+
+## Notices
+
+You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms or the URL for them above, as well as copies of any plain-text lines beginning with `Required Notice:` that the licensor provided with the software.  For example:
+
+> Required Notice: Copyright Yoyodyne, Inc. (http://example.com)
+
+## Changes and New Works License
+
+The licensor grants you an additional copyright license to make changes and new works based on the software for any permitted purpose.
+
+## Patent License
+
+The licensor grants you a patent license for the software that covers patent claims the licensor can license, or becomes able to license, that you would infringe by using the software.
+
+## Noncommercial Purposes
+
+Any noncommercial purpose is a permitted purpose.
+
+## Personal Uses
+
+Personal use for research, experiment, and testing for the benefit of public knowledge, personal study, private entertainment, hobby projects, amateur pursuits, or religious observance, without any anticipated commercial application, is use for a permitted purpose.
+
+## Noncommercial Organizations
+
+Use by any charitable organization, educational institution, public research organization, public safety or health organization, environmental protection organization, or government institution is use for a permitted purpose regardless of the source of funding or obligations resulting from the funding.
+
+## Fair Use
+
+You may have "fair use" rights for the software under the law. These terms do not limit them.
+
+## No Other Rights
+
+These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.  These terms do not imply any other licenses.
+
+## Patent Defense
+
+If you make any written claim that the software infringes or contributes to infringement of any patent, your patent license for the software granted under these terms ends immediately. If your company makes such a claim, your patent license ends immediately for work on behalf of your company.
+
+## Violations
+
+The first time you are notified in writing that you have violated any of these terms, or done anything with the software not covered by your licenses, your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to correct past violations, within 32 days of receiving notice.  Otherwise, all your licenses end immediately.
+
+## No Liability
+
+***As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.***
+
+## Definitions
+
+The **licensor** is the individual or entity offering these terms, and the **software** is the software the licensor makes available under these terms.
+
+**You** refers to the individual or entity agreeing to these terms.
+
+**Your company** is any legal entity, sole proprietorship, or other kind of organization that you work for, plus all organizations that have control over, are under the control of, or are under common control with that organization.  **Control** means ownership of substantially all the assets of an entity, or the power to direct its management and policies by vote, contract, or otherwise.  Control can be direct or indirect.
+
+**Your licenses** are all the licenses granted to you for the software under these terms.
+
+**Use** means anything you do with the software requiring one of your licenses.

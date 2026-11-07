@@ -1,0 +1,39 @@
+{
+  "DESCRIPTION": "RGB hit: red and blue channels slam apart (linear, radial or spinning) with row tears, then snap back with a decay",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["impact"],
+  "INPUTS": [
+    { "NAME": "hitFrames", "TYPE": "long", "MIN": 1, "MAX": 12, "DEFAULT": 6 },
+    { "NAME": "holdFrames", "TYPE": "long", "MIN": 0, "MAX": 6, "DEFAULT": 1 },
+    { "NAME": "decayCurve", "TYPE": "float", "MIN": 0.3, "MAX": 4, "DEFAULT": 1.5 },
+    { "NAME": "amount", "TYPE": "float", "MIN": 0, "MAX": 0.2, "DEFAULT": 0.045 },
+    { "NAME": "angle", "TYPE": "float", "MIN": -3.1416, "MAX": 3.1416, "DEFAULT": 0 },
+    { "NAME": "style", "TYPE": "long", "MIN": 0, "MAX": 2, "VALUES": [0, 1, 2], "LABELS": ["linear", "radial", "spin"], "DEFAULT": 0 },
+    { "NAME": "center", "TYPE": "point2D", "DEFAULT": [0.5, 0.5] },
+    { "NAME": "tearRows", "TYPE": "long", "MIN": 0, "MAX": 64, "DEFAULT": 14 },
+    { "NAME": "tearAmount", "TYPE": "float", "MIN": 0, "MAX": 0.3, "DEFAULT": 0.05 },
+    { "NAME": "jitter", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.5 },
+    { "NAME": "pop", "TYPE": "float", "MIN": 1, "MAX": 2.5, "DEFAULT": 1.5 },
+    { "NAME": "taps", "TYPE": "long", "MIN": 1, "MAX": 16, "DEFAULT": 8 }
+  ],
+  "X_AGENTVFX": {
+    "id": "rgb-hit",
+    "family": "impact",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "presets": {
+      "rgb-slam": { "amount": 0.045, "style": 0, "tearRows": 14, "hitFrames": 6 },
+      "rgb-radial": { "amount": 0.07, "style": 1, "tearRows": 0, "hitFrames": 7, "pop": 1.7 },
+      "rgb-spin": { "amount": 0.09, "style": 2, "tearRows": 0, "hitFrames": 8, "decayCurve": 1.2 },
+      "rgb-tear": { "amount": 0.03, "style": 0, "tearRows": 32, "tearAmount": 0.14, "angle": 0.5, "hitFrames": 5, "jitter": 1 },
+      "rgb-diagonal-hard": { "amount": 0.11, "style": 0, "angle": 0.7854, "tearRows": 6, "tearAmount": 0.08, "hitFrames": 4, "holdFrames": 2 }
+    },
+    "credits": [
+      "Chromatic aberration as per-channel sampling offsets, https://en.wikipedia.org/wiki/Chromatic_aberration",
+      "Decay grammar (2-6 frame RGB split) from the L5 impact research"
+    ]
+  }
+}

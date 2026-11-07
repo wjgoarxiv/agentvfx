@@ -1,0 +1,38 @@
+{
+  "DESCRIPTION": "Mosh melt: flow-advected accumulating feedback with refresh hits, luma-threshold pixel-sort streaks and hard posterize",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["psychedelic"],
+  "INPUTS": [
+    { "NAME": "refreshN", "TYPE": "long", "MIN": 2, "MAX": 120, "DEFAULT": 12 },
+    { "NAME": "streakLen", "TYPE": "float", "MIN": 0, "MAX": 64, "DEFAULT": 24 },
+    { "NAME": "threshold", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.55 },
+    { "NAME": "levels", "TYPE": "long", "MIN": 2, "MAX": 10, "DEFAULT": 5 },
+    { "NAME": "decay", "TYPE": "float", "MIN": 0.5, "MAX": 1, "DEFAULT": 0.97 },
+    { "NAME": "audioRefresh", "TYPE": "bool", "DEFAULT": false },
+    { "NAME": "saturation", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 1.8 },
+    { "NAME": "blend", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 }
+  ],
+  "PASSES": [
+    { "TARGET": "state", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "mosh-melt",
+    "family": "psychedelic",
+    "input": "footage",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "mosh-classic": { "refreshN": 12, "streakLen": 24, "threshold": 0.55, "levels": 5 },
+      "mosh-sludge": { "refreshN": 30, "streakLen": 48, "threshold": 0.4, "levels": 4, "decay": 0.985, "saturation": 2 },
+      "mosh-fracture": { "refreshN": 6, "streakLen": 16, "threshold": 0.7, "levels": 3, "decay": 0.94 }
+    },
+    "safeSubstitute": { "params": { "refreshN": 48, "streakLen": 8 } },
+    "credits": [
+      "Horn-Schunck optical flow (Jacobi iteration), https://en.wikipedia.org/wiki/Horn%E2%80%93Schunck_method"
+    ]
+  }
+}

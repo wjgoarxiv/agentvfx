@@ -1,0 +1,45 @@
+{
+  "DESCRIPTION": "A rotated HDR gleam band that crosses the frame, bloomed before the display fit",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["light"],
+  "INPUTS": [
+    { "NAME": "sweepAngle", "TYPE": "float", "MIN": -1.5708, "MAX": 1.5708, "DEFAULT": 0.4 },
+    { "NAME": "sweepSpeed", "TYPE": "float", "MIN": 0.04, "MAX": 1.2, "DEFAULT": 0.3 },
+    { "NAME": "bandFrac", "TYPE": "float", "MIN": 0.003, "MAX": 0.08, "DEFAULT": 0.008 },
+    { "NAME": "gleamGain", "TYPE": "float", "MIN": 1, "MAX": 24, "DEFAULT": 14 },
+    { "NAME": "bloomFrac", "TYPE": "float", "MIN": 0.004, "MAX": 0.22, "DEFAULT": 0.018 },
+    { "NAME": "audioKick", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0 },
+    { "NAME": "sweepMix", "TYPE": "float", "MIN": 0.2, "MAX": 2, "DEFAULT": 1.15 },
+    { "NAME": "paletteMix", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.75 },
+    { "NAME": "tint", "TYPE": "color", "DEFAULT": [1, 1, 1, 1] },
+    { "NAME": "toneMap", "TYPE": "long", "MIN": 0, "MAX": 1, "VALUES": [0, 1], "LABELS": ["AgX", "ACES"], "DEFAULT": 1 }
+  ],
+  "PASSES": [
+    { "TARGET": "gleam", "FLOAT": true },
+    { "TARGET": "glow", "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "light-sweep",
+    "family": "light",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "safeSubstitute": { "params": { "gleamGain": 2, "sweepSpeed": 0.08, "audioKick": 0 } },
+    "audioBind": { "audioKick": "onset" },
+    "presets": {
+      "logo-sweep": { "sweepAngle": 0.55, "sweepSpeed": 0.32, "bandFrac": 0.007, "gleamGain": 16, "bloomFrac": 0.016, "paletteMix": 0.9, "sweepMix": 1.15, "toneMap": 1 },
+      "diagonal-hit": { "sweepAngle": 0.95, "sweepSpeed": 0.5, "bandFrac": 0.01, "gleamGain": 18, "bloomFrac": 0.02, "paletteMix": 0.95, "sweepMix": 1.25, "toneMap": 1 },
+      "slow-sheen": { "sweepAngle": 0.15, "sweepSpeed": 0.12, "bandFrac": 0.012, "gleamGain": 8, "bloomFrac": 0.02, "paletteMix": 0.45, "sweepMix": 0.9, "toneMap": 1 },
+      "hard-bar": { "sweepAngle": 0, "sweepSpeed": 0.42, "bandFrac": 0.0035, "gleamGain": 20, "bloomFrac": 0.008, "paletteMix": 0, "sweepMix": 1.35, "tint": [1, 1, 1, 1], "toneMap": 1 }
+    },
+    "credits": [
+      "Soft analytic band (Gaussian across a rotated axis) with HDR gain, blurred before the display transform",
+      "ACES fitted tone map, Krzysztof Narkowicz, https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/",
+      "AgX display fit, Troy Sobotka, https://github.com/sobotka/AgX"
+    ]
+  }
+}

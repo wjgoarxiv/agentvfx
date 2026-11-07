@@ -1,0 +1,642 @@
+{
+  "DESCRIPTION": "XY phosphor scope: L drives X, R drives Y, drawn as a Gaussian electron beam with persistence, bloom and a hot white core. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": [
+    "scope",
+    "audio"
+  ],
+  "INPUTS": [
+    {
+      "NAME": "fieldMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 4,
+      "VALUES": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "LABELS": [
+        "black ground, off-white lines",
+        "acid lime field, black lines",
+        "ultramarine field, white lines",
+        "phosphor green on black",
+        "signal orange field, blue lines"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "srcMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 2,
+      "VALUES": [
+        0,
+        1,
+        2
+      ],
+      "LABELS": [
+        "audio L/R",
+        "test signal",
+        "test signal driven by audio"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "lissA",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 9,
+      "DEFAULT": 3
+    },
+    {
+      "NAME": "lissB",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 9,
+      "DEFAULT": 2
+    },
+    {
+      "NAME": "lissDelta",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.25
+    },
+    {
+      "NAME": "lissDrift",
+      "TYPE": "float",
+      "MIN": -2,
+      "MAX": 2,
+      "DEFAULT": 0.05
+    },
+    {
+      "NAME": "lissFreq",
+      "TYPE": "float",
+      "MIN": 100,
+      "MAX": 400,
+      "DEFAULT": 110
+    },
+    {
+      "NAME": "lissFold",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "gain",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 8,
+      "DEFAULT": 2
+    },
+    {
+      "NAME": "scale",
+      "TYPE": "float",
+      "MIN": 0.1,
+      "MAX": 0.48,
+      "DEFAULT": 0.36
+    },
+    {
+      "NAME": "angle",
+      "TYPE": "float",
+      "MIN": -3.1416,
+      "MAX": 3.1416,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "embedDelay",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 200,
+      "DEFAULT": 70
+    },
+    {
+      "NAME": "monoWiden",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "beamWidth",
+      "TYPE": "float",
+      "MIN": 0.8,
+      "MAX": 12,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "intensity",
+      "TYPE": "float",
+      "MIN": 0.05,
+      "MAX": 30,
+      "DEFAULT": 3.6
+    },
+    {
+      "NAME": "persistence",
+      "TYPE": "float",
+      "MIN": 0.5,
+      "MAX": 0.985,
+      "DEFAULT": 0.72
+    },
+    {
+      "NAME": "bloom",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 4,
+      "DEFAULT": 0.15
+    },
+    {
+      "NAME": "bloomSize",
+      "TYPE": "float",
+      "MIN": 0.4,
+      "MAX": 2,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "exposure",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 8,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "hot",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "noise",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.02,
+      "DEFAULT": 0.0005
+    },
+    {
+      "NAME": "gridDiv",
+      "TYPE": "long",
+      "MIN": 2,
+      "MAX": 16,
+      "DEFAULT": 8
+    },
+    {
+      "NAME": "hud",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "audioKick",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 2,
+      "DEFAULT": 0.5
+    }
+  ],
+  "PASSES": [
+    {
+      "TARGET": "pts",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "beam",
+      "PERSISTENT": true,
+      "FLOAT": true
+    },
+    {
+      "TARGET": "bh1",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "bv1",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "bh2",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "bv2",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "hudMask",
+      "FLOAT": true
+    },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "xy-phosphor",
+    "family": "scope",
+    "input": "generative",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 60,
+    "palette": false,
+    "presets": {
+      "hud-black": {
+        "fieldMode": 0,
+        "srcMode": 1,
+        "lissA": 3,
+        "lissB": 2,
+        "lissDelta": 0.25,
+        "lissDrift": 0.05
+      },
+      "field-lime": {
+        "fieldMode": 1,
+        "srcMode": 0,
+        "gain": 2,
+        "persistence": 0.78,
+        "intensity": 3.4
+      },
+      "field-ultramarine": {
+        "fieldMode": 2,
+        "srcMode": 1,
+        "lissA": 7,
+        "lissB": 5,
+        "lissDelta": 0.3,
+        "lissDrift": 0.03,
+        "persistence": 0.9,
+        "intensity": 2.2
+      },
+      "boot-green": {
+        "fieldMode": 3,
+        "srcMode": 2,
+        "lissA": 5,
+        "lissB": 4,
+        "lissDelta": 0.1,
+        "lissDrift": 0.2,
+        "lissFold": 0.3,
+        "intensity": 2.4
+      },
+      "glow-phosphor": {
+        "fieldMode": 3,
+        "srcMode": 1,
+        "lissA": 3,
+        "lissB": 2,
+        "lissDelta": 0.25,
+        "lissDrift": 0.05,
+        "beamWidth": 2.6,
+        "intensity": 0.7,
+        "persistence": 0.88,
+        "bloom": 1.4,
+        "bloomSize": 1.2,
+        "hot": 0.6,
+        "hud": 0.5
+      }
+    },
+    "audioBind": {
+      "intensity": "rms",
+      "gain": "bass"
+    },
+    "credits": [
+      "woscope Gaussian beam segment integral and 1/length intensity, https://github.com/m1el/woscope (MIT; reimplemented)",
+      "erf approximation, Abramowitz and Stegun 7.1.26, https://en.wikipedia.org/wiki/Error_function",
+      "Reinhard tone map, https://www.cs.utah.edu/docs/techreports/2002/pdf/UUCS-02-001.pdf",
+      "Lissajous curves, https://en.wikipedia.org/wiki/Lissajous_curve",
+      "mono delay embedding (Takens), https://en.wikipedia.org/wiki/Takens%27s_theorem"
+    ],
+    "text": [
+      {
+        "key": "tabA",
+        "default": "SIG L",
+        "x": 0.03,
+        "y": 0.045,
+        "size": 0.042,
+        "font": "display",
+        "style": "outline",
+        "box": "tab"
+      },
+      {
+        "key": "tabB",
+        "default": "SIG R",
+        "x": 0.03,
+        "y": 0.165,
+        "size": 0.042,
+        "font": "display",
+        "style": "outline",
+        "box": "tab"
+      },
+      {
+        "key": "title",
+        "default": "XY",
+        "x": 0.975,
+        "y": 0.035,
+        "size": 0.062,
+        "font": "tall",
+        "align": "right"
+      },
+      {
+        "key": "sub",
+        "default": "AGENT//VFX  NODE 7G-75",
+        "x": 0.975,
+        "y": 0.15,
+        "size": 0.013,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "micro",
+        "default": "NX 7G-75  48K  60FPS\n03V  RLS  202  0\nTT2  .  KMR  L3H0",
+        "x": 0.975,
+        "y": 0.845,
+        "size": 0.012,
+        "font": "mono",
+        "align": "right",
+        "lineHeight": 1.35
+      },
+      {
+        "key": "microL",
+        "default": "SIG // 01  CAL OK",
+        "x": 0.03,
+        "y": 0.947,
+        "size": 0.012,
+        "font": "mono",
+        "lineHeight": 1.35
+      },
+      {
+        "key": "rdA",
+        "default": "LVL",
+        "x": 0.862,
+        "y": 0.585,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "rdB",
+        "default": "BPM",
+        "x": 0.862,
+        "y": 0.655,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "rdC",
+        "default": "FRM",
+        "x": 0.862,
+        "y": 0.725,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "fq0",
+        "default": "40",
+        "x": 0.855,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq1",
+        "default": "180",
+        "x": 0.885,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq2",
+        "default": "800",
+        "x": 0.915,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq3",
+        "default": "3.6k",
+        "x": 0.945,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq4",
+        "default": "16k",
+        "x": 0.975,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row0",
+        "default": "0",
+        "x": 0.84,
+        "y": 0.223,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row1",
+        "default": "1",
+        "x": 0.84,
+        "y": 0.25633333333333336,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row2",
+        "default": "2",
+        "x": 0.84,
+        "y": 0.2896666666666667,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row3",
+        "default": "3",
+        "x": 0.84,
+        "y": 0.323,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row4",
+        "default": "4",
+        "x": 0.84,
+        "y": 0.35633333333333334,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row5",
+        "default": "5",
+        "x": 0.84,
+        "y": 0.38966666666666666,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row6",
+        "default": "6",
+        "x": 0.84,
+        "y": 0.42300000000000004,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv0",
+        "default": "0",
+        "x": 0.022,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv1",
+        "default": "1",
+        "x": 0.052599999999999994,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv2",
+        "default": "2",
+        "x": 0.0832,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv3",
+        "default": "3",
+        "x": 0.11379999999999998,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv4",
+        "default": "4",
+        "x": 0.1444,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv5",
+        "default": "5",
+        "x": 0.175,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx0",
+        "default": "-1.0",
+        "x": 0.286,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx1",
+        "default": "-0.5",
+        "x": 0.39299999999999996,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx2",
+        "default": "0",
+        "x": 0.5,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx3",
+        "default": "+0.5",
+        "x": 0.607,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx4",
+        "default": "+1.0",
+        "x": 0.714,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "ny0",
+        "default": "+1.0",
+        "x": 0.27399999999999997,
+        "y": 0.11299999999999999,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "ny1",
+        "default": "+0.5",
+        "x": 0.27399999999999997,
+        "y": 0.303,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "ny2",
+        "default": "0",
+        "x": 0.27399999999999997,
+        "y": 0.493,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "ny3",
+        "default": "-0.5",
+        "x": 0.27399999999999997,
+        "y": 0.683,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "ny4",
+        "default": "-1.0",
+        "x": 0.27399999999999997,
+        "y": 0.873,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      }
+    ]
+  }
+}

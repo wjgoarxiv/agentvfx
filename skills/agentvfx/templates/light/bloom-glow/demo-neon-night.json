@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "bloom-glow",
+  "preset": "neon-night",
+  "input": { "video": "test-media/clip-02.mp4" },
+  "palette": "brutal-acid",
+  "durationSec": 4,
+  "seed": 12,
+  "out": "bloom-glow-neon-night"
+}

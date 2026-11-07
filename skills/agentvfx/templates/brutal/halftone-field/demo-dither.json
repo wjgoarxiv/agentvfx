@@ -1,0 +1,1 @@
+{"version":1,"template":"halftone-field","preset":"dither","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3","startSec":2},"durationSec":4,"seed":55,"labels":{"headline":"BAYER 8","labelC":"SCREEN 9PX / ORDERED / 1-BIT"},"out":"halftone-field-dither"}

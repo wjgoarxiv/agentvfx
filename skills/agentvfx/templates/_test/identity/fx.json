@@ -1,0 +1,10 @@
+{
+  "DESCRIPTION": "Test template: passes inputImage through unchanged (black without input).",
+  "ISFVSN": "2",
+  "CATEGORIES": ["test"],
+  "INPUTS": [{ "NAME": "gain", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 1 }],
+  "X_AGENTVFX": {
+    "id": "test-identity", "family": "_test", "input": "either", "spdx": "LicenseRef-agentvfx", "flash": "none",
+    "presets": { "unity": { "gain": 1 }, "half": { "gain": 0.5 }, "double": { "gain": 2 } }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "DESCRIPTION": "Thin-line bracketed bass instrument: up to eight nested hairline outlines (delayed, exponent-stepped) around a halftone emblem disc, hatch fill, tick ring and corner brackets",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["spectrum", "audio", "hud"],
+  "INPUTS": [
+    { "NAME": "bandCount", "TYPE": "long", "MIN": 8, "MAX": 64, "DEFAULT": 26 },
+    { "NAME": "layerCount", "TYPE": "long", "MIN": 1, "MAX": 8, "DEFAULT": 8 },
+    { "NAME": "layerDelay", "TYPE": "long", "MIN": 1, "MAX": 3, "DEFAULT": 2 },
+    { "NAME": "emblemRadius", "TYPE": "float", "MIN": 0.06, "MAX": 0.3, "DEFAULT": 0.15 },
+    { "NAME": "emblemBounce", "TYPE": "float", "MIN": 0, "MAX": 0.5, "DEFAULT": 0.1 },
+    { "NAME": "emblemShake", "TYPE": "float", "MIN": 0, "MAX": 24, "DEFAULT": 0 },
+    { "NAME": "maxRadius", "TYPE": "float", "MIN": 0.05, "MAX": 0.45, "DEFAULT": 0.15 },
+    { "NAME": "bandGap", "TYPE": "float", "MIN": 0, "MAX": 0.03, "DEFAULT": 0.009 },
+    { "NAME": "hatchAmount", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.55 },
+    { "NAME": "spin", "TYPE": "float", "MIN": -3, "MAX": 3, "DEFAULT": 0.1 },
+    { "NAME": "snapDeg", "TYPE": "float", "MIN": 0, "MAX": 90, "DEFAULT": 10 },
+    { "NAME": "coneAmount", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.8 },
+    { "NAME": "coneCount", "TYPE": "long", "MIN": 0, "MAX": 160, "DEFAULT": 90 },
+    { "NAME": "coneSpeed", "TYPE": "float", "MIN": 0.05, "MAX": 2, "DEFAULT": 0.25 }
+  ],
+  "use": ["pro", "stage", "hud"],
+  "defaults": { "startFreq": 30, "endFreq": 300, "freqCurve": 1, "floorLevel": 0.34, "ceilLevel": 0.6, "expLow": 1.5, "expHigh": 1.5, "headBars": 0, "monsterSmooth": 1.2, "attackMs": 10, "releaseMs": 110, "bassHold": 0, "kickBass": 1.4, "glowRadius": 0.02 },
+  "PASSES": [
+    { "TARGET": "barState", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "bass-circle",
+    "family": "spectrum",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "bracket-black": {},
+      "bracket-ultramarine": { "$field": "ultramarine" },
+      "bracket-orange": { "$field": "orange", "layerCount": 6 },
+      "bracket-acid": { "$field": "acid", "hatchAmount": 0.8 },
+      "rainbow-glow": { "colorMode": 1, "glow": 1.6, "lineWidth": 2.6, "hatchAmount": 0.2 }
+    },
+    "audioBind": { "emblemBounce": "bass" },
+    "safeSubstitute": { "params": { "kickZoom": 0, "shake": 0, "emblemShake": 0, "snapDeg": 0 } },
+    "text": [
+      { "key": "title", "default": "BASS 30-300HZ", "x": 0.03, "y": 0.06, "size": 0.07, "font": "display", "style": "outline", "box": "tab" },
+      { "key": "node", "default": "NODE 7G-75", "x": 0.97, "y": 0.045, "size": 0.085, "font": "tall", "align": "right" },
+      { "key": "log", "default": "KICK GATE 1.4\nLAYERS 8  DELAY 2F\nCACHE OK", "x": 0.03, "y": 0.8, "size": 0.017, "font": "mono", "reveal": "type", "revealStart": 0.2, "revealDur": 1.5 },
+      { "key": "num", "default": "KX  7G2  R4  D9\n41A TQP  118  3", "x": 0.97, "y": 0.9, "size": 0.016, "font": "mono", "align": "right" }
+    ],
+    "credits": [
+      "Thin-line bracketed radial instrument: original drawing, no marks, fonts or text from other works",
+      "Layer delays, exponents and smoothing margins follow the parameters published in the open caseif/js.nation recreation (MIT; values described, no code used)"
+    ]
+  }
+}

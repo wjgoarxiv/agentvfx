@@ -1,0 +1,37 @@
+{
+  "DESCRIPTION": "Impact frame: the layer below snaps to a hard negative for 1-3 frames, then dissolves back in chunky blocks (never a milky fade)",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["impact"],
+  "INPUTS": [
+    { "NAME": "hitFrames", "TYPE": "long", "MIN": 1, "MAX": 12, "DEFAULT": 3 },
+    { "NAME": "holdFrames", "TYPE": "long", "MIN": 0, "MAX": 6, "DEFAULT": 2 },
+    { "NAME": "decayCurve", "TYPE": "float", "MIN": 0.3, "MAX": 4, "DEFAULT": 1 },
+    { "NAME": "mode", "TYPE": "long", "MIN": 0, "MAX": 3, "VALUES": [0, 1, 2, 3], "LABELS": ["negative", "value flip (hue kept)", "false negative", "palette negative"], "DEFAULT": 0 },
+    { "NAME": "contrast", "TYPE": "float", "MIN": 0.5, "MAX": 3, "DEFAULT": 1.45 },
+    { "NAME": "bands", "TYPE": "long", "MIN": 0, "MAX": 32, "DEFAULT": 0 },
+    { "NAME": "bandCoverage", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.65 },
+    { "NAME": "blockPx", "TYPE": "float", "MIN": 2, "MAX": 160, "DEFAULT": 40 }
+  ],
+  "X_AGENTVFX": {
+    "id": "impact-invert",
+    "family": "impact",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "invert-snap": { "hitFrames": 2, "holdFrames": 2, "mode": 0, "contrast": 1.45 },
+      "invert-bars": { "hitFrames": 5, "holdFrames": 2, "mode": 0, "bands": 11, "bandCoverage": 0.7, "contrast": 1.6 },
+      "invert-hue-keep": { "hitFrames": 4, "holdFrames": 2, "mode": 1, "contrast": 1.7 },
+      "invert-acid": { "hitFrames": 4, "holdFrames": 2, "mode": 3, "contrast": 1.3, "blockPx": 24 },
+      "invert-false-neg": { "hitFrames": 3, "holdFrames": 2, "mode": 2, "contrast": 1.5 }
+    },
+    "safeSubstitute": { "template": "punch-shake" },
+    "credits": [
+      "Impact-frame grammar (1-2 frame inversion on contact), sakugabooru wiki, https://www.sakugabooru.com/wiki/show?title=impact_frame",
+      "Dissolve by hashed block threshold instead of alpha blend, to avoid the stacked-exposure milky failure"
+    ]
+  }
+}

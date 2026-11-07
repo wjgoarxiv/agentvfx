@@ -1,0 +1,1 @@
+{"version":1,"template":"collage","preset":"ultra-slow","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3"},"durationSec":4,"seed":7,"out":"concept-collage-ultra-slow"}

@@ -1,0 +1,1 @@
+{"version":1,"template":"hud-deck","preset":"octagon","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3","startSec":2},"durationSec":4,"seed":44,"labels":{},"out":"hud-deck-octagon"}

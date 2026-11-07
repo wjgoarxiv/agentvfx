@@ -1,0 +1,1 @@
+@./skills/agentvfx/SKILL.md

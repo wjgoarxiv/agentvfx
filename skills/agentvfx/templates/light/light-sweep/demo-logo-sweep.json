@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "light-sweep",
+  "preset": "logo-sweep",
+  "input": { "video": "test-media/clip-02.mp4" },
+  "palette": "brutal-acid",
+  "durationSec": 4,
+  "seed": 12,
+  "out": "light-sweep-logo-sweep"
+}

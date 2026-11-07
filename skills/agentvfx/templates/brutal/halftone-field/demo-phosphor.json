@@ -1,0 +1,1 @@
+{"version":1,"template":"halftone-field","preset":"phosphor","input":{"video":"test-media/clip-02.mp4","audio":"test-media/beat-132.mp3","startSec":5},"durationSec":4,"seed":54,"labels":{"headline":"ECHO/DOT","labelA":"NODE 2P-12 // PHOS 0012"},"out":"halftone-field-phosphor"}

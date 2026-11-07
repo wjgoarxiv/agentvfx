@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "template": "light-sweep",
+  "preset": "logo-sweep",
+  "input": { "video": "test-media/clip-02.mp4", "audio": "test-media/beat-132.mp3" },
+  "bindings": [{ "param": "audioKick", "feature": "onset", "gain": 1.2, "offset": 0, "attackMs": 10, "releaseMs": 180 }],
+  "palette": "brutal-acid",
+  "durationSec": 4,
+  "seed": 21,
+  "out": "light-sweep-onset"
+}

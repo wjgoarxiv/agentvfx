@@ -1,0 +1,1 @@
+{"version":1,"template":"signal-cut","preset":"lime","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3"},"durationSec":4,"seed":11,"labels":{"stamp":"90"},"out":"concept-signal-cut-lime"}

@@ -1,0 +1,83 @@
+{
+  "DESCRIPTION": "Signal-cut: the frame is the instrument. Spectrum bands are full-height vertical slabs whose widths follow their energy and that slide, invert or turn field-colour inside the footage; on every beat the frame hard-cuts to one solid acid, ultramarine or orange field with the loud slabs as holes, and a giant cropped numeral stamps in",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["impact", "audio", "brutal"],
+  "INPUTS": [
+    { "NAME": "fieldColor", "TYPE": "color", "DEFAULT": [0.784, 1, 0, 1] },
+    { "NAME": "inkColor", "TYPE": "color", "DEFAULT": [0.043, 0.043, 0.047, 1] },
+    { "NAME": "paperColor", "TYPE": "color", "DEFAULT": [0.914, 0.914, 0.894, 1] },
+    { "NAME": "slabs", "TYPE": "long", "MIN": 4, "MAX": 32, "DEFAULT": 16 },
+    { "NAME": "startFreq", "TYPE": "float", "MIN": 30, "MAX": 400, "DEFAULT": 55 },
+    { "NAME": "endFreq", "TYPE": "float", "MIN": 2000, "MAX": 16000, "DEFAULT": 9000 },
+    { "NAME": "release", "TYPE": "float", "MIN": 0.01, "MAX": 1, "DEFAULT": 0.06 },
+    { "NAME": "floorLevel", "TYPE": "float", "MIN": 0, "MAX": 0.6, "DEFAULT": 0.2 },
+    { "NAME": "ceilLevel", "TYPE": "float", "MIN": 0.2, "MAX": 1, "DEFAULT": 0.7 },
+    { "NAME": "levelGain", "TYPE": "float", "MIN": 0, "MAX": 1.5, "DEFAULT": 0.4 },
+    { "NAME": "riseGain", "TYPE": "float", "MIN": 0, "MAX": 12, "DEFAULT": 6 },
+    { "NAME": "minWidth", "TYPE": "float", "MIN": 0.05, "MAX": 3, "DEFAULT": 0.5 },
+    { "NAME": "widthGain", "TYPE": "float", "MIN": 0, "MAX": 12, "DEFAULT": 3.5 },
+    { "NAME": "shiftY", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.45 },
+    { "NAME": "shiftX", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.18 },
+    { "NAME": "slabContrast", "TYPE": "float", "MIN": 0.5, "MAX": 3, "DEFAULT": 1.35 },
+    { "NAME": "idleDim", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.5 },
+    { "NAME": "actAt", "TYPE": "float", "MIN": 0.01, "MAX": 1, "DEFAULT": 0.05 },
+    { "NAME": "invAt", "TYPE": "float", "MIN": 0.05, "MAX": 1.5, "DEFAULT": 0.5 },
+    { "NAME": "duoAt", "TYPE": "float", "MIN": 0.05, "MAX": 1.5, "DEFAULT": 0.85 },
+    { "NAME": "slitPx", "TYPE": "float", "MIN": 0, "MAX": 16, "DEFAULT": 3 },
+    { "NAME": "fieldCut", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "cutFrames", "TYPE": "long", "MIN": 1, "MAX": 4, "DEFAULT": 2 },
+    { "NAME": "cutKeep", "TYPE": "float", "MIN": 0, "MAX": 0.95, "DEFAULT": 0.35 },
+    { "NAME": "stampFrames", "TYPE": "long", "MIN": 0, "MAX": 30, "DEFAULT": 6 },
+    { "NAME": "stampZoom", "TYPE": "float", "MIN": 1, "MAX": 3, "DEFAULT": 1.35 },
+    { "NAME": "stampPivotX", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.1 },
+    { "NAME": "stampPivotY", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.1 }
+  ],
+  "PASSES": [
+    { "TARGET": "sigState", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "signal-cut",
+    "family": "impact",
+    "input": "footage",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "strobe",
+    "fps": 30,
+    "palette": false,
+    "presets": {
+      "lime": {},
+      "lime-hold": { "release": 0.12 },
+      "ultramarine": {
+        "fieldColor": [0.078, 0.078, 1, 1],
+        "slabs": 24,
+        "widthGain": 5,
+        "slitPx": 2,
+        "stampPivotX": 0.9
+      },
+      "orange": {
+        "fieldColor": [1, 0.55, 0, 1],
+        "slabs": 10,
+        "minWidth": 0.3,
+        "widthGain": 3,
+        "slitPx": 6,
+        "cutFrames": 1,
+        "stampFrames": 10,
+        "stampZoom": 1.7
+      }
+    },
+    "audioBind": {
+      "widthGain": "bands",
+      "fieldCut": "beat"
+    },
+    "safeSubstitute": {
+      "params": { "fieldCut": 0, "invAt": 1.5, "duoAt": 1.5, "stampFrames": 0, "idleDim": 1, "shiftY": 0, "shiftX": 0.06 }
+    },
+    "text": [
+      { "key": "stamp", "default": "90", "x": -0.03, "y": 0.3, "size": 0.85, "font": "grotesk", "align": "left" }
+    ],
+    "credits": [
+      "Original composition; band-to-slab mapping, instant-attack follower with exponential release and the beat clock are written fresh for this template"
+    ]
+  }
+}

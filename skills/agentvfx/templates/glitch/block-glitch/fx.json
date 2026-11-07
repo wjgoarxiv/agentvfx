@@ -1,0 +1,54 @@
+{
+  "DESCRIPTION": "Seeded pixel-block tears over footage: displaced, channel-swapped, inverted, palette-solid, mosaic, static and streak blocks in bursts",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["glitch"],
+  "INPUTS": [
+    { "NAME": "blockSize", "TYPE": "float", "MIN": 8, "MAX": 240, "DEFAULT": 56 },
+    { "NAME": "density", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.42 },
+    { "NAME": "idleDensity", "TYPE": "float", "MIN": 0, "MAX": 0.4, "DEFAULT": 0.05 },
+    { "NAME": "shiftAmt", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 1 },
+    { "NAME": "swapAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.7 },
+    { "NAME": "invertAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.3 },
+    { "NAME": "solidAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.35 },
+    { "NAME": "mosaicAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.5 },
+    { "NAME": "staticAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.45 },
+    { "NAME": "stretchAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.5 },
+    { "NAME": "fringe", "TYPE": "float", "MIN": 0, "MAX": 40, "DEFAULT": 8 },
+    { "NAME": "joltAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.5 },
+    { "NAME": "lockMode", "TYPE": "long", "MIN": 0, "MAX": 2, "VALUES": [0, 1, 2], "LABELS": ["rate", "onset", "beat"], "DEFAULT": 0 },
+    { "NAME": "burstRate", "TYPE": "float", "MIN": 0.25, "MAX": 12, "DEFAULT": 2.6 },
+    { "NAME": "burstProb", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.85 },
+    { "NAME": "burstFrames", "TYPE": "long", "MIN": 1, "MAX": 60, "DEFAULT": 8 },
+    { "NAME": "holdFrames", "TYPE": "long", "MIN": 1, "MAX": 8, "DEFAULT": 2 },
+    { "NAME": "audioKick", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0 },
+    { "NAME": "saturation", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 1.25 },
+    { "NAME": "punch", "TYPE": "float", "MIN": 0.5, "MAX": 3, "DEFAULT": 1.2 },
+    { "NAME": "grain", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.1 }
+  ],
+  "PASSES": [
+    { "TARGET": "counter", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "block-glitch",
+    "family": "glitch",
+    "input": "footage",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "strobe",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "block-glitch-tear": {},
+      "block-glitch-mosaic": { "blockSize": 36, "density": 0.55, "mosaicAmt": 1, "shiftAmt": 0.3, "swapAmt": 0.2, "invertAmt": 0, "solidAmt": 0.6, "staticAmt": 0.3, "stretchAmt": 0.2, "burstRate": 3.4, "burstFrames": 9, "joltAmt": 0.1 },
+      "block-glitch-static": { "blockSize": 72, "density": 0.5, "staticAmt": 1, "solidAmt": 0.5, "shiftAmt": 0.5, "swapAmt": 0.2, "invertAmt": 0.1, "mosaicAmt": 0.2, "stretchAmt": 0.2, "burstRate": 2, "burstFrames": 10, "fringe": 4 },
+      "block-glitch-onset": { "lockMode": 1, "burstProb": 1, "burstFrames": 7, "density": 0.5, "idleDensity": 0.03, "solidAmt": 0.5, "invertAmt": 0.5 }
+    },
+    "audioBind": { "audioKick": "onset" },
+    "safeSubstitute": { "params": { "burstRate": 0.8, "burstFrames": 4, "holdFrames": 6, "invertAmt": 0, "solidAmt": 0, "staticAmt": 0, "joltAmt": 0, "density": 0.2, "grain": 0.04 } },
+    "credits": [
+      "PCG integer hash, M. E. O'Neill, https://www.pcg-random.org/",
+      "Datamosh / block-corruption look as in showreel glitch graphics (grammar only, no code)"
+    ]
+  }
+}

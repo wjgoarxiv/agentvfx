@@ -1,0 +1,60 @@
+{
+  "DESCRIPTION": "Pixel sorting over footage: luma-threshold spans sorted along an axis into streaks, with sweeping thresholds and row stutter",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["glitch"],
+  "INPUTS": [
+    { "NAME": "sortAxis", "TYPE": "long", "MIN": 0, "MAX": 1, "VALUES": [0, 1], "LABELS": ["horizontal", "vertical"], "DEFAULT": 0 },
+    { "NAME": "cellSize", "TYPE": "float", "MIN": 1, "MAX": 16, "DEFAULT": 3 },
+    { "NAME": "threshLo", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.28 },
+    { "NAME": "threshHi", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.97 },
+    { "NAME": "rowVar", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.25 },
+    { "NAME": "rowsFrac", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.9 },
+    { "NAME": "sweep", "TYPE": "float", "MIN": 0, "MAX": 0.5, "DEFAULT": 0.12 },
+    { "NAME": "sweepRate", "TYPE": "float", "MIN": 0, "MAX": 4, "DEFAULT": 0.35 },
+    { "NAME": "stutterHz", "TYPE": "float", "MIN": 1, "MAX": 30, "DEFAULT": 8 },
+    { "NAME": "sortBy", "TYPE": "long", "MIN": 0, "MAX": 3, "VALUES": [0, 1, 2, 3], "LABELS": ["luma", "hue", "saturation", "blue"], "DEFAULT": 0 },
+    { "NAME": "descend", "TYPE": "bool", "DEFAULT": false },
+    { "NAME": "softness", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.4 },
+    { "NAME": "cutJitter", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "paletteMix", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0 },
+    { "NAME": "saturation", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 1.5 },
+    { "NAME": "punch", "TYPE": "float", "MIN": 0.5, "MAX": 3, "DEFAULT": 1.3 },
+    { "NAME": "blend", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "audioKick", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0 }
+  ],
+  "PASSES": [
+    { "TARGET": "keyBuf", "FLOAT": true },
+    { "TARGET": "run1", "FLOAT": true },
+    { "TARGET": "run2", "FLOAT": true },
+    { "TARGET": "run3", "FLOAT": true },
+    { "TARGET": "run4", "FLOAT": true },
+    { "TARGET": "run5", "FLOAT": true },
+    { "TARGET": "run6", "FLOAT": true },
+    { "TARGET": "run7", "FLOAT": true },
+    { "TARGET": "run8", "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "pixel-sort",
+    "family": "glitch",
+    "input": "footage",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "pixel-sort-streak": {},
+      "pixel-sort-vertical": { "sortAxis": 1, "cellSize": 2, "threshLo": 0.2, "threshHi": 0.85, "sweep": 0.2, "sweepRate": 0.5, "descend": true, "rowVar": 0.35 },
+      "pixel-sort-chunk": { "cellSize": 9, "threshLo": 0.18, "threshHi": 1, "softness": 0, "rowVar": 0.4, "stutterHz": 12, "paletteMix": 0.5, "saturation": 1.5 },
+      "pixel-sort-hue": { "sortBy": 1, "cellSize": 2, "threshLo": 0.1, "threshHi": 0.92, "rowsFrac": 1, "rowVar": 0.1, "sweep": 0.18, "saturation": 1.6 },
+      "pixel-sort-kick": { "rowsFrac": 0.25, "threshLo": 0.45, "threshHi": 0.8, "sweep": 0.05, "cellSize": 3 }
+    },
+    "audioBind": { "audioKick": "onset" },
+    "credits": [
+      "ASDFPixelSort by Kim Asendorf (the pixel-sorting idea, by name only; no code used)",
+      "Run-length doubling (pointer jumping), https://en.wikipedia.org/wiki/Pointer_jumping",
+      "PCG integer hash, M. E. O'Neill, https://www.pcg-random.org/"
+    ]
+  }
+}

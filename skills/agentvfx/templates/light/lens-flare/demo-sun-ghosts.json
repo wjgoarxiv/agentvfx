@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "lens-flare",
+  "preset": "sun-ghosts",
+  "input": { "video": "test-media/clip-02.mp4" },
+  "palette": "hazard-orange",
+  "durationSec": 4,
+  "seed": 12,
+  "out": "lens-flare-sun-ghosts"
+}

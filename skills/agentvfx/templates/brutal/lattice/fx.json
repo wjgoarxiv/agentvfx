@@ -1,0 +1,130 @@
+{
+  "DESCRIPTION": "A full-frame dot lattice that sound physically deforms: kicks send radial shockwaves from a jumping origin, onsets tear rows apart sideways, highs jitter and sparkle single points, silence snaps back to a perfect grid; footage only sizes the dots",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["brutal", "lattice", "audio"],
+  "INPUTS": [
+    { "NAME": "groundColor", "TYPE": "color", "DEFAULT": [0.035, 0.03, 0.03, 1] },
+    { "NAME": "dotColor", "TYPE": "color", "DEFAULT": [1, 0.2, 0.04, 1] },
+    { "NAME": "hotColor", "TYPE": "color", "DEFAULT": [1, 0.93, 0.8, 1] },
+    { "NAME": "pitch", "TYPE": "float", "MIN": 8, "MAX": 80, "DEFAULT": 22 },
+    { "NAME": "stagger", "TYPE": "float", "MIN": 0, "MAX": 0.5, "DEFAULT": 0 },
+    { "NAME": "dotBase", "TYPE": "float", "MIN": 0.02, "MAX": 0.4, "DEFAULT": 0.17 },
+    { "NAME": "dotLuma", "TYPE": "float", "MIN": 0, "MAX": 0.6, "DEFAULT": 0.27 },
+    { "NAME": "mediaAmount", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "imgContrast", "TYPE": "float", "MIN": 0.5, "MAX": 3, "DEFAULT": 1.6 },
+    { "NAME": "imgBias", "TYPE": "float", "MIN": -0.5, "MAX": 0.5, "DEFAULT": -0.04 },
+    { "NAME": "invert", "TYPE": "bool", "DEFAULT": false },
+    { "NAME": "headline", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "textKnock", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.9 },
+    { "NAME": "release", "TYPE": "float", "MIN": 0.02, "MAX": 0.4, "DEFAULT": 0.06 },
+    { "NAME": "kickBass", "TYPE": "float", "MIN": 1, "MAX": 6, "DEFAULT": 1.6 },
+    { "NAME": "kickPush", "TYPE": "float", "MIN": 0, "MAX": 2.2, "DEFAULT": 1.8 },
+    { "NAME": "waveSpeed", "TYPE": "float", "MIN": 200, "MAX": 8000, "DEFAULT": 3200 },
+    { "NAME": "waveWidth", "TYPE": "float", "MIN": 0.05, "MAX": 0.6, "DEFAULT": 0.2 },
+    { "NAME": "kickSwell", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.55 },
+    { "NAME": "tearShear", "TYPE": "float", "MIN": 0, "MAX": 16, "DEFAULT": 6 },
+    { "NAME": "tearSpread", "TYPE": "float", "MIN": 0.05, "MAX": 1, "DEFAULT": 0.22 },
+    { "NAME": "jitter", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.3 },
+    { "NAME": "sparkle", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.8 },
+    { "NAME": "stretch", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.8 },
+    { "NAME": "ghost", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.35 },
+    { "NAME": "links", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.8 }
+  ],
+  "PASSES": [
+    { "TARGET": "lat", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "lattice",
+    "family": "brutal",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": false,
+    "presets": {
+      "vermilion": {},
+      "vermilion-fine": { "pitch": 12 },
+      "ink-yellow": {
+        "groundColor": [1, 0.82, 0, 1],
+        "dotColor": [0.03, 0.03, 0.03, 1],
+        "hotColor": [0.9, 0.08, 0, 1],
+        "pitch": 26,
+        "invert": true,
+        "imgContrast": 1.8,
+        "ghost": 0.5
+      },
+      "violet-slow": {
+        "groundColor": [0.03, 0.02, 0.05, 1],
+        "dotColor": [0.62, 0.3, 1, 1],
+        "hotColor": [1, 0.8, 1, 1],
+        "pitch": 19,
+        "stagger": 0.5,
+        "release": 0.12,
+        "waveWidth": 0.28
+      },
+      "cobalt-fine": {
+        "groundColor": [0.02, 0.025, 0.04, 1],
+        "dotColor": [0.1, 0.5, 1, 1],
+        "hotColor": [0.85, 0.97, 1, 1],
+        "pitch": 12,
+        "dotBase": 0.1,
+        "dotLuma": 0.4,
+        "tearShear": 14,
+        "kickPush": 2
+      },
+      "graphite-ice": {
+        "groundColor": [0.075, 0.08, 0.09, 1],
+        "dotColor": [0.88, 0.92, 0.96, 1],
+        "hotColor": [0.4, 0.85, 1, 1],
+        "pitch": 20,
+        "ghost": 0.3
+      },
+      "phosphor": {
+        "groundColor": [0.008, 0.02, 0.012, 1],
+        "dotColor": [0.15, 1, 0.35, 1],
+        "hotColor": [0.88, 1, 0.82, 1],
+        "pitch": 18,
+        "dotBase": 0.14,
+        "jitter": 0.4
+      },
+      "bone-ink": {
+        "groundColor": [0.92, 0.89, 0.8, 1],
+        "dotColor": [0.04, 0.04, 0.04, 1],
+        "hotColor": [0.95, 0.14, 0.02, 1],
+        "pitch": 24,
+        "invert": true,
+        "imgContrast": 1.8,
+        "ghost": 0.5
+      }
+    },
+    "audioBind": {
+      "kickPush": "bass",
+      "tearShear": "onset",
+      "jitter": "treble"
+    },
+    "safeSubstitute": {
+      "params": {
+        "kickSwell": 0,
+        "sparkle": 0
+      }
+    },
+    "text": [
+      {
+        "key": "headline",
+        "default": "LATTICE",
+        "x": 0.05,
+        "y": 0.66,
+        "size": 0.2,
+        "font": "grotesk",
+        "style": "fill",
+        "tracking": 0.1
+      }
+    ],
+    "credits": [
+      "Closed-form event motion: amplitude = strength * exp(-age / release) for a kick shockwave (travelling Gaussian front), a row shear (per-row x slide, exactly invertible so each row finds its own columns) and per-point hashed jitter",
+      "Rendering by neighbourhood search over displaced rest cells, capsule distance after the standard analytic form (Inigo Quilez, https://iquilezles.org/articles/distfunctions2d/)"
+    ]
+  }
+}

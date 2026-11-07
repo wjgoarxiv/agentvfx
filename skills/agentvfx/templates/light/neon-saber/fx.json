@@ -1,0 +1,48 @@
+{
+  "DESCRIPTION": "Neon saber: SDF core, Gaussian inner glow, Lorentzian outer glow, flicker, then a bloom pass",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["light"],
+  "INPUTS": [
+    { "NAME": "saberA", "TYPE": "point2D", "DEFAULT": [0.12, 0.2] },
+    { "NAME": "saberB", "TYPE": "point2D", "DEFAULT": [0.88, 0.8] },
+    { "NAME": "coreFrac", "TYPE": "float", "MIN": 0.001, "MAX": 0.04, "DEFAULT": 0.006 },
+    { "NAME": "haloFrac", "TYPE": "float", "MIN": 0.008, "MAX": 0.14, "DEFAULT": 0.02 },
+    { "NAME": "flicker", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.62 },
+    { "NAME": "flickerHz", "TYPE": "float", "MIN": 0, "MAX": 18, "DEFAULT": 8 },
+    { "NAME": "flickerFloor", "TYPE": "float", "MIN": 0.15, "MAX": 1, "DEFAULT": 0.32 },
+    { "NAME": "twin", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0 },
+    { "NAME": "trace", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0 },
+    { "NAME": "saberGain", "TYPE": "float", "MIN": 1, "MAX": 20, "DEFAULT": 9 },
+    { "NAME": "paletteMix", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.85 },
+    { "NAME": "tint", "TYPE": "color", "DEFAULT": [0.7, 0.92, 1, 1] },
+    { "NAME": "toneMap", "TYPE": "long", "MIN": 0, "MAX": 1, "VALUES": [0, 1], "LABELS": ["AgX", "ACES"], "DEFAULT": 1 }
+  ],
+  "PASSES": [
+    { "TARGET": "beam", "FLOAT": true },
+    { "TARGET": "glow", "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "neon-saber",
+    "family": "light",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "safeSubstitute": { "params": { "flicker": 0 } },
+    "presets": {
+      "saber-laser": { "coreFrac": 0.0032, "haloFrac": 0.018, "flicker": 0.55, "flickerHz": 9, "saberGain": 14, "tint": [0.55, 0.95, 1, 1], "paletteMix": 0.95, "saberA": [0.08, 0.22], "saberB": [0.9, 0.78], "toneMap": 1 },
+      "neon-tube": { "coreFrac": 0.006, "haloFrac": 0.028, "flicker": 0.18, "flickerHz": 4, "saberGain": 9, "tint": [1, 0.08, 0.55, 1], "paletteMix": 0.35, "saberA": [0.1, 0.5], "saberB": [0.9, 0.5], "toneMap": 1 },
+      "twin-blade": { "twin": 1, "coreFrac": 0.003, "haloFrac": 0.016, "flicker": 0.4, "flickerHz": 6, "saberGain": 12, "paletteMix": 0.9, "toneMap": 1 },
+      "hairline": { "trace": 1, "coreFrac": 0.0014, "haloFrac": 0.008, "flicker": 0.12, "flickerHz": 3, "saberGain": 16, "paletteMix": 1, "toneMap": 1 }
+    },
+    "credits": [
+      "Segment SDF, Inigo Quilez distance functions, https://iquilezles.org/articles/distfunctions2d/",
+      "Gaussian core plus Lorentzian wings, the usual beam profile (narrow exp, wide 1/(1+x^2))",
+      "ACES fitted tone map, Krzysztof Narkowicz, https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/",
+      "AgX display fit, Troy Sobotka, https://github.com/sobotka/AgX"
+    ]
+  }
+}

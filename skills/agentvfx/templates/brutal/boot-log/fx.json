@@ -1,0 +1,257 @@
+{
+  "DESCRIPTION": "Boot log: monospace kernel log typing over a field with a dot-matrix emblem, corner + marks, scrolling side readouts, a progress bar and a decode headline; scanlines, slight bloom, flicker and beat tears",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": [
+    "brutal",
+    "terminal",
+    "audio"
+  ],
+  "INPUTS": [
+    {
+      "NAME": "fieldColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.008,
+        0.02,
+        0.012,
+        1
+      ]
+    },
+    {
+      "NAME": "inkColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.224,
+        1,
+        0.078,
+        1
+      ]
+    },
+    {
+      "NAME": "hotColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.851,
+        1,
+        0.824,
+        1
+      ]
+    },
+    {
+      "NAME": "logDone",
+      "TYPE": "float",
+      "MIN": 1,
+      "MAX": 3.5,
+      "DEFAULT": 2.4
+    },
+    {
+      "NAME": "dustAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.8
+    },
+    {
+      "NAME": "streakAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "tearAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.6
+    },
+    {
+      "NAME": "scanAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.35
+    },
+    {
+      "NAME": "flickerAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.5,
+      "DEFAULT": 0.12
+    },
+    {
+      "NAME": "vignette",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.45
+    },
+    {
+      "NAME": "bloomAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 2,
+      "DEFAULT": 0.9
+    },
+    {
+      "NAME": "letterbox",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 120,
+      "DEFAULT": 46
+    },
+    {
+      "NAME": "introMs",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 3000,
+      "DEFAULT": 500
+    }
+  ],
+  "X_AGENTVFX": {
+    "id": "boot-log",
+    "family": "brutal",
+    "input": "generative",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": false,
+    "presets": {
+      "phosphor": {},
+      "acid": {
+        "fieldColor": [
+          0.784,
+          1,
+          0,
+          1
+        ],
+        "inkColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "hotColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "bloomAmount": 0.35,
+        "scanAmount": 0.25,
+        "dustAmount": 1,
+        "vignette": 0.3
+      },
+      "ultramarine": {
+        "fieldColor": [
+          0.078,
+          0.078,
+          1,
+          1
+        ],
+        "inkColor": [
+          0.863,
+          0.827,
+          1,
+          1
+        ],
+        "hotColor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "bloomAmount": 0.7,
+        "vignette": 0.35
+      },
+      "amber": {
+        "fieldColor": [
+          0.039,
+          0.024,
+          0,
+          1
+        ],
+        "inkColor": [
+          1,
+          0.69,
+          0,
+          1
+        ],
+        "hotColor": [
+          1,
+          0.941,
+          0.784,
+          1
+        ],
+        "bloomAmount": 1.1
+      }
+    },
+    "audioBind": {
+      "tearAmount": "beat"
+    },
+    "safeSubstitute": {
+      "params": {
+        "tearAmount": 0,
+        "flickerAmount": 0
+      }
+    },
+    "text": [
+      {
+        "key": "tagA",
+        "default": "AGENT//VFX // COLD ARCHIVE\nNODE 7G-75   BUILD 0417\nSECTOR 04 / SIGNAL OK",
+        "x": 0.111,
+        "y": 0.066,
+        "size": 0.0135,
+        "font": "mono",
+        "lineHeight": 1.45
+      },
+      {
+        "key": "tagB",
+        "default": "BOOT 0x7G75\nREV 04.17.31",
+        "x": 0.9,
+        "y": 0.066,
+        "size": 0.0135,
+        "font": "mono",
+        "align": "right",
+        "lineHeight": 1.45
+      },
+      {
+        "key": "log",
+        "default": "AGENT//VFX BOOT 0x7G75\nMOUNT /ARCHIVE/COLD-04 ........ OK\nCACHE 4096K PAGES ......... ALIGNED\nRELAY NODE 7G-75 .......... LINKED\nCHECKSUM 91C2 E81B ........ PASS\nLOAD SECTOR 0417 .......... 73%\nDECODE FRAME TABLE ........ OK\nSCAN 0x00F0..0x0FFF ...... CLEAN\nSIGNAL BUS 04 ............. UP\nPHASE LOCK 48.000K ........ HELD\nSEED 0x4A7C ............... SET\nHANDSHAKE ACCEPTED ........ OK\nRUN //",
+        "x": 0.033,
+        "y": 0.245,
+        "size": 0.0245,
+        "font": "mono",
+        "lineHeight": 1.18,
+        "reveal": "type",
+        "revealStart": 0.2,
+        "revealDur": 2.2
+      },
+      {
+        "key": "status",
+        "default": "BOOT SEQUENCE",
+        "x": 0.033,
+        "y": 0.848,
+        "size": 0.0135,
+        "font": "mono"
+      },
+      {
+        "key": "headline",
+        "default": "NODE 7G ONLINE",
+        "x": 0.033,
+        "y": 0.69,
+        "size": 0.11,
+        "font": "display",
+        "style": "fill",
+        "reveal": "decode",
+        "revealStart": 2.5,
+        "revealDur": 0.9
+      }
+    ],
+    "credits": [
+      "Terminal boot-log grammar (original drawing; no names, marks, fonts or footage from other works)",
+      "3x5 digit font, dot-matrix emblem generator, CRT scanline / flicker / vignette and 8-tap bloom are original"
+    ]
+  }
+}

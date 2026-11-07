@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "template": "bloom-glow",
+  "preset": "tight-specular",
+  "params": { "plateExposure": 0.5, "threshold": 0.78, "toneMap": 1 },
+  "input": { "video": "test-media/clip-01.mp4" },
+  "palette": "brutal-acid",
+  "durationSec": 4,
+  "seed": 12,
+  "out": "bloom-glow-clip01-low"
+}

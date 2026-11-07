@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "light-stage",
+  "preset": "emitters",
+  "stack": [{ "template": "god-rays", "preset": "point-lamp" }],
+  "palette": ["#0b0b0c", "#ff3c00"],
+  "durationSec": 4,
+  "seed": 12,
+  "out": "god-rays-point-lamp"
+}

@@ -1,0 +1,1 @@
+{"version":1,"template":"lattice","preset":"violet-slow","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3","startSec":0},"durationSec":4,"seed":23,"out":"lattice-violet-slow"}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "light-leak",
+  "preset": "vintage-burn",
+  "input": { "video": "test-media/clip-02.mp4" },
+  "palette": "brutal-red",
+  "durationSec": 4,
+  "seed": 12,
+  "out": "light-leak-vintage-burn"
+}

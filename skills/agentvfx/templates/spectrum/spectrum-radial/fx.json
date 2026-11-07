@@ -1,0 +1,566 @@
+{
+  "DESCRIPTION": "Starburst instrument: mirrored hairline spectrum spokes with tip dots, echo ghosts, tick ring, dashed outer circle and a bracketed frame; the ring snaps on strong onsets",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": [
+    "spectrum",
+    "audio",
+    "hud"
+  ],
+  "INPUTS": [
+    {
+      "NAME": "bandCount",
+      "TYPE": "long",
+      "MIN": 8,
+      "MAX": 120,
+      "DEFAULT": 64
+    },
+    {
+      "NAME": "maxHeight",
+      "TYPE": "float",
+      "MIN": 0.05,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "displayMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 2,
+      "VALUES": [
+        0,
+        1,
+        2
+      ],
+      "LABELS": [
+        "hairline",
+        "stepped",
+        "dots"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "side",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 1,
+      "VALUES": [
+        0,
+        1
+      ],
+      "LABELS": [
+        "outward",
+        "inward"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "lobes",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 8,
+      "DEFAULT": 2
+    },
+    {
+      "NAME": "echoLayers",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 6,
+      "DEFAULT": 3
+    },
+    {
+      "NAME": "echoDelay",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 4,
+      "DEFAULT": 2
+    },
+    {
+      "NAME": "innerRadius",
+      "TYPE": "float",
+      "MIN": 0.06,
+      "MAX": 0.4,
+      "DEFAULT": 0.12
+    },
+    {
+      "NAME": "spin",
+      "TYPE": "float",
+      "MIN": -6,
+      "MAX": 6,
+      "DEFAULT": 0.12
+    },
+    {
+      "NAME": "snapDeg",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 90,
+      "DEFAULT": 9
+    },
+    {
+      "NAME": "pulse",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.5,
+      "DEFAULT": 0.08
+    },
+    {
+      "NAME": "tickCount",
+      "TYPE": "float",
+      "MIN": 12,
+      "MAX": 360,
+      "DEFAULT": 120
+    },
+    {
+      "NAME": "floorHeight",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 10,
+      "DEFAULT": 3
+    },
+    {
+      "NAME": "startFreq",
+      "TYPE": "float",
+      "MIN": 10,
+      "MAX": 2000,
+      "DEFAULT": 25
+    },
+    {
+      "NAME": "endFreq",
+      "TYPE": "float",
+      "MIN": 100,
+      "MAX": 20000,
+      "DEFAULT": 9000
+    },
+    {
+      "NAME": "freqCurve",
+      "TYPE": "float",
+      "MIN": 1,
+      "MAX": 4,
+      "DEFAULT": 2.3
+    },
+    {
+      "NAME": "floorLevel",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.6,
+      "DEFAULT": 0.2
+    },
+    {
+      "NAME": "ceilLevel",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 1,
+      "DEFAULT": 0.62
+    },
+    {
+      "NAME": "expLow",
+      "TYPE": "float",
+      "MIN": 0.5,
+      "MAX": 8,
+      "DEFAULT": 2.1
+    },
+    {
+      "NAME": "expHigh",
+      "TYPE": "float",
+      "MIN": 0.5,
+      "MAX": 8,
+      "DEFAULT": 1.3
+    },
+    {
+      "NAME": "monsterSmooth",
+      "TYPE": "float",
+      "MIN": 1.05,
+      "MAX": 3,
+      "DEFAULT": 1.55
+    },
+    {
+      "NAME": "headBars",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.4,
+      "DEFAULT": 0.12
+    },
+    {
+      "NAME": "headMin",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.7
+    },
+    {
+      "NAME": "tilt",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.1,
+      "DEFAULT": 0.02
+    },
+    {
+      "NAME": "attackMs",
+      "TYPE": "float",
+      "MIN": 1,
+      "MAX": 300,
+      "DEFAULT": 14
+    },
+    {
+      "NAME": "releaseMs",
+      "TYPE": "float",
+      "MIN": 20,
+      "MAX": 1500,
+      "DEFAULT": 150
+    },
+    {
+      "NAME": "bassHold",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 3,
+      "DEFAULT": 0.8
+    },
+    {
+      "NAME": "capGravity",
+      "TYPE": "float",
+      "MIN": 0.1,
+      "MAX": 8,
+      "DEFAULT": 2.2
+    },
+    {
+      "NAME": "capHoldMs",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 600,
+      "DEFAULT": 90
+    },
+    {
+      "NAME": "kickZoom",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.15,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "kickDecayMs",
+      "TYPE": "float",
+      "MIN": 30,
+      "MAX": 600,
+      "DEFAULT": 120
+    },
+    {
+      "NAME": "kickBass",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 6,
+      "DEFAULT": 1.6
+    },
+    {
+      "NAME": "shake",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 24,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "bgMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 2,
+      "VALUES": [
+        0,
+        1,
+        2
+      ],
+      "LABELS": [
+        "flat",
+        "blurred-footage",
+        "halftone-footage"
+      ],
+      "DEFAULT": 2
+    },
+    {
+      "NAME": "bgDim",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.16
+    },
+    {
+      "NAME": "halftoneSize",
+      "TYPE": "float",
+      "MIN": 3,
+      "MAX": 24,
+      "DEFAULT": 7
+    },
+    {
+      "NAME": "fieldAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "fieldSpeed",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 4,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "vignette",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "grain",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.12,
+      "DEFAULT": 0.02
+    },
+    {
+      "NAME": "introMs",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 2000,
+      "DEFAULT": 500
+    },
+    {
+      "NAME": "hitFlux",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 2,
+      "DEFAULT": 0.9
+    },
+    {
+      "NAME": "groundColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.043,
+        0.043,
+        0.047,
+        1
+      ]
+    },
+    {
+      "NAME": "inkColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.914,
+        0.914,
+        0.894,
+        1
+      ]
+    },
+    {
+      "NAME": "accentColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.784,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "NAME": "lineWidth",
+      "TYPE": "float",
+      "MIN": 0.8,
+      "MAX": 4,
+      "DEFAULT": 1.5
+    },
+    {
+      "NAME": "gridAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "colorMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 1,
+      "VALUES": [
+        0,
+        1
+      ],
+      "LABELS": [
+        "accent",
+        "palette-by-frequency"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "paletteShift",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "glow",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 3,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "glowRadius",
+      "TYPE": "float",
+      "MIN": 0.002,
+      "MAX": 0.1,
+      "DEFAULT": 0.012
+    },
+    {
+      "NAME": "marks",
+      "TYPE": "bool",
+      "DEFAULT": true
+    }
+  ],
+  "PASSES": [
+    {
+      "TARGET": "barState",
+      "PERSISTENT": true,
+      "FLOAT": true
+    },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "spectrum-radial",
+    "family": "spectrum",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "starburst-black": {},
+      "starburst-ultramarine": {
+        "groundColor": [
+          0.078,
+          0.078,
+          1,
+          1
+        ],
+        "inkColor": [
+          0.95,
+          0.95,
+          0.92,
+          1
+        ],
+        "accentColor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "displayMode": 1
+      },
+      "starburst-acid": {
+        "groundColor": [
+          0.784,
+          1,
+          0,
+          1
+        ],
+        "inkColor": [
+          0.04,
+          0.04,
+          0.04,
+          1
+        ],
+        "accentColor": [
+          0.04,
+          0.04,
+          0.04,
+          1
+        ],
+        "lobes": 3,
+        "bandCount": 48
+      },
+      "dots-orange": {
+        "groundColor": [
+          1,
+          0.235,
+          0,
+          1
+        ],
+        "inkColor": [
+          0.04,
+          0.04,
+          0.04,
+          1
+        ],
+        "accentColor": [
+          0.04,
+          0.04,
+          0.04,
+          1
+        ],
+        "displayMode": 2,
+        "bandCount": 40
+      },
+      "rainbow-glow": {
+        "colorMode": 1,
+        "glow": 1.4,
+        "lineWidth": 2.4
+      }
+    },
+    "audioBind": {
+      "pulse": "onset"
+    },
+    "safeSubstitute": {
+      "params": {
+        "pulse": 0,
+        "snapDeg": 0,
+        "kickZoom": 0,
+        "shake": 0
+      }
+    },
+    "text": [
+      {
+        "key": "title",
+        "default": "RADIAL",
+        "x": 0.03,
+        "y": 0.06,
+        "size": 0.07,
+        "font": "display",
+        "style": "outline",
+        "box": "tab"
+      },
+      {
+        "key": "node",
+        "default": "NODE 7G-75",
+        "x": 0.97,
+        "y": 0.045,
+        "size": 0.085,
+        "font": "tall",
+        "align": "right"
+      },
+      {
+        "key": "log",
+        "default": "SIG 04 // 25-9000HZ\nRING LOCK  0x04F2\nCACHE OK",
+        "x": 0.03,
+        "y": 0.8,
+        "size": 0.017,
+        "font": "mono",
+        "reveal": "type",
+        "revealStart": 0.2,
+        "revealDur": 1.5
+      },
+      {
+        "key": "num",
+        "default": "KX  7G2  R4  D9\n41A TQP  118  3",
+        "x": 0.97,
+        "y": 0.9,
+        "size": 0.016,
+        "font": "mono",
+        "align": "right"
+      }
+    ],
+    "credits": [
+      "Starburst glyph and bracketed frame grammar: original drawing, no marks, fonts or text from other works",
+      "After Effects Audio Spectrum polar path vocabulary, https://helpx.adobe.com/after-effects/using/audio-effects.html",
+      "Power-curve bin mapping and peak-preserving neighbour smoothing as described for open-source bar-visualiser recreations (algorithm described, no code used)"
+    ]
+  }
+}

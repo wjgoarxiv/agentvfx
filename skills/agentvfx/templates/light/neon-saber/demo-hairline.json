@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "light-stage",
+  "preset": "cross",
+  "stack": [{ "template": "neon-saber", "preset": "hairline" }],
+  "palette": ["#0b0b0c", "#c8ff00"],
+  "durationSec": 4,
+  "seed": 12,
+  "out": "neon-saber-hairline"
+}

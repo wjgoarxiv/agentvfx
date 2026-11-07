@@ -1,0 +1,60 @@
+{
+  "DESCRIPTION": "Waveform strip instrument: framed panel with a 0..5 ruler, dashed axis and a smoothed multi-layer hairline waveform (line, hair columns or dots)",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["spectrum", "audio", "hud"],
+  "INPUTS": [
+    { "NAME": "amplitude", "TYPE": "float", "MIN": 0.05, "MAX": 0.5, "DEFAULT": 0.5 },
+    { "NAME": "gain", "TYPE": "float", "MIN": 0.5, "MAX": 12, "DEFAULT": 8 },
+    { "NAME": "smoothWin", "TYPE": "float", "MIN": 1, "MAX": 200, "DEFAULT": 60 },
+    { "NAME": "flow", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.35 },
+    { "NAME": "pinch", "TYPE": "float", "MIN": 0, "MAX": 4, "DEFAULT": 0.8 },
+    { "NAME": "layers", "TYPE": "long", "MIN": 1, "MAX": 8, "DEFAULT": 4 },
+    { "NAME": "layerDelay", "TYPE": "long", "MIN": 1, "MAX": 3, "DEFAULT": 2 },
+    { "NAME": "displayMode", "TYPE": "long", "MIN": 0, "MAX": 2, "VALUES": [0, 1, 2], "LABELS": ["line", "hair-columns", "dots"], "DEFAULT": 0 },
+    { "NAME": "columns", "TYPE": "long", "MIN": 16, "MAX": 400, "DEFAULT": 240 },
+    { "NAME": "mirror", "TYPE": "bool", "DEFAULT": false },
+    { "NAME": "hitBoost", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 }
+  ],
+  "use": ["stage", "hud"],
+  "defaults": { "hitFlux": 0.9 },
+  "PASSES": [
+    { "TARGET": "wstate", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "waveform-line",
+    "family": "spectrum",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "strip-black": {},
+      "hair-columns": { "displayMode": 1, "mirror": true, "layers": 2 },
+      "strip-ultramarine": { "$field": "ultramarine", "layers": 5 },
+      "strip-acid": { "$field": "acid", "displayMode": 1, "columns": 300 },
+      "dots-orange": { "$field": "orange", "displayMode": 2, "columns": 120, "layers": 3 },
+      "rainbow-glow": { "colorMode": 1, "glow": 1.4, "lineWidth": 2.6, "layers": 7 }
+    },
+    "audioBind": { "hitBoost": "onset" },
+    "safeSubstitute": { "params": { "hitBoost": 0, "kickZoom": 0, "shake": 0 } },
+    "text": [
+      { "key": "title", "default": "WAVEFORM", "x": 0.08, "y": 0.07, "size": 0.07, "font": "display", "style": "outline", "box": "tab" },
+      { "key": "node", "default": "STRIP 04", "x": 0.92, "y": 0.045, "size": 0.085, "font": "tall", "align": "right" },
+      { "key": "n0", "default": "0", "x": 0.08, "y": 0.28, "size": 0.018, "font": "mono", "align": "center" },
+      { "key": "n1", "default": "1", "x": 0.248, "y": 0.28, "size": 0.018, "font": "mono", "align": "center" },
+      { "key": "n2", "default": "2", "x": 0.416, "y": 0.28, "size": 0.018, "font": "mono", "align": "center" },
+      { "key": "n3", "default": "3", "x": 0.584, "y": 0.28, "size": 0.018, "font": "mono", "align": "center" },
+      { "key": "n4", "default": "4", "x": 0.752, "y": 0.28, "size": 0.018, "font": "mono", "align": "center" },
+      { "key": "n5", "default": "5", "x": 0.92, "y": 0.28, "size": 0.018, "font": "mono", "align": "center" },
+      { "key": "log", "default": "L/R MONO  48K  16BIT\nTRIG RISING 0X  LOCK", "x": 0.08, "y": 0.8, "size": 0.017, "font": "mono", "reveal": "type", "revealStart": 0.3, "revealDur": 1.4 }
+    ],
+    "credits": [
+      "Waveform strip with a numbered ruler: original drawing, no marks, fonts or text from other works",
+      "After Effects Audio Waveform parameter vocabulary, https://helpx.adobe.com/after-effects/using/audio-effects.html",
+      "Distance estimate |y - f(x)| / sqrt(1 + f'(x)^2) for a graph, https://iquilezles.org/articles/distance/"
+    ]
+  }
+}

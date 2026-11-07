@@ -1,0 +1,46 @@
+{
+  "DESCRIPTION": "Worn VHS tape over footage: chroma bleed, tracking-noise band, head-switching skew, scanlines, wobble and dropouts",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["glitch", "retro"],
+  "INPUTS": [
+    { "NAME": "chromaBleed", "TYPE": "float", "MIN": 0, "MAX": 80, "DEFAULT": 26 },
+    { "NAME": "lumaBlur", "TYPE": "float", "MIN": 0, "MAX": 6, "DEFAULT": 1.6 },
+    { "NAME": "ringing", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0.6 },
+    { "NAME": "wobble", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0.8 },
+    { "NAME": "trackAmount", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.85 },
+    { "NAME": "trackSpeed", "TYPE": "float", "MIN": -1, "MAX": 1, "DEFAULT": 0.17 },
+    { "NAME": "trackHeight", "TYPE": "float", "MIN": 0.02, "MAX": 0.5, "DEFAULT": 0.14 },
+    { "NAME": "headSwitch", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "headHeight", "TYPE": "float", "MIN": 0.01, "MAX": 0.2, "DEFAULT": 0.06 },
+    { "NAME": "scanlines", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.6 },
+    { "NAME": "tapeNoise", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.35 },
+    { "NAME": "dropouts", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0.8 },
+    { "NAME": "chromaNoise", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.5 },
+    { "NAME": "saturation", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 1.4 },
+    { "NAME": "contrast", "TYPE": "float", "MIN": 0.5, "MAX": 3, "DEFAULT": 1.2 },
+    { "NAME": "flicker", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.5 },
+    { "NAME": "audioKick", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0 }
+  ],
+  "X_AGENTVFX": {
+    "id": "vhs",
+    "family": "glitch",
+    "input": "footage",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": false,
+    "presets": {
+      "vhs-tape": {},
+      "vhs-worn": { "chromaBleed": 42, "dropouts": 1.6, "trackHeight": 0.22, "tapeNoise": 0.6, "scanlines": 0.75, "wobble": 1.2, "ringing": 0.9 },
+      "vhs-clean": { "chromaBleed": 12, "wobble": 0.3, "trackAmount": 0.35, "dropouts": 0.2, "tapeNoise": 0.15, "headSwitch": 0.6, "scanlines": 0.35, "flicker": 0.15, "saturation": 1.15 },
+      "vhs-crash": { "trackAmount": 1, "trackSpeed": 0.55, "trackHeight": 0.34, "wobble": 1.7, "chromaBleed": 64, "dropouts": 2, "tapeNoise": 0.75, "flicker": 0.9 }
+    },
+    "audioBind": { "audioKick": "onset" },
+    "safeSubstitute": { "params": { "flicker": 0, "dropouts": 0.2, "tapeNoise": 0.2, "trackAmount": 0.3 } },
+    "credits": [
+      "NTSC YIQ colour space, https://en.wikipedia.org/wiki/YIQ",
+      "PCG integer hash, M. E. O'Neill, https://www.pcg-random.org/"
+    ]
+  }
+}

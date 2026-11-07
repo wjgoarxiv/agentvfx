@@ -1,0 +1,40 @@
+{
+  "DESCRIPTION": "Edge-anchored film burn: a coloured ramp warped by slow noise, with a swell and a fade",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["light"],
+  "INPUTS": [
+    { "NAME": "edgeAnchor", "TYPE": "long", "MIN": 0, "MAX": 4, "VALUES": [0, 1, 2, 3, 4], "LABELS": ["left", "right", "bottom", "top", "corner"], "DEFAULT": 0 },
+    { "NAME": "edgeTight", "TYPE": "float", "MIN": 0.6, "MAX": 12, "DEFAULT": 5.5 },
+    { "NAME": "leakWidth", "TYPE": "float", "MIN": 0.15, "MAX": 1.6, "DEFAULT": 0.85 },
+    { "NAME": "warp", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.55 },
+    { "NAME": "noiseScale", "TYPE": "float", "MIN": 0.4, "MAX": 6, "DEFAULT": 2.4 },
+    { "NAME": "swellHz", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.22 },
+    { "NAME": "swellAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.4 },
+    { "NAME": "leakGain", "TYPE": "float", "MIN": 0.4, "MAX": 8, "DEFAULT": 5.5 },
+    { "NAME": "paletteMix", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.35 },
+    { "NAME": "tint", "TYPE": "color", "DEFAULT": [1, 0.32, 0.06, 1] },
+    { "NAME": "toneMap", "TYPE": "long", "MIN": 0, "MAX": 1, "VALUES": [0, 1], "LABELS": ["AgX", "ACES"], "DEFAULT": 1 }
+  ],
+  "X_AGENTVFX": {
+    "id": "light-leak",
+    "family": "light",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "safeSubstitute": { "params": { "swellAmt": 0, "leakGain": 1.1 } },
+    "presets": {
+      "vintage-burn": { "edgeAnchor": 0, "tint": [1, 0.42, 0.04, 1], "paletteMix": 0.9, "leakGain": 6.2, "edgeTight": 5.6, "warp": 0.28, "leakWidth": 0.9, "swellAmt": 0.35, "toneMap": 1 },
+      "edge-magenta": { "edgeAnchor": 1, "tint": [1, 0.05, 0.45, 1], "paletteMix": 0.35, "leakGain": 5.4, "edgeTight": 6.2, "warp": 0.22, "leakWidth": 0.8, "toneMap": 1 },
+      "corner-flood": { "edgeAnchor": 4, "leakGain": 5.8, "leakWidth": 0.85, "tint": [1, 0.62, 0.12, 1], "paletteMix": 0.8, "warp": 0.3, "edgeTight": 4.8, "noiseScale": 1.6, "toneMap": 1 },
+      "slit": { "edgeAnchor": 3, "edgeTight": 8.5, "leakWidth": 0.78, "warp": 0.12, "leakGain": 4.2, "swellAmt": 0.2, "paletteMix": 1, "noiseScale": 1.2, "toneMap": 1 }
+    },
+    "credits": [
+      "Edge-anchored light leak warped by noise, the construction described by Jonas Wagner, https://29a.ch/2012/12/16/webgl-light-leaks",
+      "ACES fitted tone map, Krzysztof Narkowicz, https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/",
+      "AgX display fit, Troy Sobotka, https://github.com/sobotka/AgX"
+    ]
+  }
+}

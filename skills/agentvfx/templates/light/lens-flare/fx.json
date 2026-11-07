@@ -1,0 +1,49 @@
+{
+  "DESCRIPTION": "Screen-space lens flare: threshold, ghosts along the flare axis, halo, chromatic offset, starburst",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["light"],
+  "INPUTS": [
+    { "NAME": "threshold", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.74 },
+    { "NAME": "knee", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.12 },
+    { "NAME": "flareCenter", "TYPE": "point2D", "DEFAULT": [0.7, 0.76] },
+    { "NAME": "spark", "TYPE": "float", "MIN": 0, "MAX": 4, "DEFAULT": 1.8 },
+    { "NAME": "ghostGain", "TYPE": "float", "MIN": 0, "MAX": 4, "DEFAULT": 1.9 },
+    { "NAME": "chromaAmt", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.5 },
+    { "NAME": "haloRadius", "TYPE": "float", "MIN": 0.15, "MAX": 0.8, "DEFAULT": 0.45 },
+    { "NAME": "haloGain", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 0.9 },
+    { "NAME": "spikeCount", "TYPE": "long", "MIN": 2, "MAX": 12, "DEFAULT": 8 },
+    { "NAME": "spikePower", "TYPE": "float", "MIN": 2, "MAX": 40, "DEFAULT": 18 },
+    { "NAME": "burstGain", "TYPE": "float", "MIN": 0, "MAX": 4, "DEFAULT": 1.5 },
+    { "NAME": "flareMix", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 1.6 },
+    { "NAME": "eyeBar", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0 },
+    { "NAME": "plateExposure", "TYPE": "float", "MIN": 0.25, "MAX": 1.5, "DEFAULT": 1 },
+    { "NAME": "paletteMix", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.4 },
+    { "NAME": "tint", "TYPE": "color", "DEFAULT": [1, 0.82, 0.45, 1] },
+    { "NAME": "toneMap", "TYPE": "long", "MIN": 0, "MAX": 1, "VALUES": [0, 1], "LABELS": ["AgX", "ACES"], "DEFAULT": 1 }
+  ],
+  "PASSES": [
+    { "TARGET": "flareSrc", "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "lens-flare",
+    "family": "light",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "sun-ghosts": { "ghostGain": 2.4, "chromaAmt": 0.85, "haloRadius": 0.28, "haloGain": 1.3, "burstGain": 1.6, "spark": 2.2, "spikePower": 26, "threshold": 0.74, "knee": 0.1, "flareMix": 1.35, "toneMap": 1, "paletteMix": 0.8 },
+      "starburst": { "ghostGain": 0.45, "burstGain": 2.6, "spikeCount": 8, "spikePower": 32, "spark": 2.4, "haloGain": 0.35, "haloRadius": 0.22, "flareMix": 1.4, "threshold": 0.76, "knee": 0.1, "toneMap": 1 },
+      "chroma-string": { "chromaAmt": 1, "ghostGain": 2.8, "haloGain": 0.4, "burstGain": 0.7, "threshold": 0.72, "knee": 0.1, "spark": 1.6, "flareMix": 1.3, "paletteMix": 0.85, "toneMap": 1 },
+      "eye-bar": { "eyeBar": 1, "flareCenter": [0.5, 0.46], "ghostGain": 0.15, "haloGain": 0.15, "burstGain": 0.35, "spark": 0.4, "chromaAmt": 0.85, "flareMix": 1.5, "paletteMix": 1, "threshold": 0.8, "toneMap": 1 }
+    },
+    "credits": [
+      "Screen-space pseudo lens flare: ghosts, halo, chromatic fringe, starburst. John Chapman, https://john-chapman.github.io/2017/11/05/pseudo-lens-flare.html",
+      "ACES fitted tone map, Krzysztof Narkowicz, https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/",
+      "AgX display fit, Troy Sobotka, https://github.com/sobotka/AgX"
+    ]
+  }
+}

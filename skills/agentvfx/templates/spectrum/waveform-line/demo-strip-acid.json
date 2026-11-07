@@ -1,0 +1,1 @@
+{"version":1,"template":"waveform-line","preset":"strip-acid","input":{"audio":"test-media/beat-132.mp3","startSec":3},"durationSec":4,"seed":24,"out":"waveform-line-strip-acid"}

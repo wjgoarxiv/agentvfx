@@ -1,0 +1,53 @@
+{
+  "DESCRIPTION": "Stage bloom: soft-knee highlights, 13-tap Karis downsample, tent upsample, deep-glow tail, AgX or ACES",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["light"],
+  "INPUTS": [
+    { "NAME": "threshold", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.7 },
+    { "NAME": "knee", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.16 },
+    { "NAME": "plateExposure", "TYPE": "float", "MIN": 0.25, "MAX": 1.5, "DEFAULT": 1 },
+    { "NAME": "bloomRadius", "TYPE": "float", "MIN": 0.02, "MAX": 0.5, "DEFAULT": 0.2 },
+    { "NAME": "bloomMix", "TYPE": "float", "MIN": 0.03, "MAX": 0.15, "DEFAULT": 0.14 },
+    { "NAME": "bloomGain", "TYPE": "float", "MIN": 0.5, "MAX": 16, "DEFAULT": 7 },
+    { "NAME": "levelGain", "TYPE": "float", "MIN": 0.4, "MAX": 1.6, "DEFAULT": 0.9 },
+    { "NAME": "coreTrim", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.45 },
+    { "NAME": "paletteMix", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.8 },
+    { "NAME": "tint", "TYPE": "color", "DEFAULT": [1, 1, 1, 1] },
+    { "NAME": "toneMap", "TYPE": "long", "MIN": 0, "MAX": 1, "VALUES": [0, 1], "LABELS": ["AgX", "ACES"], "DEFAULT": 1 },
+    { "NAME": "probeDot", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0 },
+    { "NAME": "spread", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0 }
+  ],
+  "PASSES": [
+    { "TARGET": "hi", "FLOAT": true },
+    { "TARGET": "b0", "FLOAT": true },
+    { "TARGET": "b1", "FLOAT": true },
+    { "TARGET": "b2", "FLOAT": true },
+    { "TARGET": "b3", "FLOAT": true },
+    { "TARGET": "b4", "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "bloom-glow",
+    "family": "light",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "deep-glow": { "levelGain": 0.78, "bloomRadius": 0.18, "coreTrim": 0.7, "bloomMix": 0.14, "bloomGain": 8, "threshold": 0.7, "knee": 0.14, "toneMap": 1, "paletteMix": 0.9 },
+      "halation": { "tint": [1, 0.16, 0.02, 1], "paletteMix": 0.25, "threshold": 0.72, "bloomRadius": 0.08, "coreTrim": 0.85, "levelGain": 0.55, "bloomMix": 0.1, "bloomGain": 6, "knee": 0.12, "toneMap": 1 },
+      "neon-night": { "threshold": 0.6, "knee": 0.2, "bloomRadius": 0.2, "bloomMix": 0.15, "bloomGain": 12, "levelGain": 0.9, "paletteMix": 1, "coreTrim": 0.75, "toneMap": 1 },
+      "tight-specular": { "threshold": 0.82, "knee": 0.1, "bloomRadius": 0.06, "coreTrim": 0.92, "levelGain": 0.5, "bloomMix": 0.1, "bloomGain": 7, "paletteMix": 0.55, "toneMap": 1 },
+      "phosphor": { "threshold": 0.55, "knee": 0.2, "bloomRadius": 0.28, "bloomMix": 0.15, "bloomGain": 16, "levelGain": 1.45, "coreTrim": 0.9, "paletteMix": 1, "toneMap": 1, "spread": 1 }
+    },
+    "credits": [
+      "13-tap downsample and Karis average, Jorge Jimenez, Call of Duty: Advanced Warfare; LearnOpenGL Physically Based Bloom, https://learnopengl.com/Guest-Articles/2022/Phys.-Based-Bloom",
+      "3x3 tent upsample, same bloom chain",
+      "soft-knee prefilter as used in UE4 bloom",
+      "ACES fitted tone map, Krzysztof Narkowicz, https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/",
+      "AgX display fit, Troy Sobotka, https://github.com/sobotka/AgX"
+    ]
+  }
+}

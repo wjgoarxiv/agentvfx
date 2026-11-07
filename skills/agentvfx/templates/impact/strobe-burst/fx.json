@@ -1,0 +1,42 @@
+{
+  "DESCRIPTION": "Beat-locked full-frame strobe burst at 1/4 to 1/32 note divisions: white, colour, invert, 1-bit or black pulses with an accent pattern, over a dimmed layer below",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["impact", "strobe"],
+  "INPUTS": [
+    { "NAME": "division", "TYPE": "long", "MIN": 4, "MAX": 32, "VALUES": [4, 8, 16, 32], "LABELS": ["1/4", "1/8", "1/16", "1/32"], "DEFAULT": 16 },
+    { "NAME": "tempo", "TYPE": "float", "MIN": 0, "MAX": 300, "DEFAULT": 0 },
+    { "NAME": "pulses", "TYPE": "long", "MIN": 1, "MAX": 32, "DEFAULT": 8 },
+    { "NAME": "duty", "TYPE": "float", "MIN": 0.1, "MAX": 0.9, "DEFAULT": 0.5 },
+    { "NAME": "mode", "TYPE": "long", "MIN": 0, "MAX": 4, "VALUES": [0, 1, 2, 3, 4], "LABELS": ["white", "colour", "invert", "1-bit", "black"], "DEFAULT": 0 },
+    { "NAME": "accentMode", "TYPE": "long", "MIN": 0, "MAX": 4, "VALUES": [0, 1, 2, 3, 4], "LABELS": ["white", "colour", "invert", "1-bit", "black"], "DEFAULT": 2 },
+    { "NAME": "accentLen", "TYPE": "long", "MIN": 1, "MAX": 8, "DEFAULT": 4 },
+    { "NAME": "accentPattern", "TYPE": "long", "MIN": 0, "MAX": 255, "DEFAULT": 0 },
+    { "NAME": "level", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "offDim", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.35 },
+    { "NAME": "color", "TYPE": "color", "DEFAULT": [0.78, 1, 0, 1] },
+    { "NAME": "useScorePalette", "TYPE": "bool", "DEFAULT": false }
+  ],
+  "X_AGENTVFX": {
+    "id": "strobe-burst",
+    "family": "impact",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "strobe",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "strobe-white-16": { "division": 16, "mode": 0, "pulses": 8, "accentPattern": 0 },
+      "strobe-accent-8": { "division": 8, "mode": 0, "accentMode": 2, "accentLen": 4, "accentPattern": 1, "pulses": 8, "offDim": 0.45 },
+      "strobe-colour-16": { "division": 16, "mode": 1, "accentMode": 0, "accentLen": 2, "accentPattern": 2, "pulses": 10, "useScorePalette": true },
+      "strobe-1bit-32": { "division": 32, "mode": 3, "accentMode": 0, "accentLen": 8, "accentPattern": 17, "pulses": 16, "duty": 0.6, "offDim": 0.2 },
+      "strobe-black-4": { "division": 4, "mode": 4, "accentMode": 0, "accentLen": 4, "accentPattern": 1, "pulses": 4, "duty": 0.5, "offDim": 0 }
+    },
+    "safeSubstitute": { "params": {"mode": 0, "accentPattern": 0, "level": 0.08, "offDim": 0, "pulses": 1 } },
+    "credits": [
+      "Strobe flash definitions and limits, WCAG 2.2 SC 2.3.1, https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold",
+      "ITU-R BT.1702-3 flash and pattern guidance, https://www.itu.int/rec/R-REC-BT.1702",
+      "Note-division period = 4 / division beats, standard musical time"
+    ]
+  }
+}

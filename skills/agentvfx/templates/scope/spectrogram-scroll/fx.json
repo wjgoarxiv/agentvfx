@@ -1,0 +1,595 @@
+{
+  "DESCRIPTION": "Scrolling log-frequency spectrogram as hard pixel blocks: dB range, colour map, onset ticks, octave grid and a playhead. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": [
+    "scope",
+    "audio"
+  ],
+  "INPUTS": [
+    {
+      "NAME": "fieldMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 4,
+      "VALUES": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "LABELS": [
+        "black ground, off-white lines",
+        "acid lime field, black lines",
+        "ultramarine field, white lines",
+        "phosphor green on black",
+        "signal orange field, blue lines"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "fMin",
+      "TYPE": "float",
+      "MIN": 20,
+      "MAX": 2000,
+      "DEFAULT": 50
+    },
+    {
+      "NAME": "fMax",
+      "TYPE": "float",
+      "MIN": 2000,
+      "MAX": 24000,
+      "DEFAULT": 16000
+    },
+    {
+      "NAME": "freqScale",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 2,
+      "VALUES": [
+        0,
+        1,
+        2
+      ],
+      "LABELS": [
+        "log",
+        "linear",
+        "square root"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "dbMin",
+      "TYPE": "float",
+      "MIN": -70,
+      "MAX": -20,
+      "DEFAULT": -64
+    },
+    {
+      "NAME": "dbMax",
+      "TYPE": "float",
+      "MIN": -40,
+      "MAX": 0,
+      "DEFAULT": -26
+    },
+    {
+      "NAME": "tilt",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 9,
+      "DEFAULT": 3
+    },
+    {
+      "NAME": "gamma",
+      "TYPE": "float",
+      "MIN": 0.3,
+      "MAX": 3,
+      "DEFAULT": 0.85
+    },
+    {
+      "NAME": "colorMap",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 5,
+      "VALUES": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "LABELS": [
+        "acid",
+        "heat",
+        "ultraviolet",
+        "palette",
+        "mono",
+        "ink halftone"
+      ],
+      "DEFAULT": 5
+    },
+    {
+      "NAME": "scrollPx",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 32,
+      "DEFAULT": 12
+    },
+    {
+      "NAME": "cell",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 32,
+      "DEFAULT": 10
+    },
+    {
+      "NAME": "smoothing",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.9,
+      "DEFAULT": 0.25
+    },
+    {
+      "NAME": "mirror",
+      "TYPE": "bool",
+      "DEFAULT": false
+    },
+    {
+      "NAME": "onsetTicks",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "grid",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.6
+    },
+    {
+      "NAME": "playhead",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "hot",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "bloom",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 4,
+      "DEFAULT": 0.3
+    },
+    {
+      "NAME": "preroll",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "hud",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    }
+  ],
+  "PASSES": [
+    {
+      "TARGET": "specBuf",
+      "PERSISTENT": true,
+      "FLOAT": true
+    },
+    {
+      "TARGET": "hudMask",
+      "FLOAT": true
+    },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "spectrogram-scroll",
+    "family": "scope",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 60,
+    "palette": false,
+    "presets": {
+      "hud-black": {
+        "fieldMode": 0,
+        "colorMap": 5,
+        "scrollPx": 12,
+        "cell": 12,
+        "smoothing": 0.25
+      },
+      "field-lime": {
+        "fieldMode": 1,
+        "colorMap": 5,
+        "scrollPx": 12,
+        "cell": 8,
+        "smoothing": 0.35,
+        "tilt": 4.5,
+        "gamma": 1.3
+      },
+      "field-ultramarine": {
+        "fieldMode": 2,
+        "colorMap": 5,
+        "mirror": true,
+        "scrollPx": 12,
+        "cell": 8,
+        "smoothing": 0.2
+      },
+      "boot-green": {
+        "fieldMode": 3,
+        "colorMap": 5,
+        "scrollPx": 8,
+        "cell": 6,
+        "smoothing": 0.4,
+        "freqScale": 2,
+        "fMin": 30
+      },
+      "glow-phosphor": {
+        "fieldMode": 3,
+        "colorMap": 0,
+        "scrollPx": 12,
+        "cell": 10,
+        "smoothing": 0.25,
+        "hud": 0.5
+      }
+    },
+    "audioBind": {
+      "dbMax": "rms"
+    },
+    "credits": [
+      "log-frequency spectrogram with dB range and pink (3 dB per octave) tilt, Wave Candy spectrum mode options, https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/plugins/Wave%20Candy.htm",
+      "scrolling persistent buffer, exact integer texel shift (no resampling blur)"
+    ],
+    "text": [
+      {
+        "key": "tabA",
+        "default": "SPEC LOG",
+        "x": 0.03,
+        "y": 0.045,
+        "size": 0.042,
+        "font": "display",
+        "style": "outline",
+        "box": "tab"
+      },
+      {
+        "key": "tabB",
+        "default": "dB WIN",
+        "x": 0.03,
+        "y": 0.165,
+        "size": 0.042,
+        "font": "display",
+        "style": "outline",
+        "box": "tab"
+      },
+      {
+        "key": "title",
+        "default": "SPECT",
+        "x": 0.975,
+        "y": 0.035,
+        "size": 0.062,
+        "font": "tall",
+        "align": "right"
+      },
+      {
+        "key": "sub",
+        "default": "AGENT//VFX  NODE 7G-75",
+        "x": 0.975,
+        "y": 0.15,
+        "size": 0.013,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "micro",
+        "default": "NX 7G-75  48K  60FPS\n03V  RLS  202  0\nTT2  .  KMR  L3H0",
+        "x": 0.975,
+        "y": 0.845,
+        "size": 0.012,
+        "font": "mono",
+        "align": "right",
+        "lineHeight": 1.35
+      },
+      {
+        "key": "microL",
+        "default": "SIG // 01  CAL OK",
+        "x": 0.03,
+        "y": 0.947,
+        "size": 0.012,
+        "font": "mono",
+        "lineHeight": 1.35
+      },
+      {
+        "key": "rdA",
+        "default": "LVL",
+        "x": 0.862,
+        "y": 0.585,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "rdB",
+        "default": "BPM",
+        "x": 0.862,
+        "y": 0.655,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "rdC",
+        "default": "FRM",
+        "x": 0.862,
+        "y": 0.725,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "fq0",
+        "default": "40",
+        "x": 0.855,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq1",
+        "default": "180",
+        "x": 0.885,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq2",
+        "default": "800",
+        "x": 0.915,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq3",
+        "default": "3.6k",
+        "x": 0.945,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq4",
+        "default": "16k",
+        "x": 0.975,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row0",
+        "default": "0",
+        "x": 0.84,
+        "y": 0.223,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row1",
+        "default": "1",
+        "x": 0.84,
+        "y": 0.25633333333333336,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row2",
+        "default": "2",
+        "x": 0.84,
+        "y": 0.2896666666666667,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row3",
+        "default": "3",
+        "x": 0.84,
+        "y": 0.323,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row4",
+        "default": "4",
+        "x": 0.84,
+        "y": 0.35633333333333334,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row5",
+        "default": "5",
+        "x": 0.84,
+        "y": 0.38966666666666666,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row6",
+        "default": "6",
+        "x": 0.84,
+        "y": 0.42300000000000004,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv0",
+        "default": "0",
+        "x": 0.022,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv1",
+        "default": "1",
+        "x": 0.052599999999999994,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv2",
+        "default": "2",
+        "x": 0.0832,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv3",
+        "default": "3",
+        "x": 0.11379999999999998,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv4",
+        "default": "4",
+        "x": 0.1444,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv5",
+        "default": "5",
+        "x": 0.175,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fy0",
+        "default": "100",
+        "x": 0.19799999999999998,
+        "y": 0.7816750100055645,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "fy1",
+        "default": "250",
+        "x": 0.19799999999999998,
+        "y": 0.660949939966613,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "fy2",
+        "default": "1k",
+        "x": 0.19799999999999998,
+        "y": 0.478299959977742,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "fy3",
+        "default": "4k",
+        "x": 0.19799999999999998,
+        "y": 0.295649979988871,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "fy4",
+        "default": "10k",
+        "x": 0.19799999999999998,
+        "y": 0.1749249099499195,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "tx0",
+        "default": "-4s",
+        "x": 0.21,
+        "y": 0.914,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "tx1",
+        "default": "-3s",
+        "x": 0.355,
+        "y": 0.914,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "tx2",
+        "default": "-2s",
+        "x": 0.5,
+        "y": 0.914,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "tx3",
+        "default": "-1s",
+        "x": 0.645,
+        "y": 0.914,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "tx4",
+        "default": "0",
+        "x": 0.79,
+        "y": 0.914,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      }
+    ]
+  }
+}

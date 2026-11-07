@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "template": "test-gradient",
+  "durationSec": 8,
+  "seed": 1,
+  "out": "bad"
+}

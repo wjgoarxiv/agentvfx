@@ -1,0 +1,1 @@
+{"version":1,"template":"spectrogram-scroll","preset":"hud-black","input":{"audio":"test-media/beat-132.mp3"},"durationSec":4,"seed":120,"out":"spectrogram-scroll-hud-black"}

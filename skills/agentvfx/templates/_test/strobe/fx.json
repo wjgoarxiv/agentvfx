@@ -1,0 +1,14 @@
+{
+  "DESCRIPTION": "Test template: full-frame strobe, on for the first half of each period (rate 0 = always on).",
+  "ISFVSN": "2",
+  "CATEGORIES": ["test"],
+  "INPUTS": [
+    { "NAME": "rate", "TYPE": "float", "MIN": 0, "MAX": 30, "DEFAULT": 12 },
+    { "NAME": "red", "TYPE": "bool", "DEFAULT": false }
+  ],
+  "X_AGENTVFX": {
+    "id": "test-strobe", "family": "_test", "input": "generative", "spdx": "LicenseRef-agentvfx", "flash": "strobe",
+    "presets": { "hold": { "rate": 0 }, "slow": { "rate": 2 }, "fast": { "rate": 12 } },
+    "safeSubstitute": { "template": "test-identity", "params": { "rate": 1 } }
+  }
+}

@@ -1,0 +1,1 @@
+{"version":1,"template":"hud-deck","preset":"acid","input":{"video":"test-media/clip-02.mp4","audio":"test-media/beat-132.mp3","startSec":4},"durationSec":4,"seed":43,"labels":{"artist":"KRAIT","track":"DRIFT","title":"NODE//7G","winTag":"AC-0075 *"},"out":"hud-deck-acid"}

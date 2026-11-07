@@ -1,0 +1,1 @@
+{"version":1,"template":"echo-flow","preset":"echo-trail","input":{"video":"test-media/clip-01.mp4"},"durationSec":4,"seed":11,"out":"echo-trail"}

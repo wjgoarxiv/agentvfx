@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "template": "lens-flare",
+  "preset": "eye-bar",
+  "params": { "plateExposure": 0.32, "flareCenter": [0.5, 0.62] },
+  "input": { "video": "test-media/clip-01.mp4" },
+  "palette": ["#0b0b0c", "#ff3c00"],
+  "durationSec": 4,
+  "seed": 12,
+  "out": "lens-flare-clip01-bar"
+}

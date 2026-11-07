@@ -1,0 +1,366 @@
+{
+  "poster": {
+    "description": "Full-bleed footage, one giant cropped word whose letters fill with vermilion on the rms, a single hairline spectrum standing on the word's cap line, captions, a cut counter and a registration mark in the margins.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.6,"footageContrast":1.1,"groundColor":[0.045,0.045,0.05,1],"inkColor":[0.93,0.92,0.88,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"footage","frame":"none","variant":5},
+      {"x":0,"y":8,"w":30,"h":10,"role":"type","frame":"none","variant":4,"src":{"x":0,"y":-1.5,"scale":1.6}},
+      {"x":0,"y":7,"w":32,"h":6,"role":"spectrum","frame":"none","variant":1},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1}},
+      {"x":23,"y":1,"w":8,"h":2,"role":"type","frame":"none","src":{"x":26,"y":4,"scale":1}},
+      {"x":1,"y":4,"w":1,"h":1,"role":"readout","frame":"none","variant":2},
+      {"x":29,"y":3,"w":2,"h":2,"role":"crosshair","frame":"none","variant":1}
+    ]
+  },
+  "spread": {
+    "description": "Magazine spread: footage fills the left page, the right page is a bone sheet with a serif headline that a vermilion bar sweeps on every onset, a small mono paragraph, four thin level bars and a vertical spine; one vermilion scope line runs across both pages.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":0.65,"groundColor":[0.05,0.05,0.055,1],"inkColor":[0.92,0.9,0.85,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":0,"y":0,"w":16,"h":18,"role":"footage","frame":"none","variant":4},
+      {"x":16,"y":0,"w":16,"h":18,"role":"rule","frame":"none","fill":"ink"},
+      {"x":18,"y":2,"w":12,"h":8,"role":"type","frame":"none","tone":"ground","variant":5,"src":{"x":0,"y":9,"scale":1.4}},
+      {"x":18,"y":10,"w":12,"h":1,"role":"rule","frame":"none","tone":"ground","variant":1},
+      {"x":18,"y":11,"w":10,"h":4,"role":"type","frame":"none","tone":"ground","src":{"x":10,"y":9,"scale":1.2}},
+      {"x":16,"y":1,"w":1,"h":14,"role":"type","frame":"none","tone":"ground","rot":1,"src":{"x":0,"y":15.5,"scale":1}},
+      {"x":28,"y":11,"w":3,"h":4,"role":"meter","frame":"none","tone":"ground","variant":1},
+      {"x":0,"y":15,"w":32,"h":3,"role":"scope","frame":"none","variant":1},
+      {"x":1,"y":1,"w":2,"h":2,"role":"crosshair","frame":"none","variant":1},
+      {"x":25,"y":1,"w":4,"h":2,"role":"type","frame":"none","tone":"ground","src":{"x":26,"y":4,"scale":1}},
+      {"x":30,"y":1,"w":1,"h":1,"role":"readout","frame":"none","tone":"ground","variant":2}
+    ]
+  },
+  "index": {
+    "description": "Catalogue card on bone paper: a giant tall numeral that fills with vermilion on the rms, a small footage plate inside crop marks, a ruled field table whose rows carry four thin live level bars, a comb spectrum and a registration mark.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":0.85,"groundColor":[0.91,0.89,0.83,1],"inkColor":[0.07,0.07,0.075,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":1,"y":2,"w":9,"h":13,"role":"type","frame":"none","variant":4,"src":{"x":19,"y":0,"scale":1.5}},
+      {"x":12,"y":2,"w":16,"h":8,"role":"footage","frame":"none"},
+      {"x":11,"y":1,"w":18,"h":10,"role":"rule","frame":"corners"},
+      {"x":12,"y":11,"w":16,"h":4,"role":"rule","frame":"none","variant":8},
+      {"x":12,"y":11,"w":10,"h":4,"role":"type","frame":"none","src":{"x":19,"y":9,"scale":1}},
+      {"x":23,"y":11,"w":5,"h":1,"role":"rule","frame":"none","variant":4},
+      {"x":23,"y":12,"w":5,"h":1,"role":"rule","frame":"none","variant":5},
+      {"x":23,"y":13,"w":5,"h":1,"role":"rule","frame":"none","variant":6},
+      {"x":23,"y":14,"w":5,"h":1,"role":"rule","frame":"none","variant":7},
+      {"x":12,"y":15,"w":16,"h":3,"role":"spectrum","frame":"none","variant":2},
+      {"x":29,"y":15,"w":2,"h":2,"role":"crosshair","frame":"none","variant":1},
+      {"x":1,"y":15,"w":10,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1}},
+      {"x":1,"y":1,"w":4,"h":2,"role":"type","frame":"none","src":{"x":26,"y":4,"scale":1}}
+    ]
+  },
+  "glyph-flood": {
+    "description": "Experimental type: one monstrous letter (sheet word `mega`, default A, Monument Extended) cropped by the frame, footage seen through it, a hard vermilion extrusion behind it, a flood of MesloLGS NF micro-type over everything whose rows are the spectrum, a giant vermilion numeral colliding with the letter. On the beat the letter tears into horizontal slices; on every onset it stretches taller and its extrusion jumps out.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.02,"footageScan":0,"footageSat":0.55,"footageContrast":1.2,"groundColor":[0.04,0.04,0.045,1],"inkColor":[0.93,0.92,0.88,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"footage","frame":"none","variant":6},
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"b"}},
+      {"x":0,"y":0,"w":14,"h":18,"role":"type","frame":"none","tone":"accent","src":{"x":19.5,"y":0.5,"scale":2.4}},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":2,"y":0,"w":29,"h":18,"role":"typefx","frame":"none","variant":2,"src":{"x":-1,"y":0.5,"scale":2.5,"sheet":"g"}},
+      {"x":30,"y":1,"w":1,"h":15,"role":"type","frame":"none","rot":1,"src":{"x":0,"y":15.5,"scale":1},"tone":"accent"},
+      {"x":25,"y":16,"w":5,"h":1,"role":"rule","frame":"none","fill":"ground"},
+      {"x":25,"y":16,"w":5,"h":1,"role":"readout","frame":"none","variant":3}
+    ]
+  },
+  "glyph-flood-ko": {
+    "description": "Experimental type, paper version in Hangul: one giant Pretendard syllable (sheet word `megaK`, default light, 빛) with footage seen through it and a hard vermilion extrusion, over a flood of Pretendard micro-type, a caption and a spine. Same tearing, stretching and extrusion reactions as glyph-flood on a bone ground.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.5,"footageContrast":1.25,"groundColor":[0.91,0.89,0.83,1],"inkColor":[0.06,0.06,0.065,1],"accentColor":[0.9,0.22,0.08,1],"typeWarp":0.6},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"g"}},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":9,"y":0,"w":21,"h":18,"role":"typefx","frame":"none","variant":2,"src":{"x":21.5,"y":0,"scale":2.4,"sheet":"g"}},
+      {"x":30,"y":1,"w":1,"h":15,"role":"type","frame":"none","rot":1,"src":{"x":0,"y":15.5,"scale":1}},
+      {"x":26,"y":16,"w":4,"h":1,"role":"readout","frame":"none","variant":3}
+    ]
+  },
+  "glyph-flood-solid": {
+    "description": "Experimental type, flat colour version: a huge Monument Extended ampersand (sheet word `mega2`) filled with solid vermilion instead of footage (tone accent), a bone extrusion behind it, the footage only a dark ghost, hairline rules and a MesloLGS NF micro-type flood. Same tearing, stretching and extrusion reactions.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.5,"footageContrast":1.2,"groundColor":[0.04,0.04,0.045,1],"inkColor":[0.93,0.92,0.88,1],"accentColor":[0.9,0.22,0.08,1],"typeWarp":0.6},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"footage","frame":"none","variant":6},
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"b"}},
+      {"x":0,"y":3,"w":32,"h":1,"role":"rule","frame":"none","variant":1},
+      {"x":0,"y":15,"w":32,"h":1,"role":"rule","frame":"none","variant":1},
+      {"x":3,"y":0,"w":23,"h":18,"role":"typefx","frame":"none","variant":2,"src":{"x":10.5,"y":0,"scale":2.3,"sheet":"g"},"tone":"accent"},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":22,"y":16,"w":9,"h":2,"role":"type","frame":"none","fill":"ground","src":{"x":26,"y":4,"scale":1}},
+      {"x":1,"y":16,"w":8,"h":1,"role":"readout","frame":"none","variant":4}
+    ]
+  },
+  "slit-scan": {
+    "description": "Experimental type: a tall Pretendard Black word (sheet word `slit`, default SCAN) as a window onto still footage on a vermilion field. Every row of the word reads the music at its own delay, so each beat enters at the bottom and travels up the letters as a sideways shear; the beat also smears the word into a streak; black MesloLGS NF micro-type lines, a timecode bar and a spine column frame it.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.6,"footageContrast":1.2,"groundColor":[0.9,0.22,0.08,1],"inkColor":[0.06,0.06,0.065,1],"accentColor":[0.93,0.92,0.88,1]},
+    "cells": [
+      {"x":12,"y":1,"w":20,"h":17,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"b"}},
+      {"x":0,"y":1,"w":32,"h":17,"role":"typefx","frame":"none","variant":3,"src":{"x":-0.5,"y":-0.5,"scale":1.9,"sheet":"b"}},
+      {"x":0,"y":0,"w":32,"h":1,"role":"rule","frame":"none","fill":"ink"},
+      {"x":1,"y":0,"w":8,"h":1,"role":"readout","frame":"none","tone":"ground","variant":4},
+      {"x":24,"y":0,"w":5,"h":1,"role":"readout","frame":"none","tone":"ground","variant":3},
+      {"x":0,"y":2,"w":1,"h":15,"role":"type","frame":"none","rot":1,"src":{"x":0,"y":15.5,"scale":1}}
+    ]
+  },
+  "slit-scan-ko": {
+    "description": "Experimental type, calm Hangul version: the tall Pretendard word 신호 (sheet word `slitK`) as a footage window on near-black, vermilion smear, Hangul micro-type behind it, typeWarp 0.45 so the shear and smear are gentler and the flash audit reports far fewer transitions than slit-scan.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.6,"footageContrast":1.2,"groundColor":[0.04,0.04,0.045,1],"inkColor":[0.93,0.92,0.88,1],"accentColor":[0.9,0.22,0.08,1],"typeWarp":0.45},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"g"}},
+      {"x":4,"y":0,"w":24,"h":18,"role":"typefx","frame":"none","variant":3,"src":{"x":18,"y":0.5,"scale":2.4,"sheet":"b"}},
+      {"x":31,"y":0,"w":1,"h":18,"role":"rule","frame":"none","fill":"accent"},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":22,"y":16,"w":8,"h":1,"role":"readout","frame":"none","variant":4}
+    ]
+  },
+  "slit-scan-bone": {
+    "description": "Experimental type, paper version: the Pretendard Black word SCAN blown up to 3x and cropped by the frame on a bone ground, black MesloLGS NF micro-type, vermilion smear on the beat; typeWarp 0.5 keeps the shear softer than slit-scan.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.6,"footageContrast":1.2,"groundColor":[0.91,0.89,0.83,1],"inkColor":[0.06,0.06,0.065,1],"accentColor":[0.9,0.22,0.08,1],"typeWarp":0.5},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"b"}},
+      {"x":0,"y":1,"w":32,"h":17,"role":"typefx","frame":"none","variant":3,"src":{"x":1,"y":0,"scale":2.6,"sheet":"b"}},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":31,"y":1,"w":1,"h":16,"role":"type","frame":"none","rot":1,"src":{"x":0,"y":15.5,"scale":1}},
+      {"x":22,"y":16,"w":8,"h":1,"role":"readout","frame":"none","variant":4}
+    ]
+  },
+  "echo-stack": {
+    "description": "Experimental type: a Monument Extended word (sheet word `echo`, default ECHO) so large the frame crops it, repeated 2 to 10 times in a stack stepping up and to the right, odd copies solid vermilion, even copies knocked out of a bone ground, footage in the front copy, over a field of black MesloLGS NF micro-type. The stack count follows the rms and jumps on every beat frame (a little on onsets).",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":0.7,"footageContrast":1.2,"groundColor":[0.91,0.89,0.83,1],"inkColor":[0.06,0.06,0.065,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"b"}},
+      {"x":0,"y":4,"w":32,"h":14,"role":"typefx","frame":"none","variant":4,"src":{"x":0.5,"y":8,"scale":2.2,"sheet":"g"}},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":31,"y":1,"w":1,"h":16,"role":"type","frame":"none","rot":1,"src":{"x":0,"y":15.5,"scale":1}}
+    ]
+  },
+  "echo-stack-ko": {
+    "description": "Experimental type, dark Hangul version: the Pretendard Black word 메아리 (sheet word `echoK`, \"echo\") stacked 2 to 10 times, odd copies solid vermilion, even copies knocked out to near-black with bone edges, footage in the front copy, Hangul micro-type behind. Count follows the rms and the beat as in echo-stack.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.7,"footageContrast":1.2,"groundColor":[0.04,0.04,0.045,1],"inkColor":[0.93,0.92,0.88,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"g"}},
+      {"x":0,"y":3,"w":32,"h":15,"role":"typefx","frame":"none","variant":4,"src":{"x":16.5,"y":8,"scale":2.2,"sheet":"g"}},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":31,"y":1,"w":1,"h":16,"role":"type","frame":"none","rot":1,"src":{"x":0,"y":15.5,"scale":1},"tone":"accent"}
+    ]
+  },
+  "echo-ripple": {
+    "description": "Experimental type, new: a Monument Extended ampersand (sheet word `mega2`) with footage inside it, ringed by 2 to 12 hairline outlines that grow out of it in alternating bone and vermilion; the ring count follows the rms and jumps on the beat frame. Near-black ground, footage ghost, MesloLGS NF micro-type.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.55,"footageContrast":1.2,"groundColor":[0.04,0.04,0.045,1],"inkColor":[0.93,0.92,0.88,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"footage","frame":"none","variant":6},
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"b"}},
+      {"x":3,"y":0,"w":24,"h":18,"role":"typefx","frame":"none","variant":5,"src":{"x":11,"y":0.5,"scale":2.6,"sheet":"g"}},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":24,"y":16,"w":6,"h":1,"role":"readout","frame":"none","variant":4}
+    ]
+  },
+  "type-eq": {
+    "description": "Experimental type, new: the word SIGNAL in Monument Extended is the spectrum analyzer. Every column of the letters fills solid vermilion up to the level of the band under it (bass left, treble right) and is only an outline over a dim footage ghost above that; a giant vermilion numeral, MesloLGS NF micro-type and a timecode frame it.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.5,"footageContrast":1.2,"groundColor":[0.04,0.04,0.045,1],"inkColor":[0.93,0.92,0.88,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"footage","frame":"none","variant":6},
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"b"}},
+      {"x":24,"y":0,"w":6,"h":9,"role":"type","frame":"none","tone":"accent","src":{"x":19.5,"y":0.5,"scale":1}},
+      {"x":1,"y":8,"w":29,"h":6,"role":"typefx","frame":"none","variant":6,"src":{"x":0,"y":9.5,"scale":1.7,"sheet":"b"}},
+      {"x":0,"y":13,"w":32,"h":1,"role":"rule","frame":"none","variant":3},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":1,"y":16,"w":8,"h":1,"role":"readout","frame":"none","variant":4}
+    ]
+  },
+  "type-eq-ko": {
+    "description": "Experimental type, new, paper version in Hangul: the word 소리 (\"sound\") in Pretendard Black as the spectrum analyzer on a bone ground, columns filled vermilion to their band level, outline over a footage ghost above it, Hangul micro-type behind.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.016,"footageScan":0,"footageSat":0.5,"footageContrast":1.2,"groundColor":[0.91,0.89,0.83,1],"inkColor":[0.06,0.06,0.065,1],"accentColor":[0.9,0.22,0.08,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"typefx","frame":"none","variant":1,"src":{"x":0,"y":0,"scale":1,"sheet":"g"}},
+      {"x":6,"y":5,"w":20,"h":10,"role":"typefx","frame":"none","variant":6,"src":{"x":19,"y":9,"scale":2.4,"sheet":"b"}},
+      {"x":1,"y":1,"w":9,"h":3,"role":"type","frame":"none","src":{"x":26,"y":0,"scale":1},"fill":"ground"},
+      {"x":31,"y":1,"w":1,"h":16,"role":"type","frame":"none","rot":1,"src":{"x":0,"y":15.5,"scale":1}},
+      {"x":24,"y":16,"w":6,"h":1,"role":"readout","frame":"none","variant":4}
+    ]
+  },
+  "specimen": {
+    "description": "Round 7 scene: a deep ultramarine specimen sheet. The plate is a single-tone lavender dither inside a tall arch; an ultra-tall thin word (Pretendard Thin stretched) stands as a column; pink and cyan micro bars on the arch edges are live band levels; a solid black square with a semicircle snaps to a new place of a fixed set on every beat; MesloLGS NF captions with live numbers.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":1,"groundColor":[0.04,0.04,0.66,1],"inkColor":[0.8,0.77,1,1],"accentColor":[1,0.45,0.72,1],"tintA":[0.2,0.9,1,1],"tintB":[0.02,0.02,0.05,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":1}
+    ]
+  },
+  "wiring": {
+    "description": "Round 7 scene: a black ground with the plate as a cyan / yellow duotone and scanline bands that re-seed on every beat; five yellow cables run from fixed points on the CRT wall to boxed annotations with live pixel-font readouts and level bars; pixel arcs and a dot grid sit in a corner; a small crimson pixel glyph blinks on every onset and each onset sends a packet down the next cable. Monument Extended is used only as small label caps.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.25,"cutMode":0,"textSet":2,"groundColor":[0.02,0.02,0.025,1],"inkColor":[0.93,0.93,0.9,1],"accentColor":[1,0.83,0,1],"tintA":[0,0.88,1,1],"tintB":[0.91,0,0.18,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":2}
+    ]
+  },
+  "field-cut": {
+    "description": "Round 7 scene over time: every beat hard-cuts to the next of four full fields, each with its own fixed composition. Acid lime with a halftone of the plate and a black dot-matrix tower whose height is the bass; signal orange with rows of a condensed Pretendard Black word in blue that shear on every onset and a blue dither window of the plate; ultramarine with the plate in a ringed circle, a Hangul word and checker blocks; a white field with the plate torn into RGB pixel slabs and a lime brush chunk. The fields advance on beats only.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":1,"footageContrast":1.15,"cutMode":0,"textSet":3,"groundColor":[0.03,0.03,0.035,1],"inkColor":[0.97,0.97,0.95,1],"accentColor":[0.784,1,0,1],"tintA":[1,0.56,0.02,1],"tintB":[0.08,0.08,1,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":3}
+    ]
+  },
+  "pattern-sheet": {
+    "description": "Round 7 scene: a bone sheet in a signal-green border. The plate is a black line-screen engraving in the big circle; a heavy grotesk label sits between magenta serif quote marks; outline circles step their radius on every onset; thin rules, ticks and crosshairs; QR-like pixel stamps that re-seed on every beat; a vertical waveform strip with a 0 to 5 ruler on the left edge.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":0,"footageContrast":1.1,"cutMode":0,"textSet":4,"groundColor":[0,0.69,0.33,1],"inkColor":[0.04,0.04,0.045,1],"accentColor":[1,0.18,0.58,1],"tintA":[0.92,0.9,0.84,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":4}
+    ]
+  },
+  "anatomy": {
+    "description": "Round 8 scene: a sepia paper field with a huge cropped Times numeral, a dark panel holding the plate as a cream hairline wireframe (edge detection) that grows denser on every beat while a rust scan band jumps to a new height on every cut, a thin ring, three callout cables to Pretendard Light labels, a checkerboard tower of the mid level and tiny rust code columns.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.3,"cutMode":0,"textSet":5,"groundColor":[0.78,0.66,0.46,1],"inkColor":[0.12,0.07,0.04,1],"accentColor":[0.72,0.2,0.08,1],"tintA":[0.07,0.04,0.03,1],"tintB":[0.96,0.9,0.72,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":5}
+    ]
+  },
+  "deck": {
+    "description": "Round 8 scene: a hot pink field and a HUD deck of thin black lines. The plate sits in a chamfered octagon window; outlined tab-box labels (DIN Condensed, Pretendard Hangul) down the left, a lilac particle cloud box that scatters on the onset, a starburst glyph whose rays are band levels and that steps round on every beat, a text ring that turns a notch per onset, a contour-map box whose terrain shifts on the beat and a 0 to 5 ruler strip.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":6,"groundColor":[1,0.18,0.54,1],"inkColor":[0.04,0.03,0.04,1],"accentColor":[1,1,1,1],"tintA":[0.78,0.72,1,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":6}
+    ]
+  },
+  "bootlog": {
+    "description": "Round 8 scene: phosphor green on near-black. A boot log the engine types over the clip, a dot-matrix terminal icon, a boot progress bar that fills a step on every beat, a big Hangul word, the plate as a single-tone phosphor CRT with raster lines, a ghost and a roll bar, and data streaks along the bottom whose length is the spectrum; every beat inverts one log row.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.014,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":7,"groundColor":[0.01,0.025,0.012,1],"inkColor":[0.22,1,0.1,1],"accentColor":[0.8,1,0.78,1],"tintA":[0.05,0.35,0.06,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":7}
+    ]
+  },
+  "tunnel": {
+    "description": "Round 8 scene: a pixel checker tunnel in electric blue on black that jumps one ring deeper and turns half a step on every beat; the plate sits in a curved letterbox at its vanishing point; a white-hot horizontal eye bar flares on the onset; a black block with a giant Monument Extended word and live depth numbers.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":8,"groundColor":[0,0,0.01,1],"inkColor":[0.96,0.97,1,1],"accentColor":[0.12,0.3,1,1],"tintA":[0.02,0.06,0.4,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":8}
+    ]
+  },
+  "runner": {
+    "description": "Round 8 scene: the plate as a black and grey monotone under scanline bands (a few slide sideways on every onset), white-hot data streaks whose length is the spectrum and that jump on the onset, and a vermilion bar with a heavy Arial Black word that swaps to the next of three words and slams to a new left edge on every beat; black pixel crosses, a checker block and MesloLGS NF captions.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":9,"groundColor":[0.02,0.02,0.025,1],"inkColor":[1,1,0.94,1],"accentColor":[1,0.24,0.04,1],"tintA":[0.02,0.02,0.03,1],"tintB":[0.8,0.8,0.78,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":9}
+    ]
+  },
+  "ascii": {
+    "description": "Round 8 scene: the plate drawn as ASCII, one character per cell from the pixel font by tone (mint, the lightest cells lilac) on dark teal; after every onset a hot column sweeps across it and lifts the characters it passes; a contour-map box whose terrain shifts on the beat, a lilac particle cloud box that scatters on the onset, live readouts and a big Pretendard Hangul word.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":10,"groundColor":[0.01,0.07,0.07,1],"inkColor":[0.49,1,0.83,1],"accentColor":[0.9,1,0.96,1],"tintA":[0.7,0.58,1,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":0}
+    ]
+  },
+  "cube-wall": {
+    "description": "Round 9 scene: a salmon field and a 4 x 3 wall of cubes. On every beat each cube turns to its next face in three frames (even columns sideways, odd columns upward); a face is a cobalt rounded tile with a cream letter, a cream tile with a cobalt letter, a cobalt Bayer dither of the plate, or a dot grid whose dot radius is the bass; each onset swaps the letter of one cube. Big Shoulders Display letters, MesloLGS NF caption.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":11,"groundColor":[0.98,0.55,0.5,1],"inkColor":[0.98,0.93,0.8,1],"accentColor":[0,0.2,0.85,1],"tintA":[0.78,0.35,0.33,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":0,"rot":1}
+    ]
+  },
+  "vortex-count": {
+    "description": "Round 9 scene: a blue-grey field whose log-polar rings of Bebas Neue text spiral out of the centre (white and navy rings alternate, the spiral steps on every beat), a round window at the vanishing point holding the plate as white halftone dots that grow with the bass, and a ring of 24 countdown ticks that loses one tick on every beat.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":12,"groundColor":[0.4,0.47,0.55,1],"inkColor":[0.97,0.98,1,1],"accentColor":[0.05,0.1,0.3,1],"tintA":[0.72,0.78,0.85,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":1,"rot":1}
+    ]
+  },
+  "sticker-slap": {
+    "description": "Round 9 scene: a black field and a pile of cream stickers. Every beat a new sticker slaps on with an overshoot (1.35, 1.12, 0.97, 1); the pile keeps the last eight; every onset flips one sticker over to a 1-bit dither of the plate. Filled and outlined Impact words, a round Georgia tag, small mustard pills (under about 15 percent of the frame), two rows of Impact text along the top.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":13,"groundColor":[0.02,0.02,0.02,1],"inkColor":[0.96,0.92,0.8,1],"accentColor":[0.9,0.65,0.1,1],"tintA":[0.72,0.62,0.95,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":2,"rot":1}
+    ]
+  },
+  "ribbon-rays": {
+    "description": "Round 9 scene: an ochre field with a fan of white hairline rays whose count grows on every beat, and a twisted ribbon crossing the frame: its front face is black with a heavy condensed word flowing along it (the flow steps on every beat), its back face is an ochre duotone of the plate; four echo copies trail behind in colour steps; one DIN Condensed label at the root of the rays.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":14,"groundColor":[0.82,0.55,0.12,1],"inkColor":[1,1,0.96,1],"accentColor":[0.04,0.03,0.02,1],"tintA":[0.5,0.3,0.05,1],"tintB":[0.95,0.8,0.5,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":3,"rot":1}
+    ]
+  },
+  "slab-shear": {
+    "description": "Round 9 scene: a concrete-grey field with a giant Futura word that flows on a sine wave (the wave steps on every beat) cut into nine horizontal slabs; on every beat some slabs slide sideways and some become safety-blue slabs holding the plate as a 1-bit Bayer dither with the word in white; a typed Menlo label on a seam, a crosshair target and ticks.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":15,"groundColor":[0.62,0.62,0.6,1],"inkColor":[1,1,0.98,1],"accentColor":[0,0.3,0.95,1],"tintA":[0.03,0.03,0.04,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":4,"rot":1}
+    ]
+  },
+  "frame-loop-dial": {
+    "description": "Round 9 scene: a dark aubergine field with a line of Georgia text running round the border of the frame (every onset jumps it ahead); an arch window with the plate as a peach Bayer dither; a dial of 60 ticks filled up on every beat with a split-flap countdown in its middle (the top half of the old digit folds away in three frames); a typed Menlo input line.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":16,"groundColor":[0.17,0.05,0.14,1],"inkColor":[0.96,0.94,0.88,1],"accentColor":[1,0.72,0.55,1],"tintA":[0.33,0.12,0.3,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":5,"rot":1}
+    ]
+  },
+  "tilt-tiles": {
+    "description": "Round 10 scene: a lemon field tilted about 14 degrees into rows of Rockwell word tiles; neighbouring rows flow the other way and every beat each row jumps a different distance; filled and outlined rows alternate and each onset swaps the kind of one row; a tilted window holds the plate as a three-tone posterize (black, lemon, white), with a white caption box and a numbered black disc.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":17,"groundColor":[1,0.9,0,1],"inkColor":[0.04,0.04,0.04,1],"accentColor":[1,1,1,1],"tintA":[0,0.35,0.2,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":6,"rot":1}
+    ]
+  },
+  "marquee-stack": {
+    "description": "Round 10 scene: a teal field of six stacked word rows (Gill Sans Bold, the last row in Hangul); every beat each row jumps its own distance in its own direction (a marquee that moves in steps), each with three echo copies trailing in colour steps; a cream-framed window holds the plate as a coarse four-colour mosaic.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":18,"groundColor":[0,0.5,0.45,1],"inkColor":[0.97,0.93,0.8,1],"accentColor":[1,0.55,0.1,1],"tintA":[0,0.22,0.22,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":7,"rot":1}
+    ]
+  },
+  "lens-wrap": {
+    "description": "Round 10 scene: a mint field; the plate wrapped on a sphere with a red-blue lens fringe and a specular patch, swelling with the bass; a perspective floor of forest-green tile lines that steps toward you on every beat; a 4 x 3 block of small panels that each turn a quarter on every third onset; Didot and Courier New type.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":19,"groundColor":[0.55,0.82,0.68,1],"inkColor":[0.04,0.26,0.16,1],"accentColor":[0.03,0.03,0.03,1],"tintA":[0.33,0.62,0.5,1],"tintB":[0.96,0.95,0.86,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":8,"rot":1}
+    ]
+  },
+  "liquid-type": {
+    "description": "Round 10 scene: a sky-blue field; the plate blurred and thresholded into ink-blot shapes (mid blue, one orange blot in the brightest part); a big Bodoni 72 word on a double sine ripple whose phase steps on every beat; a typed American Typewriter note and a crosshair reticle that jumps to a new place on every beat.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.01,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":20,"groundColor":[0.68,0.84,1,1],"inkColor":[0.04,0.08,0.3,1],"accentColor":[1,0.5,0.1,1],"tintA":[0.9,0.96,1,1],"tintB":[0.38,0.58,0.92,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":9,"rot":1}
+    ]
+  },
+  "panel-grid": {
+    "description": "Round 10 scene: an ice-white sheet with a 6 x 4 grid of small square panels, each a thin-line instrument (plate isolines, spectrum comb, bass gauge, big number, starburst, waveform, checker, reticle); on every onset one panel in turn swings a quarter turn in three frames and shows its next instrument; brick accents, Optima and SF Mono type.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.008,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":21,"groundColor":[0.94,0.95,0.96,1],"inkColor":[0.05,0.05,0.06,1],"accentColor":[0.85,0.35,0.2,1],"tintA":[0.6,0.6,0.62,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":0,"rot":2}
+    ]
+  },
+  "mirror-track": {
+    "description": "Round 10 scene: a dusty violet field and a central window holding the plate mirrored about its vertical axis and solarized into brick red, indigo and cream; five outline target squares with tiny number labels jump to new places on every beat and are mirrored with the plate; a barcode strip that re-seeds on every beat; a D2Coding file-lookup block with struck-through rows and a big Phosphate word.",
+    "params": {"margin":0,"gridDots":0,"construction":false,"grain":0.012,"footageScan":0,"footageSat":1,"footageContrast":1.2,"cutMode":0,"textSet":22,"groundColor":[0.45,0.34,0.62,1],"inkColor":[0.97,0.93,0.82,1],"accentColor":[0.85,0.25,0.15,1],"tintA":[0.12,0.07,0.3,1],"tintB":[0.7,0.6,0.85,1]},
+    "cells": [
+      {"x":0,"y":0,"w":32,"h":18,"role":"scene","frame":"none","variant":1,"rot":2}
+    ]
+  },
+  "wide-hero": [
+    {"x":0,"y":0,"w":22,"h":12,"role":"footage"},
+    {"x":22,"y":0,"w":6,"h":5,"role":"readout"},
+    {"x":22,"y":5,"w":6,"h":7,"role":"crosshair"},
+    {"x":28,"y":0,"w":4,"h":12,"role":"meter"},
+    {"x":0,"y":12,"w":13,"h":6,"role":"spectrum"},
+    {"x":13,"y":12,"w":13,"h":6,"role":"scope"},
+    {"x":26,"y":12,"w":3,"h":6,"role":"plate"},
+    {"x":29,"y":12,"w":3,"h":3,"role":"ruler"},
+    {"x":29,"y":15,"w":3,"h":3,"role":"pixels"}
+  ],
+  "split": [
+    {"x":0,"y":0,"w":15,"h":15,"role":"footage"},
+    {"x":0,"y":15,"w":15,"h":3,"role":"ruler"},
+    {"x":15,"y":0,"w":17,"h":5,"role":"spectrum"},
+    {"x":15,"y":5,"w":17,"h":4,"role":"scope"},
+    {"x":15,"y":9,"w":17,"h":3,"role":"meter"},
+    {"x":15,"y":12,"w":8,"h":6,"role":"readout"},
+    {"x":23,"y":12,"w":6,"h":6,"role":"crosshair"},
+    {"x":29,"y":12,"w":3,"h":6,"role":"pixels"}
+  ],
+  "mosaic": [
+    {"x":0,"y":0,"w":10,"h":6,"role":"spectrum"},
+    {"x":10,"y":0,"w":6,"h":6,"role":"crosshair"},
+    {"x":16,"y":0,"w":6,"h":6,"role":"readout"},
+    {"x":22,"y":0,"w":10,"h":6,"role":"scope"},
+    {"x":0,"y":6,"w":4,"h":12,"role":"meter"},
+    {"x":4,"y":6,"w":10,"h":10,"role":"footage"},
+    {"x":14,"y":6,"w":5,"h":10,"role":"plate"},
+    {"x":19,"y":6,"w":13,"h":5,"role":"pixels"},
+    {"x":4,"y":16,"w":15,"h":2,"role":"ruler"},
+    {"x":19,"y":11,"w":13,"h":7,"role":"hatch"}
+  ]
+}

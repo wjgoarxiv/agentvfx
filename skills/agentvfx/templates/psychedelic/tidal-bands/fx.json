@@ -1,0 +1,37 @@
+{
+  "DESCRIPTION": "Tidal bands: fbm-warped luma posterized into sweeping saturated colour bands",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["psychedelic"],
+  "INPUTS": [
+    { "NAME": "flowSpeed", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 0.7 },
+    { "NAME": "flowScale", "TYPE": "float", "MIN": 0.2, "MAX": 5, "DEFAULT": 1.4 },
+    { "NAME": "bandCount", "TYPE": "long", "MIN": 2, "MAX": 14, "DEFAULT": 8 },
+    { "NAME": "edgeSharp", "TYPE": "float", "MIN": 0.05, "MAX": 1, "DEFAULT": 0.7 },
+    { "NAME": "ramp", "TYPE": "long", "MIN": 0, "MAX": 2, "VALUES": [0, 1, 2], "LABELS": ["rainbow", "thermal", "score"], "DEFAULT": 0 },
+    { "NAME": "paletteShift", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0 },
+    { "NAME": "saturation", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 1.7 },
+    { "NAME": "contrast", "TYPE": "float", "MIN": 0.5, "MAX": 3, "DEFAULT": 1.6 },
+    { "NAME": "audioPush", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0 },
+    { "NAME": "blend", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 }
+  ],
+  "X_AGENTVFX": {
+    "id": "tidal-bands",
+    "family": "psychedelic",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "tidal-classic": { "ramp": 0, "bandCount": 8, "flowSpeed": 0.7, "flowScale": 1.4, "saturation": 1.8, "contrast": 1.7 },
+      "tidal-abyss": { "ramp": 1, "bandCount": 12, "flowSpeed": 0.9, "flowScale": 1.8, "edgeSharp": 0.85, "saturation": 1.9, "contrast": 1.9 },
+      "tidal-slow": { "ramp": 2, "bandCount": 5, "flowSpeed": 0.22, "flowScale": 0.9, "edgeSharp": 0.45, "saturation": 1.6, "contrast": 1.5 }
+    },
+    "safeSubstitute": { "params": { "flowSpeed": 0.15, "saturation": 1.0 } },
+    "credits": [
+      "iq cosine palette, https://iquilezles.org/articles/palettes/",
+      "fbm, The Book of Shaders ch.13, https://thebookofshaders.com/13/"
+    ]
+  }
+}

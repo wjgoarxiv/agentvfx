@@ -1,0 +1,1 @@
+{"version":1,"template":"hud-deck","preset":"ultramarine","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3","startSec":2},"durationSec":4,"seed":42,"labels":{"artist":"VANTA","track":"HALO-9","title":"PLATE//77","winTag":"UM-3301 *"},"out":"hud-deck-ultramarine"}

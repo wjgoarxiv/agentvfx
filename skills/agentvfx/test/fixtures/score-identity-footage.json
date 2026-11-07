@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "template": "test-identity",
+  "input": { "video": "test-media/clip-01.mp4", "startSec": 0 },
+  "durationSec": 5,
+  "seed": 1,
+  "out": "identity-footage"
+}

@@ -1,0 +1,15 @@
+{
+  "DESCRIPTION": "Test template: shows the engine text mask (R ink white, G box fill grey).",
+  "ISFVSN": "2",
+  "CATEGORIES": ["test"],
+  "INPUTS": [{ "NAME": "gain", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 }],
+  "X_AGENTVFX": {
+    "id": "test-text-probe", "family": "_test", "input": "generative", "spdx": "LicenseRef-agentvfx", "flash": "none",
+    "presets": { "a": { "gain": 1 }, "b": { "gain": 0.5 }, "c": { "gain": 0.8 } },
+    "text": [
+      { "key": "title", "default": "TRACK TITLE", "x": 0.06, "y": 0.1, "size": 0.16, "font": "display", "style": "outline", "box": "tab" },
+      { "key": "code", "default": "SIGNAL 0x7G75 ACCEPTED", "x": 0.06, "y": 0.6, "size": 0.07, "font": "mono", "reveal": "decode", "revealStart": 0.2, "revealDur": 1.6 },
+      { "key": "bar", "default": "HEADLINE", "x": 0.94, "y": 0.78, "size": 0.1, "font": "grotesk", "align": "right", "box": "bar" }
+    ]
+  }
+}

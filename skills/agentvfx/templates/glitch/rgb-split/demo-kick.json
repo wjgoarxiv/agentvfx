@@ -1,0 +1,1 @@
+{"version":1,"template":"rgb-split","preset":"rgb-split-kick","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3"},"bindings":[{"param":"audioKick","feature":"onset","gain":1.4,"offset":0,"attackMs":0,"releaseMs":240}],"durationSec":4,"seed":24,"out":"rgb-split-kick"}

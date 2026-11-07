@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "god-rays",
+  "preset": "golden-hour",
+  "input": { "video": "test-media/clip-02.mp4" },
+  "palette": "hazard-orange",
+  "durationSec": 4,
+  "seed": 12,
+  "out": "god-rays-golden-hour"
+}

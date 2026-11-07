@@ -1,0 +1,1 @@
+{"version":1,"template":"halftone-field","preset":"acid","input":{"video":"test-media/clip-02.mp4","audio":"test-media/beat-132.mp3","startSec":5},"durationSec":4,"seed":52,"labels":{"headline":"SIGNAL 04","labelA":"NODE 7G-75 // KRAIT 0075"},"out":"halftone-field-acid"}

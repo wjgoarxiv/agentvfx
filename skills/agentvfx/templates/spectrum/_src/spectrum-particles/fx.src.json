@@ -1,0 +1,58 @@
+{
+  "DESCRIPTION": "Particle-cloud box: a framed panel with a ruler and a hairline spectrum floor that fires bursts of one-tone dots on every strong onset",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["spectrum", "audio", "particles", "hud"],
+  "INPUTS": [
+    { "NAME": "bandCount", "TYPE": "long", "MIN": 8, "MAX": 64, "DEFAULT": 48 },
+    { "NAME": "particleCount", "TYPE": "long", "MIN": 8, "MAX": 64, "DEFAULT": 56 },
+    { "NAME": "particleSize", "TYPE": "float", "MIN": 1, "MAX": 30, "DEFAULT": 9 },
+    { "NAME": "sparkShape", "TYPE": "long", "MIN": 0, "MAX": 2, "VALUES": [0, 1, 2], "LABELS": ["square", "circle", "cross"], "DEFAULT": 0 },
+    { "NAME": "speed", "TYPE": "float", "MIN": 0.1, "MAX": 3, "DEFAULT": 1.7 },
+    { "NAME": "spread", "TYPE": "float", "MIN": 0.2, "MAX": 6.28, "DEFAULT": 2.6 },
+    { "NAME": "drag", "TYPE": "float", "MIN": 0.1, "MAX": 8, "DEFAULT": 1.4 },
+    { "NAME": "gravity", "TYPE": "float", "MIN": -1, "MAX": 3, "DEFAULT": 0.3 },
+    { "NAME": "lifeSec", "TYPE": "float", "MIN": 0.3, "MAX": 2, "DEFAULT": 1.5 },
+    { "NAME": "barDim", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.9 }
+  ],
+  "use": ["pro", "stage", "hud"],
+  "defaults": { "hitFlux": 0.7, "startFreq": 25, "endFreq": 9000, "freqCurve": 2.3 },
+  "PASSES": [
+    { "TARGET": "partState", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "spectrum-particles",
+    "family": "spectrum",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "cloud-black": {},
+      "cloud-ultramarine": { "$field": "ultramarine", "sparkShape": 1, "particleSize": 8 },
+      "cloud-acid": { "$field": "acid", "particleCount": 64, "particleSize": 9 },
+      "cross-orange": { "$field": "orange", "sparkShape": 2, "particleSize": 14, "particleCount": 36 },
+      "rainbow-glow": { "colorMode": 1, "glow": 2.2, "particleSize": 9, "sparkShape": 1 }
+    },
+    "audioBind": { "speed": "flux" },
+    "safeSubstitute": { "params": { "kickZoom": 0, "shake": 0 } },
+    "text": [
+      { "key": "title", "default": "CLOUD", "x": 0.02, "y": 0.04, "size": 0.065, "font": "display", "style": "outline", "box": "tab" },
+      { "key": "node", "default": "BURST 7G", "x": 0.97, "y": 0.03, "size": 0.07, "font": "tall", "align": "right" },
+      { "key": "n0", "default": "0", "x": 0.125, "y": 0.152, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "n1", "default": "1", "x": 0.125, "y": 0.296, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "n2", "default": "2", "x": 0.125, "y": 0.44, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "n3", "default": "3", "x": 0.125, "y": 0.584, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "n4", "default": "4", "x": 0.125, "y": 0.728, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "n5", "default": "5", "x": 0.125, "y": 0.872, "size": 0.016, "font": "mono", "align": "right" },
+      { "key": "log", "default": "N=56  FLUX GATE 0.7\nEMIT ON ONSET", "x": 0.14, "y": 0.91, "size": 0.015, "font": "mono", "reveal": "type", "revealStart": 0.3, "revealDur": 1.4 }
+    ],
+    "credits": [
+      "Particle-cloud box grammar: original drawing, no marks, fonts or text from other works",
+      "Closed-form ballistic particles with linear drag: x(t) = x0 + v (1 - exp(-k t)) / k, a standard result for velocity-proportional drag",
+      "Power-curve bin mapping and peak-preserving neighbour smoothing as described for open-source bar-visualiser recreations (algorithm described, no code used)"
+    ]
+  }
+}

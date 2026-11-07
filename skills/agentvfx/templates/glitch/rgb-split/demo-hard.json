@@ -1,0 +1,1 @@
+{"version":1,"template":"rgb-split","preset":"rgb-split-hard","input":{"video":"test-media/clip-01.mp4"},"durationSec":4,"seed":21,"out":"rgb-split-hard"}

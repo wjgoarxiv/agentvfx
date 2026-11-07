@@ -1,0 +1,29 @@
+{
+  "DESCRIPTION": "Black HUD ground: hairline brackets, crosshair and a dashed rule, with optional hot points for streaks and bloom",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["light"],
+  "INPUTS": [
+    { "NAME": "hotPoints", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0 },
+    { "NAME": "pointScale", "TYPE": "float", "MIN": 0.5, "MAX": 6, "DEFAULT": 1 },
+    { "NAME": "rule", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 }
+  ],
+  "PASSES": [ {} ],
+  "X_AGENTVFX": {
+    "id": "light-stage",
+    "family": "light",
+    "input": "generative",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": false,
+    "presets": {
+      "deck": { "hotPoints": 0, "rule": 1 },
+      "emitters": { "hotPoints": 1, "rule": 1 },
+      "cross": { "hotPoints": 0, "rule": 0 }
+    },
+    "credits": [
+      "Segment SDF for the hairlines, Inigo Quilez distance functions, https://iquilezles.org/articles/distfunctions2d/"
+    ]
+  }
+}

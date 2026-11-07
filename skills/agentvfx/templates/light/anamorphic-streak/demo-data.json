@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "template": "light-stage",
+  "preset": "emitters",
+  "stack": [{ "template": "anamorphic-streak", "preset": "data-flight" }],
+  "palette": ["#0b0b0c", "#39ff14"],
+  "durationSec": 4,
+  "seed": 12,
+  "out": "anamorphic-streak-data"
+}

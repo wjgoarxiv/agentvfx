@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "template": "light-sweep",
+  "preset": "hard-bar",
+  "stack": [{ "template": "light-stage", "preset": "deck" }],
+  "input": { "audio": "test-media/beat-132.mp3" },
+  "bindings": [{ "param": "audioKick", "feature": "onset", "gain": 1.4, "offset": 0, "attackMs": 8, "releaseMs": 160 }],
+  "palette": ["#0b0b0c", "#e9e9e4"],
+  "durationSec": 4,
+  "seed": 21,
+  "out": "light-sweep-hard-bar"
+}

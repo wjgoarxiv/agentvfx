@@ -1,0 +1,686 @@
+{
+  "DESCRIPTION": "Polar oscilloscope: the synced waveform wrapped around a circle as a phosphor ring (L outer, R inner), with loops, mirror or seam-closing wrap and a spinning start mark. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants. HUD instrument look: thin lines in a bracketed panel, dashed grid, tick rulers with numerals, readouts, field-colour variants",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": [
+    "scope",
+    "audio"
+  ],
+  "INPUTS": [
+    {
+      "NAME": "fieldMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 4,
+      "VALUES": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "LABELS": [
+        "black ground, off-white lines",
+        "acid lime field, black lines",
+        "ultramarine field, white lines",
+        "phosphor green on black",
+        "signal orange field, blue lines"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "window",
+      "TYPE": "long",
+      "MIN": 16,
+      "MAX": 512,
+      "DEFAULT": 400
+    },
+    {
+      "NAME": "syncMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 3,
+      "VALUES": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "LABELS": [
+        "free run",
+        "rising zero crossing",
+        "level trigger",
+        "period lock"
+      ],
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "syncLevel",
+      "TYPE": "float",
+      "MIN": -0.8,
+      "MAX": 0.8,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "syncHz",
+      "TYPE": "float",
+      "MIN": 20,
+      "MAX": 2000,
+      "DEFAULT": 100
+    },
+    {
+      "NAME": "syncCycles",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 8,
+      "DEFAULT": 2
+    },
+    {
+      "NAME": "pinch",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "interpolate",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 2,
+      "VALUES": [
+        0,
+        1,
+        2
+      ],
+      "LABELS": [
+        "raw steps",
+        "linear",
+        "band-limited"
+      ],
+      "DEFAULT": 2
+    },
+    {
+      "NAME": "loops",
+      "TYPE": "long",
+      "MIN": 1,
+      "MAX": 8,
+      "DEFAULT": 2
+    },
+    {
+      "NAME": "wrap",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 2,
+      "VALUES": [
+        0,
+        1,
+        2
+      ],
+      "LABELS": [
+        "mirror",
+        "raw",
+        "close the seam"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "ringRadius",
+      "TYPE": "float",
+      "MIN": 0.1,
+      "MAX": 0.4,
+      "DEFAULT": 0.22
+    },
+    {
+      "NAME": "depth",
+      "TYPE": "float",
+      "MIN": 0.02,
+      "MAX": 0.4,
+      "DEFAULT": 0.13
+    },
+    {
+      "NAME": "amplitude",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 10,
+      "DEFAULT": 1.3
+    },
+    {
+      "NAME": "stereoSeparation",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.3,
+      "DEFAULT": 0.07
+    },
+    {
+      "NAME": "spin",
+      "TYPE": "float",
+      "MIN": -3,
+      "MAX": 3,
+      "DEFAULT": 0.25
+    },
+    {
+      "NAME": "thickness",
+      "TYPE": "float",
+      "MIN": 0.6,
+      "MAX": 14,
+      "DEFAULT": 1.5
+    },
+    {
+      "NAME": "fill",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "persist",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.97,
+      "DEFAULT": 0.3
+    },
+    {
+      "NAME": "bloom",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 4,
+      "DEFAULT": 0.2
+    },
+    {
+      "NAME": "bloomSize",
+      "TYPE": "float",
+      "MIN": 0.4,
+      "MAX": 2,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "exposure",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 8,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "hot",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "spokes",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 96,
+      "DEFAULT": 24
+    },
+    {
+      "NAME": "hud",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "audioKick",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 2,
+      "DEFAULT": 0.3
+    }
+  ],
+  "PASSES": [
+    {
+      "TARGET": "curve",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "beam",
+      "PERSISTENT": true,
+      "FLOAT": true
+    },
+    {
+      "TARGET": "bh1",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "bv1",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "bh2",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "bv2",
+      "FLOAT": true
+    },
+    {
+      "TARGET": "hudMask",
+      "FLOAT": true
+    },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "scope-polar",
+    "family": "scope",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "safeSubstitute": {
+      "params": {
+        "persist": 0.9,
+        "audioKick": 0,
+        "bloom": 0.4,
+        "depth": 0.09,
+        "amplitude": 1.2,
+        "exposure": 0.8
+      }
+    },
+    "fps": 60,
+    "palette": false,
+    "presets": {
+      "hud-black": {
+        "fieldMode": 0,
+        "window": 400,
+        "loops": 2,
+        "wrap": 0,
+        "spin": 0.25
+      },
+      "field-lime": {
+        "fieldMode": 1,
+        "window": 512,
+        "syncMode": 3,
+        "syncHz": 110,
+        "syncCycles": 4,
+        "loops": 1,
+        "wrap": 1,
+        "ringRadius": 0.18,
+        "depth": 0.17,
+        "amplitude": 1.2,
+        "spin": 0.6,
+        "spokes": 48,
+        "fill": 0.3
+      },
+      "field-ultramarine": {
+        "fieldMode": 2,
+        "window": 320,
+        "loops": 3,
+        "wrap": 2,
+        "ringRadius": 0.24,
+        "depth": 0.09,
+        "stereoSeparation": 0.14,
+        "spin": -0.4
+      },
+      "boot-green": {
+        "fieldMode": 3,
+        "window": 256,
+        "loops": 5,
+        "wrap": 0,
+        "pinch": 0.5,
+        "ringRadius": 0.2,
+        "depth": 0.15,
+        "amplitude": 1.6,
+        "spin": 1.2,
+        "spokes": 0,
+        "fill": 0.3,
+        "persist": 0.7
+      },
+      "glow-phosphor": {
+        "fieldMode": 3,
+        "window": 400,
+        "loops": 2,
+        "wrap": 0,
+        "spin": 0.25,
+        "thickness": 2.6,
+        "persist": 0.6,
+        "bloom": 1.5,
+        "hot": 0.6,
+        "hud": 0.5
+      }
+    },
+    "audioBind": {
+      "amplitude": "rms"
+    },
+    "credits": [
+      "polar waveform display, Wave Candy oscilloscope option set (window, sync, pinch, interpolate), https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/plugins/Wave%20Candy.htm",
+      "Lanczos resampling (band-limited interpolation), https://en.wikipedia.org/wiki/Lanczos_resampling",
+      "Reinhard tone map, https://www.cs.utah.edu/docs/techreports/2002/pdf/UUCS-02-001.pdf"
+    ],
+    "text": [
+      {
+        "key": "tabA",
+        "default": "RING L",
+        "x": 0.03,
+        "y": 0.045,
+        "size": 0.042,
+        "font": "display",
+        "style": "outline",
+        "box": "tab"
+      },
+      {
+        "key": "tabB",
+        "default": "RING R",
+        "x": 0.03,
+        "y": 0.165,
+        "size": 0.042,
+        "font": "display",
+        "style": "outline",
+        "box": "tab"
+      },
+      {
+        "key": "title",
+        "default": "POLAR",
+        "x": 0.975,
+        "y": 0.035,
+        "size": 0.062,
+        "font": "tall",
+        "align": "right"
+      },
+      {
+        "key": "sub",
+        "default": "AGENT//VFX  NODE 7G-75",
+        "x": 0.975,
+        "y": 0.15,
+        "size": 0.013,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "micro",
+        "default": "NX 7G-75  48K  60FPS\n03V  RLS  202  0\nTT2  .  KMR  L3H0",
+        "x": 0.975,
+        "y": 0.845,
+        "size": 0.012,
+        "font": "mono",
+        "align": "right",
+        "lineHeight": 1.35
+      },
+      {
+        "key": "microL",
+        "default": "SIG // 01  CAL OK",
+        "x": 0.03,
+        "y": 0.947,
+        "size": 0.012,
+        "font": "mono",
+        "lineHeight": 1.35
+      },
+      {
+        "key": "rdA",
+        "default": "LVL",
+        "x": 0.862,
+        "y": 0.585,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "rdB",
+        "default": "LOP",
+        "x": 0.862,
+        "y": 0.655,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "rdC",
+        "default": "FRM",
+        "x": 0.862,
+        "y": 0.725,
+        "size": 0.015,
+        "font": "mono"
+      },
+      {
+        "key": "fq0",
+        "default": "40",
+        "x": 0.855,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq1",
+        "default": "180",
+        "x": 0.885,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq2",
+        "default": "800",
+        "x": 0.915,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq3",
+        "default": "3.6k",
+        "x": 0.945,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "fq4",
+        "default": "16k",
+        "x": 0.975,
+        "y": 0.195,
+        "size": 0.012,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row0",
+        "default": "0",
+        "x": 0.84,
+        "y": 0.223,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row1",
+        "default": "1",
+        "x": 0.84,
+        "y": 0.25633333333333336,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row2",
+        "default": "2",
+        "x": 0.84,
+        "y": 0.2896666666666667,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row3",
+        "default": "3",
+        "x": 0.84,
+        "y": 0.323,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row4",
+        "default": "4",
+        "x": 0.84,
+        "y": 0.35633333333333334,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row5",
+        "default": "5",
+        "x": 0.84,
+        "y": 0.38966666666666666,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "row6",
+        "default": "6",
+        "x": 0.84,
+        "y": 0.42300000000000004,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv0",
+        "default": "0",
+        "x": 0.022,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv1",
+        "default": "1",
+        "x": 0.052599999999999994,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv2",
+        "default": "2",
+        "x": 0.0832,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv3",
+        "default": "3",
+        "x": 0.11379999999999998,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv4",
+        "default": "4",
+        "x": 0.1444,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "wv5",
+        "default": "5",
+        "x": 0.175,
+        "y": 0.805,
+        "size": 0.013,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx0",
+        "default": "-1.0",
+        "x": 0.286,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx1",
+        "default": "-0.5",
+        "x": 0.39299999999999996,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx2",
+        "default": "0",
+        "x": 0.5,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx3",
+        "default": "+0.5",
+        "x": 0.607,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "nx4",
+        "default": "+1.0",
+        "x": 0.714,
+        "y": 0.892,
+        "size": 0.014,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "ny0",
+        "default": "+1.0",
+        "x": 0.27399999999999997,
+        "y": 0.11299999999999999,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "ny1",
+        "default": "+0.5",
+        "x": 0.27399999999999997,
+        "y": 0.303,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "ny2",
+        "default": "0",
+        "x": 0.27399999999999997,
+        "y": 0.493,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "ny3",
+        "default": "-0.5",
+        "x": 0.27399999999999997,
+        "y": 0.683,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      },
+      {
+        "key": "ny4",
+        "default": "-1.0",
+        "x": 0.27399999999999997,
+        "y": 0.873,
+        "size": 0.014,
+        "font": "mono",
+        "align": "right"
+      }
+    ]
+  }
+}

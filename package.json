@@ -1,0 +1,30 @@
+{
+  "name": "agentvfx",
+  "version": "0.3.1",
+  "private": true,
+  "description": "Agent-directed, music-reactive VFX clips: the agent writes an FX score, the engine renders WebGL2 templates with optional Blender plates, audits every frame for flashes, and exports silent loops or live web effects.",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "wjgoarxiv",
+  "homepage": "https://github.com/wjgoarxiv/agentvfx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wjgoarxiv/agentvfx.git"
+  },
+  "keywords": [
+    "pi-package",
+    "vfx",
+    "music-visualizer",
+    "webgl",
+    "motion-graphics",
+    "agent-skill",
+    "blender"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  }
+}

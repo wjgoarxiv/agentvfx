@@ -1,0 +1,1 @@
+{"version":1,"template":"hud-deck","preset":"night","input":{"video":"test-media/clip-02.mp4","audio":"test-media/beat-132.mp3","startSec":4},"durationSec":4,"seed":41,"labels":{"artist":"SIGMA7","track":"RELAY","title":"SIGNAL//04"},"out":"hud-deck-night"}

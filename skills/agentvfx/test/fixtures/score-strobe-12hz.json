@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "template": "test-strobe",
+  "preset": "fast",
+  "durationSec": 3,
+  "seed": 3,
+  "out": "strobe-12hz"
+}

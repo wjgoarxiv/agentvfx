@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you publish work made with agentvfx, the licence requires a credit: keep the on-screen credit, or write: Made with agentvfx by Woojin Go - https://github.com/wjgoarxiv/agentvfx"
+title: agentvfx
+abstract: "An agent skill that renders music-reactive VFX clips locally from an FX score, with a per-frame flash audit."
+type: software
+authors:
+  - family-names: Go
+    given-names: Woojin
+    alias: wjgoarxiv
+repository-code: "https://github.com/wjgoarxiv/agentvfx"
+url: "https://agentvfx.vercel.app"
+license-url: "https://github.com/wjgoarxiv/agentvfx/blob/main/LICENSE"
+version: 0.3.1
+date-released: 2026-11-07
+keywords:
+  - vfx
+  - music-visualizer
+  - webgl
+  - agent-skill

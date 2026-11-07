@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "template": "does-not-exist",
+  "durationSec": 3,
+  "seed": 1,
+  "out": "missing"
+}

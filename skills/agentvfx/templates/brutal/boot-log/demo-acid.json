@@ -1,0 +1,1 @@
+{"version":1,"template":"boot-log","preset":"acid","input":{"audio":"test-media/beat-132.mp3","startSec":4},"durationSec":4,"seed":62,"labels":{"headline":"DECK 04 LINKED","tagA":"AGENT//VFX // ACID FIELD\nNODE 7G-75   BUILD 0418\nSECTOR 05 / SIGNAL OK"},"out":"boot-log-acid"}

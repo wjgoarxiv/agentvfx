@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "template": "light-stage",
+  "preset": "emitters",
+  "params": { "pointScale": 4 },
+  "stack": [{ "template": "bloom-glow", "preset": "phosphor" }],
+  "palette": ["#0b0b0c", "#39ff14"],
+  "durationSec": 4,
+  "seed": 12,
+  "out": "bloom-glow-phosphor"
+}

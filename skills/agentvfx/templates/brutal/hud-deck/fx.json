@@ -1,0 +1,601 @@
+{
+  "DESCRIPTION": "Neo-brutalist control desk: a wide framed media window (rect, rounded or chamfered octagon) over a desk of artist and track labels, waveform strip and hatched spectrum, beside a rail with a contour map, particle box, beat sequencer and micro code, all following the music",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": [
+    "brutal",
+    "hud",
+    "audio"
+  ],
+  "INPUTS": [
+    {
+      "NAME": "groundColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.043,
+        0.043,
+        0.047,
+        1
+      ]
+    },
+    {
+      "NAME": "inkColor",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.914,
+        0.914,
+        0.894,
+        1
+      ]
+    },
+    {
+      "NAME": "winBg",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.02,
+        0.02,
+        0.022,
+        1
+      ]
+    },
+    {
+      "NAME": "tone",
+      "TYPE": "color",
+      "DEFAULT": [
+        0.914,
+        0.914,
+        0.894,
+        1
+      ]
+    },
+    {
+      "NAME": "dimAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.5
+    },
+    {
+      "NAME": "deckLayout",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 1,
+      "VALUES": [
+        0,
+        1
+      ],
+      "LABELS": [
+        "night-deck",
+        "tiles"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "winShape",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 2,
+      "VALUES": [
+        0,
+        1,
+        2
+      ],
+      "LABELS": [
+        "rect",
+        "rounded",
+        "octagon"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "winX",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 0.8,
+      "DEFAULT": 0.3542
+    },
+    {
+      "NAME": "winY",
+      "TYPE": "float",
+      "MIN": 0.3,
+      "MAX": 0.7,
+      "DEFAULT": 0.3657
+    },
+    {
+      "NAME": "winW",
+      "TYPE": "float",
+      "MIN": 0.3,
+      "MAX": 0.85,
+      "DEFAULT": 0.6771
+    },
+    {
+      "NAME": "winH",
+      "TYPE": "float",
+      "MIN": 0.4,
+      "MAX": 0.98,
+      "DEFAULT": 0.6759
+    },
+    {
+      "NAME": "chamfer",
+      "TYPE": "float",
+      "MIN": 20,
+      "MAX": 300,
+      "DEFAULT": 150
+    },
+    {
+      "NAME": "marks",
+      "TYPE": "bool",
+      "DEFAULT": true
+    },
+    {
+      "NAME": "mediaMode",
+      "TYPE": "long",
+      "MIN": 0,
+      "MAX": 3,
+      "VALUES": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "LABELS": [
+        "natural",
+        "mono",
+        "halftone",
+        "duotone"
+      ],
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "mediaContrast",
+      "TYPE": "float",
+      "MIN": 0.5,
+      "MAX": 3,
+      "DEFAULT": 1.25
+    },
+    {
+      "NAME": "mediaBias",
+      "TYPE": "float",
+      "MIN": -0.5,
+      "MAX": 0.5,
+      "DEFAULT": 0
+    },
+    {
+      "NAME": "dotSize",
+      "TYPE": "float",
+      "MIN": 3,
+      "MAX": 24,
+      "DEFAULT": 8
+    },
+    {
+      "NAME": "dotAngle",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1.5708,
+      "DEFAULT": 0.7854
+    },
+    {
+      "NAME": "flare",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.85
+    },
+    {
+      "NAME": "flareX",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.5
+    },
+    {
+      "NAME": "flareY",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.5
+    },
+    {
+      "NAME": "flareW",
+      "TYPE": "float",
+      "MIN": 0.05,
+      "MAX": 0.6,
+      "DEFAULT": 0.42
+    },
+    {
+      "NAME": "flareBeat",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.8
+    },
+    {
+      "NAME": "tearAmount",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 1,
+      "DEFAULT": 0.4
+    },
+    {
+      "NAME": "reactivity",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 2,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "spectrumGain",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 1.5,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "waveGain",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 4,
+      "DEFAULT": 2.4
+    },
+    {
+      "NAME": "particleDensity",
+      "TYPE": "float",
+      "MIN": 0.3,
+      "MAX": 2.5,
+      "DEFAULT": 1.1
+    },
+    {
+      "NAME": "driftSpeed",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 3,
+      "DEFAULT": 1
+    },
+    {
+      "NAME": "contourScale",
+      "TYPE": "float",
+      "MIN": 0.5,
+      "MAX": 4,
+      "DEFAULT": 1.7
+    },
+    {
+      "NAME": "contourLevels",
+      "TYPE": "float",
+      "MIN": 2,
+      "MAX": 8,
+      "DEFAULT": 3.6
+    },
+    {
+      "NAME": "introMs",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 3000,
+      "DEFAULT": 600
+    },
+    {
+      "NAME": "startFreq",
+      "TYPE": "float",
+      "MIN": 20,
+      "MAX": 400,
+      "DEFAULT": 50
+    },
+    {
+      "NAME": "endFreq",
+      "TYPE": "float",
+      "MIN": 3000,
+      "MAX": 20000,
+      "DEFAULT": 12800
+    },
+    {
+      "NAME": "floorLevel",
+      "TYPE": "float",
+      "MIN": 0,
+      "MAX": 0.6,
+      "DEFAULT": 0.14
+    },
+    {
+      "NAME": "ceilLevel",
+      "TYPE": "float",
+      "MIN": 0.2,
+      "MAX": 1,
+      "DEFAULT": 0.72
+    },
+    {
+      "NAME": "specExp",
+      "TYPE": "float",
+      "MIN": 0.5,
+      "MAX": 3,
+      "DEFAULT": 1.5
+    },
+    {
+      "NAME": "attackMs",
+      "TYPE": "float",
+      "MIN": 1,
+      "MAX": 300,
+      "DEFAULT": 16
+    },
+    {
+      "NAME": "releaseMs",
+      "TYPE": "float",
+      "MIN": 20,
+      "MAX": 1500,
+      "DEFAULT": 240
+    }
+  ],
+  "PASSES": [
+    {
+      "TARGET": "specState",
+      "PERSISTENT": true,
+      "FLOAT": true
+    },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "hud-deck",
+    "family": "brutal",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": false,
+    "presets": {
+      "night": {},
+      "ultramarine": {
+        "groundColor": [
+          0.078,
+          0.078,
+          1,
+          1
+        ],
+        "inkColor": [
+          0.863,
+          0.827,
+          1,
+          1
+        ],
+        "winBg": [
+          0.039,
+          0.039,
+          0.62,
+          1
+        ],
+        "tone": [
+          0.788,
+          0.722,
+          1,
+          1
+        ],
+        "mediaMode": 2,
+        "dotSize": 8,
+        "mediaContrast": 1.45,
+        "flare": 0.55,
+        "dimAmount": 0.55
+      },
+      "acid": {
+        "groundColor": [
+          0.784,
+          1,
+          0,
+          1
+        ],
+        "inkColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "winBg": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "tone": [
+          0.784,
+          1,
+          0,
+          1
+        ],
+        "mediaMode": 3,
+        "dimAmount": 0.6,
+        "mediaContrast": 1.3,
+        "flare": 0.7
+      },
+      "octagon": {
+        "winShape": 2,
+        "deckLayout": 1,
+        "winX": 0.55,
+        "winY": 0.47,
+        "winW": 0.58,
+        "winH": 0.7,
+        "chamfer": 96,
+        "flare": 0,
+        "marks": false,
+        "mediaContrast": 1.15,
+        "inkColor": [
+          1,
+          0.698,
+          0.102,
+          1
+        ],
+        "dimAmount": 0.2
+      },
+      "orange-mono": {
+        "groundColor": [
+          1,
+          0.235,
+          0,
+          1
+        ],
+        "inkColor": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "winBg": [
+          0.043,
+          0.043,
+          0.047,
+          1
+        ],
+        "tone": [
+          1,
+          0.235,
+          0,
+          1
+        ],
+        "mediaMode": 1,
+        "dimAmount": 0.6,
+        "mediaContrast": 1.5,
+        "flare": 0.6
+      }
+    },
+    "audioBind": {
+      "spectrumGain": "bands",
+      "flare": "beat"
+    },
+    "safeSubstitute": {
+      "params": {
+        "flare": 0,
+        "tearAmount": 0
+      }
+    },
+    "text": [
+      {
+        "key": "artist",
+        "default": "SIGMA7",
+        "x": 0.0156,
+        "y": 0.752,
+        "size": 0.066,
+        "font": "display",
+        "style": "fill"
+      },
+      {
+        "key": "artistTag",
+        "default": "ARTIST",
+        "x": 0.0156,
+        "y": 0.7333,
+        "size": 0.0098,
+        "font": "mono"
+      },
+      {
+        "key": "track",
+        "default": "RELAY",
+        "x": 0.0156,
+        "y": 0.8463,
+        "size": 0.066,
+        "font": "display",
+        "style": "fill"
+      },
+      {
+        "key": "trackTag",
+        "default": "TRACK",
+        "x": 0.0156,
+        "y": 0.8278,
+        "size": 0.0098,
+        "font": "mono"
+      },
+      {
+        "key": "title",
+        "default": "SIGNAL//04",
+        "x": 0.9844,
+        "y": 0.8852,
+        "size": 0.066,
+        "font": "tall",
+        "style": "fill",
+        "weight": 500,
+        "align": "right",
+        "tracking": 0.14
+      },
+      {
+        "key": "f1",
+        "default": "50Hz",
+        "x": 0.2917,
+        "y": 0.9361,
+        "size": 0.0098,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "f2",
+        "default": "200Hz",
+        "x": 0.3919,
+        "y": 0.9361,
+        "size": 0.0098,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "f3",
+        "default": "800Hz",
+        "x": 0.4922,
+        "y": 0.9361,
+        "size": 0.0098,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "f4",
+        "default": "3.2k",
+        "x": 0.5924,
+        "y": 0.9361,
+        "size": 0.0098,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "f5",
+        "default": "12.8k",
+        "x": 0.6927,
+        "y": 0.9361,
+        "size": 0.0098,
+        "font": "mono",
+        "align": "center"
+      },
+      {
+        "key": "winTag",
+        "default": "LV-0417 *",
+        "x": 0.0156,
+        "y": 0.712,
+        "size": 0.0095,
+        "font": "mono"
+      },
+      {
+        "key": "code",
+        "default": "LV//D0 045D 61F7 2FF RLYF96\n8D NODE32 1EAF AX66 1D7\n55F 322 0xCE3E 3EB7 297F",
+        "x": 0.7135,
+        "y": 0.7852,
+        "size": 0.0105,
+        "font": "mono",
+        "lineHeight": 2.2,
+        "reveal": "type",
+        "revealStart": 0.6,
+        "revealDur": 1.4
+      },
+      {
+        "key": "microL",
+        "default": "KRNE0D 1F 789 67D5 BD F1 119 9E\n0x58B DA 724E 262 7G-28BE AD8\nF5E3 KRN304D 8C 53 AB 85 RLYCDC\n7G-1BD 0B6F 4D F0E3 ED 520 NODE157F\n0x680 72 61E1 D5 45A C8 843F 58\n0x6E0F RLY32F2 82 60D7 0x469D\n103 CBB 7G-0E DD9 RLYEC4F KRN8D\nBD7 SIG6BD B6 2EC7 147 7G-DF 9D\nAX52C 66 5B18 337 4623 DCF2 53BE\nRLY60 F0 AX69C 7G-802E 64 044F\nSIG09A 6370 742F 7B 98F NODEE2A7\nRLY530B 9E AX469 136 F7 0xB47\nAA AX26 LV//1E 9E NODE11F F5 4A9A\nBB61 NODEEB7E 161 FFF8 C19 2BD5\n7G-BA66 74 NODE3B RLY081 658D",
+        "x": 0.0151,
+        "y": 0.372,
+        "size": 0.0085,
+        "font": "mono",
+        "lineHeight": 1.25
+      },
+      {
+        "key": "microR",
+        "default": "LV//50D8 NODE6B2F 990 329 7G-2DD\nAE82 052F RLY2A8 C7 16 DB 26A\n2E A0F C80A C5 A9B BB 0F 0996\n21 A3 0x3A5 BA4 DB DCD9 31 RLY058E\n671 FC A5CB LV//172 SIGD59 45E\n65 6F 639 1F2 02DE CC1 20E3 20\nD4B7 C3 2F4 12 7G-C2 63B5 FA 72E7\n7G-59 78 LV//B7 3D55 40BF BA NODE1663\nKRN54 8948 0x022 0x659 D9C5 717\nLV//36 7CDD 0x0DC 94 AX715B 8A\nB04 615 AXA0A7 KRN3E4F 0F3C CD\nLV//78 F09 19 0BA LV//8227 RLYC45\nA5 A4 284 KRN02 1203 31 A7 789C\nAX803 RLYB369 AXD6A E022 D1E6\n1AB 6A 663 380E AXC1 B3E0 CD17",
+        "x": 0.8604,
+        "y": 0.372,
+        "size": 0.0085,
+        "font": "mono",
+        "lineHeight": 1.25
+      }
+    ],
+    "credits": [
+      "Instrument-panel grammar (original drawing; no names, marks, fonts or footage from other works)",
+      "2D signed distance functions after Inigo Quilez, https://iquilezles.org/articles/distfunctions2d/ (circle, box, segment, ellipse, triangle); 3x5 digit font, dot screen, Bayer 8x8 index and glyph icons are original",
+      "Spectrum column mapping: log-spaced columns, peak-preserving neighbour smoothing, attack/release follower (same structure as the agentvfx spectrum family)"
+    ]
+  }
+}

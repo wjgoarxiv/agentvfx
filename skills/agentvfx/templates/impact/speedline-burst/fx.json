@@ -1,0 +1,44 @@
+{
+  "DESCRIPTION": "Speed-line burst: hard radial wedge lines from a centre over a darkened, zoom-smeared frame, with a hot core; lines re-roll every frame and thin out as the hit decays",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["impact"],
+  "INPUTS": [
+    { "NAME": "hitFrames", "TYPE": "long", "MIN": 1, "MAX": 12, "DEFAULT": 5 },
+    { "NAME": "holdFrames", "TYPE": "long", "MIN": 0, "MAX": 6, "DEFAULT": 3 },
+    { "NAME": "decayCurve", "TYPE": "float", "MIN": 0.3, "MAX": 4, "DEFAULT": 1 },
+    { "NAME": "center", "TYPE": "point2D", "DEFAULT": [0.5, 0.5] },
+    { "NAME": "lines", "TYPE": "long", "MIN": 8, "MAX": 400, "DEFAULT": 150 },
+    { "NAME": "density", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.6 },
+    { "NAME": "thickness", "TYPE": "float", "MIN": 0.05, "MAX": 0.9, "DEFAULT": 0.42 },
+    { "NAME": "innerRadius", "TYPE": "float", "MIN": 0, "MAX": 1.2, "DEFAULT": 0.22 },
+    { "NAME": "innerRagged", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.6 },
+    { "NAME": "dim", "TYPE": "float", "MIN": 0, "MAX": 0.9, "DEFAULT": 0.5 },
+    { "NAME": "zoomSmear", "TYPE": "float", "MIN": 0, "MAX": 0.3, "DEFAULT": 0.08 },
+    { "NAME": "core", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.6 },
+    { "NAME": "mode", "TYPE": "long", "MIN": 0, "MAX": 3, "VALUES": [0, 1, 2, 3], "LABELS": ["white", "black", "accent", "negative"], "DEFAULT": 0 },
+    { "NAME": "lineColor", "TYPE": "color", "DEFAULT": [1, 1, 1, 1] },
+    { "NAME": "stepFrames", "TYPE": "long", "MIN": 1, "MAX": 4, "DEFAULT": 1 }
+  ],
+  "X_AGENTVFX": {
+    "id": "speedline-burst",
+    "family": "impact",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "speed-white": { "mode": 0, "lines": 150, "dim": 0.5, "core": 0.6 },
+      "speed-manga": { "mode": 1, "lines": 110, "density": 0.7, "thickness": 0.5, "dim": 0, "core": 1, "innerRadius": 0.26, "zoomSmear": 0.04 },
+      "speed-accent": { "mode": 2, "lines": 190, "density": 0.55, "dim": 0.62, "core": 0.5 },
+      "speed-negative": { "mode": 3, "lines": 130, "density": 0.65, "thickness": 0.5, "dim": 0.25, "innerRadius": 0.3 },
+      "speed-tunnel": { "mode": 0, "lines": 260, "density": 0.5, "thickness": 0.3, "innerRadius": 0.12, "dim": 0.7, "zoomSmear": 0.14, "hitFrames": 6, "holdFrames": 3 }
+    },
+    "safeSubstitute": { "template": "punch-shake" },
+    "credits": [
+      "Speed lines (shuuchuusen) are wedges of constant angular width, https://en.wikipedia.org/wiki/Speed_lines",
+      "Radial zoom smear as a centre-weighted multi-tap blur, see GPU Gems 3 ch.13 for the radial-sample idea, https://developer.nvidia.com/gpugems/gpugems3/part-ii-light-and-shadows/chapter-13-volumetric-light-scattering-post-process"
+    ]
+  }
+}

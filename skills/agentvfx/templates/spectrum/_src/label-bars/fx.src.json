@@ -1,0 +1,54 @@
+{
+  "DESCRIPTION": "Deck layout: outlined tab-box labels, icon row and starburst on the left, a framed panel of 63 hairline bars on a ruler baseline, tall title, halftone footage backdrop",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["spectrum", "audio", "hud"],
+  "INPUTS": [
+    { "NAME": "bandCount", "TYPE": "long", "MIN": 16, "MAX": 96, "DEFAULT": 63 },
+    { "NAME": "maxHeight", "TYPE": "float", "MIN": 0.1, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "thickness", "TYPE": "float", "MIN": 0.05, "MAX": 1, "DEFAULT": 0.34 },
+    { "NAME": "floorHeight", "TYPE": "float", "MIN": 0, "MAX": 10, "DEFAULT": 2 }
+  ],
+  "use": ["pro", "stage", "hud"],
+  "defaults": { "freqCurve": 2.5, "expLow": 2.4, "expHigh": 1.4, "monsterSmooth": 1.5, "releaseMs": 170, "bgDim": 0.2, "halftoneSize": 8 },
+  "PASSES": [
+    { "TARGET": "barState", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "label-bars",
+    "family": "spectrum",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "deck-black": {},
+      "deck-ultramarine": { "$field": "ultramarine", "thickness": 0.45 },
+      "deck-acid": { "$field": "acid" },
+      "deck-orange": { "$field": "orange", "bandCount": 48 },
+      "rainbow-glow": { "colorMode": 1, "glow": 1.2, "lineWidth": 2.4 }
+    },
+    "audioBind": { "thickness": "bass" },
+    "safeSubstitute": { "params": { "kickZoom": 0, "shake": 0 } },
+    "text": [
+      { "key": "artist", "default": "AGENT//VFX", "x": 0.03, "y": 0.07, "size": 0.062, "font": "display", "style": "outline", "box": "tab" },
+      { "key": "track", "default": "SIGNAL 04", "x": 0.03, "y": 0.21, "size": 0.062, "font": "display", "style": "outline", "box": "tab" },
+      { "key": "title", "default": "NODE 7G-75", "x": 0.97, "y": 0.04, "size": 0.085, "font": "tall", "align": "right" },
+      { "key": "n0", "default": "0", "x": 0.269, "y": 0.83, "size": 0.015, "font": "mono", "align": "center" },
+      { "key": "n1", "default": "8", "x": 0.354, "y": 0.83, "size": 0.015, "font": "mono", "align": "center" },
+      { "key": "n2", "default": "16", "x": 0.44, "y": 0.83, "size": 0.015, "font": "mono", "align": "center" },
+      { "key": "n3", "default": "24", "x": 0.525, "y": 0.83, "size": 0.015, "font": "mono", "align": "center" },
+      { "key": "n4", "default": "32", "x": 0.61, "y": 0.83, "size": 0.015, "font": "mono", "align": "center" },
+      { "key": "n5", "default": "40", "x": 0.695, "y": 0.83, "size": 0.015, "font": "mono", "align": "center" },
+      { "key": "n6", "default": "48", "x": 0.781, "y": 0.83, "size": 0.015, "font": "mono", "align": "center" },
+      { "key": "n7", "default": "56", "x": 0.866, "y": 0.83, "size": 0.015, "font": "mono", "align": "center" },
+      { "key": "log", "default": "KX  7G2  R4  D9  41A  TQP  118\nBARS 63  20-12000HZ  CACHE OK", "x": 0.03, "y": 0.9, "size": 0.015, "font": "mono", "reveal": "type", "revealStart": 0.3, "revealDur": 1.6 }
+    ],
+    "credits": [
+      "Index-card outlined labels, level meter and framed instrument panels: original drawing, no marks, fonts or text from other works",
+      "Power-curve bin mapping (exponent 2.5), peak-preserving neighbour smoothing, per-bar exponent ramp and head margin as described for the open caseif/vis.js recreation (MIT; algorithm described, no code used)"
+    ]
+  }
+}

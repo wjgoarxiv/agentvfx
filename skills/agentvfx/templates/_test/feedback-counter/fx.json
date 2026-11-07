@@ -1,0 +1,11 @@
+{
+  "DESCRIPTION": "Test template: a persistent buffer that adds inc per frame; output shows the count in sRGB code values.",
+  "ISFVSN": "2",
+  "CATEGORIES": ["test"],
+  "INPUTS": [{ "NAME": "inc", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.00392156862745098 }],
+  "PASSES": [{ "TARGET": "acc", "PERSISTENT": true, "FLOAT": true }, {}],
+  "X_AGENTVFX": {
+    "id": "test-feedback-counter", "family": "_test", "input": "generative", "spdx": "LicenseRef-agentvfx", "flash": "none",
+    "presets": { "one": { "inc": 0.00392156862745098 }, "two": { "inc": 0.00784313725490196 }, "zero": { "inc": 0 } }
+  }
+}

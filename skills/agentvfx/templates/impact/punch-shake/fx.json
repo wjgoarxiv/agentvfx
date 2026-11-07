@@ -1,0 +1,36 @@
+{
+  "DESCRIPTION": "Camera punch: the layer below snaps in 5-15% and shakes with a decaying random kick, with shutter smear along the motion and a little chroma split",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["impact"],
+  "INPUTS": [
+    { "NAME": "hitFrames", "TYPE": "long", "MIN": 1, "MAX": 12, "DEFAULT": 6 },
+    { "NAME": "holdFrames", "TYPE": "long", "MIN": 0, "MAX": 6, "DEFAULT": 1 },
+    { "NAME": "decayCurve", "TYPE": "float", "MIN": 0.3, "MAX": 4, "DEFAULT": 1.8 },
+    { "NAME": "punch", "TYPE": "float", "MIN": 0, "MAX": 0.4, "DEFAULT": 0.12 },
+    { "NAME": "shake", "TYPE": "float", "MIN": 0, "MAX": 0.15, "DEFAULT": 0.035 },
+    { "NAME": "roll", "TYPE": "float", "MIN": 0, "MAX": 0.3, "DEFAULT": 0.025 },
+    { "NAME": "shutter", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.8 },
+    { "NAME": "split", "TYPE": "float", "MIN": 0, "MAX": 0.05, "DEFAULT": 0.012 },
+    { "NAME": "edge", "TYPE": "long", "MIN": 0, "MAX": 2, "VALUES": [0, 1, 2], "LABELS": ["mirror", "clamp", "black"], "DEFAULT": 0 }
+  ],
+  "X_AGENTVFX": {
+    "id": "punch-shake",
+    "family": "impact",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "presets": {
+      "punch-hard": { "punch": 0.12, "shake": 0.035, "roll": 0.025, "hitFrames": 6 },
+      "punch-heavy": { "punch": 0.22, "shake": 0.07, "roll": 0.06, "hitFrames": 9, "decayCurve": 1.4, "split": 0.02 },
+      "punch-micro": { "punch": 0.06, "shake": 0.015, "roll": 0.008, "hitFrames": 4, "split": 0.006 },
+      "punch-roll": { "punch": 0.1, "shake": 0.02, "roll": 0.16, "hitFrames": 8, "decayCurve": 1.3 },
+      "punch-dutch": { "punch": 0.15, "shake": 0.05, "roll": 0.1, "hitFrames": 7, "edge": 2, "shutter": 1 }
+    },
+    "credits": [
+      "Zoom/shake punch grammar (2-6 frames), impact-frame notes in the L5 research",
+      "Shutter integration over the frame interval (analytic motion blur), https://en.wikipedia.org/wiki/Motion_blur"
+    ]
+  }
+}

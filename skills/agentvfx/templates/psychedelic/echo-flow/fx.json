@@ -1,0 +1,38 @@
+{
+  "DESCRIPTION": "Echo flow: Horn-Schunck optical flow advecting a max-blend trail buffer with flow-scaled chroma split",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["psychedelic"],
+  "INPUTS": [
+    { "NAME": "flowScale", "TYPE": "float", "MIN": 0, "MAX": 8, "DEFAULT": 2.5 },
+    { "NAME": "flowSmooth", "TYPE": "float", "MIN": 0.001, "MAX": 0.5, "DEFAULT": 0.05 },
+    { "NAME": "decay", "TYPE": "float", "MIN": 0.5, "MAX": 0.999, "DEFAULT": 0.94 },
+    { "NAME": "chromaSplit", "TYPE": "float", "MIN": 0, "MAX": 20, "DEFAULT": 6 },
+    { "NAME": "saturation", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 1.7 },
+    { "NAME": "blend", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 }
+  ],
+  "PASSES": [
+    { "TARGET": "f1", "FLOAT": true },
+    { "TARGET": "f2", "FLOAT": true },
+    { "TARGET": "trail", "PERSISTENT": true, "FLOAT": true },
+    { "TARGET": "prev", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "echo-flow",
+    "family": "psychedelic",
+    "input": "footage",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "echo-trail": { "decay": 0.96, "flowScale": 2.5, "chromaSplit": 6, "flowSmooth": 0.05 },
+      "echo-chroma": { "decay": 0.9, "flowScale": 3.5, "chromaSplit": 14, "flowSmooth": 0.03, "saturation": 1.9 },
+      "echo-tight": { "decay": 0.86, "flowScale": 1.5, "chromaSplit": 4, "flowSmooth": 0.12 }
+    },
+    "credits": [
+      "Horn-Schunck optical flow (Jacobi iteration), https://en.wikipedia.org/wiki/Horn%E2%80%93Schunck_method"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "DESCRIPTION": "Spectral RGB split with seeded bursts, direction jitter and sideways row tears over footage",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["glitch"],
+  "INPUTS": [
+    { "NAME": "splitAmount", "TYPE": "float", "MIN": 0, "MAX": 200, "DEFAULT": 22 },
+    { "NAME": "splitMode", "TYPE": "long", "MIN": 0, "MAX": 1, "VALUES": [0, 1], "LABELS": ["axis", "radial"], "DEFAULT": 0 },
+    { "NAME": "splitAngle", "TYPE": "float", "MIN": -3.1416, "MAX": 3.1416, "DEFAULT": 0 },
+    { "NAME": "center", "TYPE": "point2D", "DEFAULT": [0.5, 0.5] },
+    { "NAME": "splitTaps", "TYPE": "long", "MIN": 3, "MAX": 12, "DEFAULT": 9 },
+    { "NAME": "jitter", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.8 },
+    { "NAME": "jitterRate", "TYPE": "float", "MIN": 1, "MAX": 60, "DEFAULT": 18 },
+    { "NAME": "burstRate", "TYPE": "float", "MIN": 0.25, "MAX": 12, "DEFAULT": 2.4 },
+    { "NAME": "burstProb", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.85 },
+    { "NAME": "burstFrames", "TYPE": "long", "MIN": 1, "MAX": 60, "DEFAULT": 7 },
+    { "NAME": "burstBoost", "TYPE": "float", "MIN": 0, "MAX": 8, "DEFAULT": 3.5 },
+    { "NAME": "tear", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.8 },
+    { "NAME": "audioKick", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 0 },
+    { "NAME": "saturation", "TYPE": "float", "MIN": 0, "MAX": 3, "DEFAULT": 1.35 },
+    { "NAME": "punch", "TYPE": "float", "MIN": 0.5, "MAX": 3, "DEFAULT": 1.25 },
+    { "NAME": "scanlines", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.3 },
+    { "NAME": "grain", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 0.12 }
+  ],
+  "X_AGENTVFX": {
+    "id": "rgb-split",
+    "family": "glitch",
+    "input": "footage",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "possible",
+    "fps": 30,
+    "palette": false,
+    "presets": {
+      "rgb-split-hard": {},
+      "rgb-split-radial": { "splitMode": 1, "splitAmount": 30, "burstBoost": 4, "tear": 0.3, "jitter": 0.4, "burstRate": 2 },
+      "rgb-split-diagonal-stutter": { "splitAngle": 0.7854, "splitAmount": 34, "jitterRate": 30, "burstRate": 4, "burstFrames": 5, "burstBoost": 4.5, "tear": 1, "splitTaps": 5 },
+      "rgb-split-kick": { "splitAmount": 8, "burstProb": 0, "burstBoost": 6, "tear": 1, "audioKick": 0, "jitter": 1 }
+    },
+    "audioBind": { "audioKick": "onset" },
+    "safeSubstitute": { "params": { "burstRate": 0.5, "burstBoost": 0.6, "tear": 0, "jitter": 0.2, "grain": 0.05 } },
+    "credits": [
+      "Chromatic aberration as spectral tap accumulation, https://en.wikipedia.org/wiki/Chromatic_aberration",
+      "PCG integer hash, M. E. O'Neill, https://www.pcg-random.org/"
+    ]
+  }
+}

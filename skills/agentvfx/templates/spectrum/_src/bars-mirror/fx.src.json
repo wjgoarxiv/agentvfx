@@ -1,0 +1,51 @@
+{
+  "DESCRIPTION": "Full-frame field instrument: four-way mirrored hairline spectrum bars in black or white ink on an acid, ultramarine or orange field; hard colour swap on strong onsets",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["spectrum", "audio", "hud"],
+  "INPUTS": [
+    { "NAME": "bandCount", "TYPE": "long", "MIN": 8, "MAX": 120, "DEFAULT": 84 },
+    { "NAME": "maxHeight", "TYPE": "float", "MIN": 0.05, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "thickness", "TYPE": "float", "MIN": 0.05, "MAX": 1, "DEFAULT": 0.3 },
+    { "NAME": "mirrorMode", "TYPE": "long", "MIN": 0, "MAX": 2, "VALUES": [0, 1, 2], "LABELS": ["four-way", "top-bottom", "left-right"], "DEFAULT": 0 },
+    { "NAME": "centreGap", "TYPE": "float", "MIN": 0, "MAX": 0.1, "DEFAULT": 0.01 },
+    { "NAME": "floorHeight", "TYPE": "float", "MIN": 0, "MAX": 10, "DEFAULT": 2 },
+    { "NAME": "tipDots", "TYPE": "bool", "DEFAULT": true },
+    { "NAME": "invertHit", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 },
+    { "NAME": "flashDecayMs", "TYPE": "float", "MIN": 30, "MAX": 600, "DEFAULT": 110 }
+  ],
+  "use": ["pro", "stage", "hud"],
+  "defaults": { "groundColor": [0.784, 1, 0, 1], "inkColor": [0.04, 0.04, 0.04, 1], "accentColor": [0.04, 0.04, 0.04, 1], "startFreq": 20, "endFreq": 12000, "freqCurve": 2.4, "floorLevel": 0.2, "ceilLevel": 0.64 },
+  "PASSES": [
+    { "TARGET": "barState", "PERSISTENT": true, "FLOAT": true },
+    {}
+  ],
+  "X_AGENTVFX": {
+    "id": "bars-mirror",
+    "family": "spectrum",
+    "input": "either",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "strobe",
+    "fps": 30,
+    "palette": true,
+    "presets": {
+      "field-acid": {},
+      "field-ultramarine": { "$field": "ultramarine", "thickness": 0.45 },
+      "field-orange": { "$field": "orange", "mirrorMode": 1, "bandCount": 100 },
+      "black-hairline": { "groundColor": [0.043, 0.043, 0.047, 1], "inkColor": [0.914, 0.914, 0.894, 1], "accentColor": [0.784, 1, 0, 1], "invertHit": 0, "mirrorMode": 2 },
+      "rainbow-glow": { "groundColor": [0.02, 0.02, 0.03, 1], "inkColor": [1, 1, 1, 1], "colorMode": 1, "glow": 1, "invertHit": 0, "thickness": 0.6 }
+    },
+    "audioBind": { "invertHit": "onset" },
+    "safeSubstitute": { "params": { "invertHit": 0, "kickZoom": 0, "shake": 0 } },
+    "text": [
+      { "key": "title", "default": "FIELD 04", "x": 0.06, "y": 0.09, "size": 0.07, "font": "display", "style": "outline", "box": "tab" },
+      { "key": "node", "default": "SIGNAL", "x": 0.94, "y": 0.075, "size": 0.09, "font": "tall", "align": "right" },
+      { "key": "log", "default": "AGENT//VFX  NODE 7G-75\nCACHE OK  0x04F2", "x": 0.06, "y": 0.84, "size": 0.017, "font": "mono", "reveal": "type", "revealStart": 0.2, "revealDur": 1.4 },
+      { "key": "num", "default": "0   1   2   3   4   5   6", "x": 0.94, "y": 0.865, "size": 0.017, "font": "mono", "align": "right" }
+    ],
+    "credits": [
+      "Hairline analyser instrument and full-colour field grammar: original drawing, no marks, fonts or text from other works",
+      "Power-curve bin mapping and peak-preserving neighbour smoothing as described for open-source bar-visualiser recreations (algorithm described, no code used)"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"version":1,"template":"pixel-sort","preset":"pixel-sort-kick","input":{"video":"test-media/clip-01.mp4","audio":"test-media/beat-132.mp3"},"bindings":[{"param":"audioKick","feature":"onset","gain":1.5,"offset":0,"attackMs":0,"releaseMs":260}],"durationSec":4,"seed":55,"out":"pixel-sort-kick"}

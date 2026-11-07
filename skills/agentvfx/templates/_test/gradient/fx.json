@@ -1,0 +1,23 @@
+{
+  "DESCRIPTION": "Test template: a moving linear-light gradient. Not listed in the gallery.",
+  "CREDIT": "agentvfx",
+  "ISFVSN": "2",
+  "CATEGORIES": ["test"],
+  "INPUTS": [
+    { "NAME": "speed", "TYPE": "float", "MIN": 0, "MAX": 4, "DEFAULT": 1 },
+    { "NAME": "tint", "TYPE": "color", "DEFAULT": [1, 0.2, 0.6, 1] }
+  ],
+  "X_AGENTVFX": {
+    "id": "test-gradient",
+    "family": "_test",
+    "input": "generative",
+    "spdx": "LicenseRef-agentvfx",
+    "flash": "none",
+    "presets": {
+      "slow": { "speed": 0.25 },
+      "default": { "speed": 1 },
+      "fast": { "speed": 3, "tint": [0.2, 1, 0.4, 1] }
+    },
+    "credits": []
+  }
+}
