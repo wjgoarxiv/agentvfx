@@ -10,8 +10,8 @@ authors:
 repository-code: "https://github.com/wjgoarxiv/agentvfx"
 url: "https://agentvfx.vercel.app"
 license-url: "https://github.com/wjgoarxiv/agentvfx/blob/main/LICENSE"
-version: 0.3.1
-date-released: 2026-11-07
+version: 0.3.2
+date-released: 2026-11-08
 keywords:
   - vfx
   - music-visualizer

@@ -653,6 +653,11 @@ async function mount(canvas, opts = {}) {
       const node = media instanceof MediaStream ? audioCtx.createMediaStreamSource(media) : audioCtx.createMediaElementSource(media);
       analyser = audioCtx.createAnalyser();
       analyser.fftSize = 1024;
+      // Same level window as the render's spectrum (70 dB; AnalyserNode reads about 7 dB above the render's scale),
+      // unsmoothed: the browser default (-100..-30 dB, 0.8) pins most bars of a loud master at the top.
+      analyser.minDecibels = -63;
+      analyser.maxDecibels = 7;
+      analyser.smoothingTimeConstant = 0;
       node.connect(analyser);
       analyser.connect(audioCtx.destination);
     },

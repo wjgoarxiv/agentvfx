@@ -386,3 +386,12 @@ window.__litReady = true;
     rmSync(offlineDir, { recursive: true, force: true });
   }
 });
+
+test("live analyser reads the same level window as the render, so loud masters do not pin every bar", () => {
+  const runtime = readFileSync(path.join(root, "runtime/agentvfx.js"), "utf8");
+  // Render: dB of power vs a full-scale sine, over 70 dB (engine/node/audio.mjs). AnalyserNode dB sit about 7 dB
+  // higher on the same audio, so the live window is -63..+7 dB, unsmoothed (templates do their own attack/release).
+  assert.match(runtime, /analyser\.minDecibels = -63;/u);
+  assert.match(runtime, /analyser\.maxDecibels = 7;/u);
+  assert.match(runtime, /analyser\.smoothingTimeConstant = 0;/u);
+});
