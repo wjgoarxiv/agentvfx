@@ -1,6 +1,7 @@
 ---
 name: agentvfx
 description: Agent-directed, music-reactive VFX clips from an FX score. WebGL2 shader templates (psychedelic, spectrum, scope, impact, light, glitch, neo-brutalist collage and lattice), optional Blender background plates, a flash audit on every render, silent ping-pong loops, and a web export for live use in apps and sites. Use when someone asks for a VFX clip, a visualizer, a festival or stage loop, a music-reactive background, or a live shader effect for a web page.
+license: LicenseRef-agentvfx. Noncommercial use; see LICENSE for the complete terms.
 ---
 
 # agentvfx
