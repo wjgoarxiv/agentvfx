@@ -1,11 +1,10 @@
 {
   "name": "agentvfx",
-  "version": "0.3.3",
-  "private": true,
+  "version": "0.3.4",
   "description": "Agent-directed, music-reactive VFX clips: the agent writes an FX score, the engine renders WebGL2 templates with optional Blender plates, audits every frame for flashes, and exports silent loops or live web effects.",
   "license": "SEE LICENSE IN LICENSE",
   "author": "wjgoarxiv",
-  "homepage": "https://github.com/wjgoarxiv/agentvfx",
+  "homepage": "https://agentvfx.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wjgoarxiv/agentvfx.git"
@@ -18,6 +17,14 @@
     "motion-graphics",
     "agent-skill",
     "blender"
+  ],
+  "files": [
+    "skills/",
+    "!skills/agentvfx/out/",
+    "LICENSE",
+    "README.md",
+    "AGENTS.md",
+    "GEMINI.md"
   ],
   "engines": {
     "node": ">=20"
