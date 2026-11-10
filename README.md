@@ -7,7 +7,7 @@
 
 **Music-reactive VFX, directed by your coding agent.**
 
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-agentvfx%20licence-ff5a1f?style=flat-square" alt="agentvfx licence: noncommercial, with a creator permission"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-ff5a1f?style=flat-square" alt="License: Apache-2.0"></a>
 <img src="https://img.shields.io/badge/node-%E2%89%A520-efece4?style=flat-square&labelColor=1d1d22" alt="Node 20 or newer">
 <img src="https://img.shields.io/badge/runtime%20deps-0-8a8a90?style=flat-square&labelColor=1d1d22" alt="no runtime dependencies">
 <a href="https://agentvfx.vercel.app"><img src="https://img.shields.io/badge/site-agentvfx.vercel.app-7aa2f7?style=flat-square&labelColor=16161e" alt="Site: agentvfx.vercel.app"></a>
@@ -212,25 +212,17 @@ Live effects carry a flash guard: the browser runtime checks every shown frame w
 
 ## 📄 License
 
-agentvfx uses the **agentvfx licence** ([`LICENSE`](LICENSE)): the PolyForm Noncommercial License 1.0.0, reproduced unchanged as Part 2, plus Additional Terms in Part 1. It is source-available, not open source.
+agentvfx is licensed under the [Apache License 2.0](LICENSE). You may use, change and share it, commercially too, as long as you keep the licence and the [`NOTICE`](skills/agentvfx/NOTICE) file with any copy you hand on. Releases up to 0.3.4 were published under earlier terms and keep their own `LICENSE` file.
 
-**Free for noncommercial use, and for individual creators in their own work, commercially too.** If you are an individual (a sole proprietor or a band of individuals counts), you can run agentvfx and use the clips you render in your own work: your music video, your channel and its ads or sponsors, your own VJ or live set.
-
-**Needs a commercial licence** (ask in [Issues](https://github.com/wjgoarxiv/agentvfx/issues)): companies and employers, client work or output made for someone else to publish, paid rendering services, selling or reselling the tool, its templates, or the clips on their own (stock, loops, packs).
-
-**Forks need their own name.** You may not call a changed copy agentvfx or present it as the original; give it a name without "agentvfx", say it is changed from agentvfx and link back here.
-
-**Not allowed under any permission:** training, fine-tuning or evaluating a model on the code, shaders or templates, or building a dataset for that. Having your own coding agent operate agentvfx is fine.
-
-**Credit is required for anything you publish.** Every render burns a small `agentvfx` credit into a corner of the frame; leave it in. If you turn it off with `"credit": { "overlay": false }` in the score, put this line in the description, caption or credits instead (it is also in `CREDIT.txt` next to every film):
+**A credit is appreciated, not required.** Every render burns a small `agentvfx` credit into a corner of the frame by default; switch it off with `"credit": { "overlay": false }` in the score. If you would like to credit agentvfx in a description or credits, this line is also written to `CREDIT.txt` next to every film:
 
 ```text
 Made with agentvfx by Woojin Go - https://github.com/wjgoarxiv/agentvfx
 ```
 
-When you hand a clip to someone who will publish it, pass the credit on with it. The folder that `export-web` writes carries its own `LICENSE`; keep it with the files.
+The licence gives no right to use the name "agentvfx" or its logo beyond saying truthfully where a work comes from (Apache-2.0, section 6). The folder that `export-web` writes carries its own `LICENSE` and `NOTICE`; keep them with the files.
 
-> 한국어 요약: 비상업 사용은 자유입니다. 개인(개인사업자, 개인들로 이뤄진 밴드 포함)은 자기 작품(뮤직비디오, 자기 채널의 광고와 스폰서 수익, 자기 VJ 공연)에 렌더 결과를 상업적으로도 쓸 수 있습니다. 회사, 고용주, 의뢰 작업(남이 게시할 결과물), 유료 렌더 서비스, 도구나 클립의 단독 판매, AI 학습 용도는 허용되지 않으며 상업 라이선스가 필요합니다. 코드를 고쳐 배포(포크)할 때는 "agentvfx"가 들어가지 않는 새 이름을 쓰고, agentvfx를 고친 것임을 밝히고 이 저장소 링크를 달아야 합니다. 게시하는 모든 결과물에는 크레딧이 필요합니다. 기본으로 화면 모서리에 작은 `agentvfx` 표시가 들어가며, 끄면(`"credit": { "overlay": false }`) 설명란이나 크레딧에 위 문구를 넣어야 합니다. 결과물을 남에게 넘길 때는 크레딧도 함께 전달하세요.
+> 한국어 요약: agentvfx는 Apache License 2.0을 따릅니다. 상업적 사용을 포함해 자유롭게 쓰고, 고치고, 배포할 수 있습니다. 다른 사람에게 넘길 때는 `LICENSE`와 `NOTICE` 파일을 함께 넘겨 주세요. 렌더 화면 모서리에 기본으로 들어가는 작은 `agentvfx` 크레딧은 끌 수 있고, 크레딧 표기는 의무가 아니라 부탁입니다.
 
 The parts adapted from mexicat/pdoom-video keep their MIT licence ([`NOTICE`](skills/agentvfx/NOTICE) lists the files). To cite agentvfx in a paper or write-up, use [`CITATION.cff`](CITATION.cff).
 

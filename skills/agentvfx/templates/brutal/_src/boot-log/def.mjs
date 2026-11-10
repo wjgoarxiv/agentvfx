@@ -35,7 +35,7 @@ const fx = {
   CATEGORIES: ["brutal", "terminal", "audio"],
   INPUTS,
   X_AGENTVFX: {
-    id: "boot-log", family: "brutal", input: "generative", spdx: "LicenseRef-agentvfx", flash: "possible", fps: 30, palette: false,
+    id: "boot-log", family: "brutal", input: "generative", spdx: "Apache-2.0", flash: "possible", fps: 30, palette: false,
     presets: { phosphor: PHOSPHOR, acid: ACID, ultramarine: ULTRA, amber: AMBER },
     audioBind: { tearAmount: "beat" },
     safeSubstitute: { params: { tearAmount: 0, flickerAmount: 0 } },

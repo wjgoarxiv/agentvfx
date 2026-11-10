@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Injected before any page script: the page has no wall clock and no
+// agentvfx (Apache-2.0, see LICENSE). Injected before any page script: the page has no wall clock and no
 // unseeded randomness. Math.random is a seeded mulberry32; Date and performance.now are frozen at 0
 // (time comes only from the frame index the host passes to window.__litStep).
 (() => {

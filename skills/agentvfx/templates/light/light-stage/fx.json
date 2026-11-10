@@ -13,7 +13,7 @@
     "id": "light-stage",
     "family": "light",
     "input": "generative",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "none",
     "fps": 30,
     "palette": false,

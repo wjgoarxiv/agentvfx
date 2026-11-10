@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/board.mjs: only the
+// agentvfx (Apache-2.0, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/board.mjs: only the
 // tile geometry is kept. Look-gate boards (references beside rendered frames) are composed in Node
 // from RGBA buffers by stills.mjs, so no browser or font is involved.
 

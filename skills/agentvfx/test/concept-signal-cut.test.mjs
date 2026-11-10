@@ -54,7 +54,7 @@ test("signal-cut is declared: family, 3+ presets, strobe class with a safe subst
   assert.ok(tpl, "signal-cut is in the library");
   const x = tpl.fx.X_AGENTVFX;
   assert.equal(x.input, "footage");
-  assert.equal(x.spdx, "LicenseRef-agentvfx");
+  assert.equal(x.spdx, "Apache-2.0");
   assert.ok(Object.keys(x.presets).length >= 3);
   assert.equal(x.flash, "strobe");
   assert.equal(x.safeSubstitute.params.fieldCut, 0);

@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/stage-capture.mjs.
+// agentvfx (Apache-2.0, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/stage-capture.mjs.
 // One stage browser: headless Chrome on the GPU rung, the render page served by Fetch interception on
 // http://lit.stage, the frozen-clock init script injected before any page script, and a step/capture
 // pair the renderer calls frame by frame. The master and the determinism replay each open their own

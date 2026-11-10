@@ -1,6 +1,6 @@
-// agentvfx (agentvfx licence, see LICENSE). Local replacement for the plugin's lib/mark.mjs: the generator
+// agentvfx (Apache-2.0, see LICENSE). Local replacement for the plugin's lib/mark.mjs: the generator
 // tag and the credit line that ffmpeg writes into every MP4, plus an optional comment (the stage-mode flashing notice).
-// Attribution is a licence condition for published output, so the credit also goes to CREDIT.txt next to the film.
+// The credit also goes to CREDIT.txt next to the film, so it is easy to paste when the film is published.
 export const GENERATOR = "agentvfx";
 export const CREDIT_TEXT = "Made with agentvfx by Woojin Go - https://github.com/wjgoarxiv/agentvfx";
 export const CREDIT_SHORT = "VFX: agentvfx (github.com/wjgoarxiv/agentvfx)";
@@ -8,13 +8,10 @@ export const CREDIT_SHORT = "VFX: agentvfx (github.com/wjgoarxiv/agentvfx)";
 export function creditText() {
   return `${CREDIT_TEXT}
 
-Publishing this film? The agentvfx licence requires a credit. The film carries a small on-screen credit; keep it
-in the frame. If you switched it off ("credit": { "overlay": false }), put the line above where viewers can find
-it: the description, caption or credits. Where space is short: ${CREDIT_SHORT}
-When you hand the film to someone who will publish it, pass the credit on with it.
-Licence: the agentvfx licence (Additional Terms plus the PolyForm Noncommercial License 1.0.0). Individuals may use
-their own output commercially; companies, client work, paid services and AI training are not covered.
-See LICENSE in https://github.com/wjgoarxiv/agentvfx.
+Publishing this film? A credit is appreciated, not required. The film carries a small on-screen credit; you can
+keep it in the frame, or switch it off ("credit": { "overlay": false }) and put the line above in the description,
+caption or credits. Where space is short: ${CREDIT_SHORT}
+Licence: Apache-2.0. See LICENSE and NOTICE in https://github.com/wjgoarxiv/agentvfx.
 `;
 }
 

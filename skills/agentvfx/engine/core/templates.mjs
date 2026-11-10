@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). The template library: every templates/<family>/<id>/fx.json, keyed by
+// agentvfx (Apache-2.0, see LICENSE). The template library: every templates/<family>/<id>/fx.json, keyed by
 // X_AGENTVFX.id. Test templates live under templates/_test/ and are loaded only on request.
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";

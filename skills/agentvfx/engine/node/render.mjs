@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). The host side of a render: open the render page in headless Chrome (GPU
+// agentvfx (Apache-2.0, see LICENSE). The host side of a render: open the render page in headless Chrome (GPU
 // rung), prepare the templates, step every frame in order, capture, analyse in a worker pool, pipe
 // RGBA to ffmpeg, then replay sampled frames in a fresh browser from frame 0 and compare bytes
 // (determinism; exit 18 semantics after lit-typographic-motion's stage replay).

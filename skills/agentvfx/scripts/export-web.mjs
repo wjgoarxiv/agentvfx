@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Bundle selected templates and the live runtime into a folder a page
+// agentvfx (Apache-2.0, see LICENSE). Bundle selected templates and the live runtime into a folder a page
 // can open with no network and no build. The GLSL prelude is imported here and inlined verbatim.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -12,11 +12,12 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const runtimePath = path.join(here, "../runtime/agentvfx.js");
 const preludePath = path.join(here, "../engine/web/prelude.mjs");
 const licensePath = path.join(here, "../LICENSE");
+const noticePath = path.join(here, "../NOTICE");
 // The licence notice is added after stripUrls runs, so it survives; it names the repository without a scheme because the
-// bundle must hold no fetchable URL. The exact Required Notice line, with its URL, is in the LICENSE file written beside it.
+// bundle must hold no fetchable URL. LICENSE and NOTICE, with their URLs, are written beside it.
 const LICENSE_NOTICE = [
-  "agentvfx licence: the full terms are in the LICENSE file in this folder. Keep it with these files.",
-  "Required Notice: Copyright (c) 2026 Woojin Go (github.com/wjgoarxiv/agentvfx)",
+  "agentvfx is licensed under the Apache License 2.0; see LICENSE and NOTICE in this folder. Keep them with these files.",
+  "Copyright 2026 Woojin Go (github.com/wjgoarxiv/agentvfx)",
 ];
 const flashPaths = ["../engine/core/flash-constants.mjs", "../engine/core/flash.mjs"].map((p) => path.join(here, p));
 
@@ -151,5 +152,6 @@ for (const [name, body] of Object.entries(files)) {
   }
   writeFileSync(path.join(out, name), body);
 }
-// The licence text itself carries URLs by design, so it is copied verbatim after the no-URL check above.
+// The licence and notice carry URLs by design, so they are copied verbatim after the no-URL check above.
 writeFileSync(path.join(out, "LICENSE"), readFileSync(licensePath));
+writeFileSync(path.join(out, "NOTICE"), readFileSync(noticePath));

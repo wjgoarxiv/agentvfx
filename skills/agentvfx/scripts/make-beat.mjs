@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// agentvfx (agentvfx licence, see LICENSE). Generates the original 10 s, 132 BPM demo drum loop (test-media/beat-132.mp3).
+// agentvfx (Apache-2.0, see LICENSE). Generates the original 10 s, 132 BPM demo drum loop (test-media/beat-132.mp3).
 // Everything is synthesised here from sines and seeded noise: a kick on every beat, a snare on
 // beats 2 and 4, closed hats on the 8ths, starting a quarter beat in, over a faint noise bed so the
 // waveform never goes flat between hits. Nothing is sampled or downloaded.

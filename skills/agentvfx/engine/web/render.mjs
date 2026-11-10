@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). The render page: WebGL2 multipass renderer for template layers with
+// agentvfx (Apache-2.0, see LICENSE). The render page: WebGL2 multipass renderer for template layers with
 // persistent RGBA16F buffers. The host (engine/node/render.mjs) calls window.__litPrepare once, then
 // window.__litStep(f, plan) for every frame in order, and captures the canvas after each step.
 // No requestAnimationFrame, no wall clock: time comes only from the plan.
@@ -329,7 +329,7 @@ out vec4 fragColor;
 uniform sampler2D credit;
 void main() { fragColor = texture(credit, vUv); }`;
 
-/** The licence credit as a frame-sized RGBA texture: small text in the bottom-right corner, white with a dark edge. */
+/** The credit as a frame-sized RGBA texture: small text in the bottom-right corner, white with a dark edge. */
 function creditTexture(text) {
   const c = document.createElement("canvas");
   c.width = W;

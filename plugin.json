@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "agentvfx",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Agent-directed, music-reactive VFX clips: the agent writes an FX score, the engine renders WebGL2 templates with optional Blender plates, audits every frame for flashes, and exports silent loops or live web effects.",
   "author": {
     "name": "wjgoarxiv"
   },
   "homepage": "https://agentvfx.vercel.app",
   "repository": "https://github.com/wjgoarxiv/agentvfx",
-  "license": "LicenseRef-agentvfx",
+  "license": "Apache-2.0",
   "keywords": [
     "vfx",
     "music-visualizer",

@@ -1,4 +1,4 @@
-// Attribution is a licence condition for published output, so every render carries the credit line: CREDIT.txt next
+// Every render carries the credit line (appreciated, not required): CREDIT.txt next
 // to the film, the MP4 description tag of every film written (the safe variant too), and the gate report the agent
 // reads before reporting.
 import { test } from "node:test";
@@ -39,4 +39,16 @@ test("every render writes CREDIT.txt, tags each film with the credit and reports
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
+});
+
+test("licence metadata says Apache-2.0 and the old licence id is gone", async () => {
+  const { SPDX_ALLOWED } = await import("../engine/core/validate.mjs");
+  const { creditText } = await import("../engine/core/mark.mjs");
+  const { readFileSync } = await import("node:fs");
+  const repo = new URL("../../../", import.meta.url);
+  assert.ok(!SPDX_ALLOWED.includes("LicenseRef-agentvfx"));
+  assert.match(creditText(), /Apache-2\.0/u);
+  assert.doesNotMatch(creditText(), /requires a credit|PolyForm/u);
+  assert.equal(JSON.parse(readFileSync(new URL("package.json", repo), "utf8")).license, "Apache-2.0");
+  assert.equal(JSON.parse(readFileSync(new URL(".claude-plugin/plugin.json", repo), "utf8")).license, "Apache-2.0");
 });

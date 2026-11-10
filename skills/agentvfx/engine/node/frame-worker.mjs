@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/frame-worker.mjs.
+// agentvfx (Apache-2.0, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/frame-worker.mjs.
 // One frame-analysis worker: decode a captured PNG to RGBA and analyse it off the capture thread
 // (the SHA-256 of the decoded RGBA, the flash-audit cells on the frame's own grid, the 0.5th and
 // 99.5th percentile luminance, the busy-cell share). The capture loop steps the next frame while a

@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/stage-serve.mjs.
+// agentvfx (Apache-2.0, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/stage-serve.mjs.
 // Serving without a listening socket: every request the render page makes is paused by CDP Fetch
 // interception and either fulfilled from disk on the synthetic origin http://lit.stage, or failed
 // with BlockedByClient and recorded. Routes: /lit/engine/* (engine/web), /lit/templates/* (the

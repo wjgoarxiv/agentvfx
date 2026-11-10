@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Engine text layer, drawn in the render page with Canvas 2D and system fonts
+// agentvfx (Apache-2.0, see LICENSE). Engine text layer, drawn in the render page with Canvas 2D and system fonts
 // (nothing bundled). Output is a mask: R = glyph and line ink, G = solid box/bar fill. Templates colour
 // it. Reveal modes are frame-deterministic: "type" prints characters over time with a block cursor,
 // "decode" settles each character out of seeded random glyphs.

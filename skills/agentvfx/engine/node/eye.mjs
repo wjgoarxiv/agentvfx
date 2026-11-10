@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). The eye: every render leaves stills the model must open before reporting.
+// agentvfx (Apache-2.0, see LICENSE). The eye: every render leaves stills the model must open before reporting.
 // stills/sheet.png (12 evenly spaced frames, 4x3), stills/strip-<k>.png (7 consecutive frames centred
 // on each hit, cut or onset, or on 25/50/75 % when there are none; at most 6 strips) and
 // stills/poster.png (full size, 40 % in). Frames are downscaled as they arrive, so memory stays small.

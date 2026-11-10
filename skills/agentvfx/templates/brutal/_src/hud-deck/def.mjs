@@ -58,7 +58,7 @@ const fx = {
   INPUTS,
   PASSES: [{ TARGET: "specState", PERSISTENT: true, FLOAT: true }, {}],
   X_AGENTVFX: {
-    id: "hud-deck", family: "brutal", input: "either", spdx: "LicenseRef-agentvfx", flash: "possible", fps: 30, palette: false,
+    id: "hud-deck", family: "brutal", input: "either", spdx: "Apache-2.0", flash: "possible", fps: 30, palette: false,
     presets: { night: NIGHT, ultramarine: ULTRA, acid: ACID, octagon: OCTAGON, "orange-mono": ORANGE },
     audioBind: { spectrumGain: "bands", flare: "beat" },
     safeSubstitute: { params: { flare: 0, tearAmount: 0 } },

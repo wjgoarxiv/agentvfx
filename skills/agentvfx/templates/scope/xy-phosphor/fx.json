@@ -236,7 +236,7 @@
     "id": "xy-phosphor",
     "family": "scope",
     "input": "generative",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "none",
     "fps": 60,
     "palette": false,

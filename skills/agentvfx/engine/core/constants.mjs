@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/core/constants.mjs.
+// agentvfx (Apache-2.0, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/core/constants.mjs.
 // Every number the agentvfx engine and its gate use, in one place.
 
 export const ENGINE_COMMIT = "ca251e3dddda422b364385eb484b5a3593a0990d";

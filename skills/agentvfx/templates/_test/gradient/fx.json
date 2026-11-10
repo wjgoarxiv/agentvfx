@@ -11,7 +11,7 @@
     "id": "test-gradient",
     "family": "_test",
     "input": "generative",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "none",
     "presets": {
       "slow": { "speed": 0.25 },

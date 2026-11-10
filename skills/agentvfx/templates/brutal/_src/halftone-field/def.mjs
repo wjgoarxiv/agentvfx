@@ -47,7 +47,7 @@ const fx = {
   CATEGORIES: ["brutal", "halftone", "audio"],
   INPUTS,
   X_AGENTVFX: {
-    id: "halftone-field", family: "brutal", input: "either", spdx: "LicenseRef-agentvfx", flash: "possible", fps: 30, palette: false,
+    id: "halftone-field", family: "brutal", input: "either", spdx: "Apache-2.0", flash: "possible", fps: 30, palette: false,
     presets: { ultramarine: ULTRA, "ink-blue": INK_BLUE, acid: ACID, orange: ORANGE, phosphor: PHOSPHOR, dither: DITHER, ascii: ASCII },
     audioBind: { dotGain: "bass", barAmount: "bands" },
     safeSubstitute: { params: { tearAmount: 0, kickGain: 0 } },

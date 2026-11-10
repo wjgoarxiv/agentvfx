@@ -41,7 +41,7 @@ test("lattice validates: every preset and demo, 4 s demos with the shared music"
     assert.equal(demo.input.audio, MUSIC);
     assert.ok(existsSync(path.join(ROOT, demo.input.video)));
   }
-  assert.equal(tpl.fx.X_AGENTVFX.spdx, "LicenseRef-agentvfx");
+  assert.equal(tpl.fx.X_AGENTVFX.spdx, "Apache-2.0");
   assert.ok(tpl.fx.X_AGENTVFX.safeSubstitute);
 });
 

@@ -29,7 +29,7 @@
     "id": "bass-circle",
     "family": "spectrum",
     "input": "either",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "none",
     "fps": 30,
     "palette": true,

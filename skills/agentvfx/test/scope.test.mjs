@@ -90,7 +90,7 @@ test("all five templates are valid, licensed, 60 fps, 3+ presets, honest flash a
     const x = t.fx.X_AGENTVFX;
     assert.equal(x.family, "scope");
     assert.equal(x.fps, 60);
-    assert.equal(x.spdx, "LicenseRef-agentvfx");
+    assert.equal(x.spdx, "Apache-2.0");
     assert.ok(Object.keys(x.presets).length >= 3, `${id} presets`);
     for (const p of PRESETS) assert.ok(x.presets[p], `${id} lacks the ${p} preset`);
     assert.ok(Array.isArray(x.text) && x.text.length >= 20, `${id} should label its panels with engine text`);

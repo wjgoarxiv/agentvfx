@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Shared palettes, usable by any template that declares a `palette` input.
+// agentvfx (Apache-2.0, see LICENSE). Shared palettes, usable by any template that declares a `palette` input.
 // Each palette is a list of sRGB hex stops; templates sample it as a ramp (index 0..1) or as a cyclic
 // ramp. Brutal palettes are black, white and one acid accent, in the spirit of festival HUD
 // colour grammar; the names are neutral and no existing colour system is copied.

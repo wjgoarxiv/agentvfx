@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). One render job, end to end: resolve the score's footage and audio, analyse
+// agentvfx (Apache-2.0, see LICENSE). One render job, end to end: resolve the score's footage and audio, analyse
 // the audio, render the master (stage mode: full intensity, never tamed), keep the eye's stills, run
 // the flash audit as a report, write SAFETY.txt and the MP4 comment when limits are exceeded, and, only
 // when asked (safety.mode "broadcast-safe" or safeVariant), render a substituted broadcast-safe file.

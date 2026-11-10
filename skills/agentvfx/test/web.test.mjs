@@ -258,7 +258,7 @@ test("export-web bundles templates whose shader credits carry links, keeping the
   }
 });
 
-test("export-web writes the LICENSE next to the bundle and keeps the licence notice in the runtime", () => {
+test("export-web writes LICENSE and NOTICE next to the bundle and keeps the licence notice in the runtime", () => {
   const dir = mkdtempSync(path.join(tmpdir(), "agentvfx-export-"));
   try {
     const result = runExport(["test-gradient", "--out", dir]);
@@ -266,11 +266,14 @@ test("export-web writes the LICENSE next to the bundle and keeps the licence not
     assertNoExternalUrl(dir);
     const license = readFileSync(path.join(dir, "LICENSE"), "utf8");
     assert.equal(license, readFileSync(path.join(root, "LICENSE"), "utf8"), "LICENSE is copied verbatim");
-    assert.match(license, /^Required Notice: Copyright \(c\) 2026 Woojin Go \(https:\/\/github\.com\/wjgoarxiv\/agentvfx\)$/mu);
+    assert.match(license, /Apache License\s+Version 2\.0, January 2004/u);
+    const notice = readFileSync(path.join(dir, "NOTICE"), "utf8");
+    assert.equal(notice, readFileSync(path.join(root, "NOTICE"), "utf8"), "NOTICE is copied verbatim");
+    assert.match(notice, /^Copyright 2026 Woojin Go/mu);
     const runtime = readFileSync(path.join(dir, "agentvfx.js"), "utf8");
-    assert.match(runtime, /^\/\/ agentvfx licence: the full terms are in the LICENSE file in this folder/mu);
-    assert.match(runtime, /^\/\/ Required Notice: Copyright \(c\) 2026 Woojin Go \(github\.com\/wjgoarxiv\/agentvfx\)$/mu);
-    assert.match(readFileSync(path.join(dir, "demo.html"), "utf8"), /Required Notice: Copyright \(c\) 2026 Woojin Go/u);
+    assert.match(runtime, /^\/\/ agentvfx is licensed under the Apache License 2\.0; see LICENSE and NOTICE in this folder/mu);
+    assert.match(runtime, /^\/\/ Copyright 2026 Woojin Go \(github\.com\/wjgoarxiv\/agentvfx\)$/mu);
+    assert.match(readFileSync(path.join(dir, "demo.html"), "utf8"), /Copyright 2026 Woojin Go/u);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

@@ -1,9 +1,9 @@
-// agentvfx (agentvfx licence, see LICENSE). Hand-rolled validators for templates (fx.json) and FX scores. Every error
+// agentvfx (Apache-2.0, see LICENSE). Hand-rolled validators for templates (fx.json) and FX scores. Every error
 // names the JSON path that failed, so the model can fix the exact field.
 import { PALETTE_NAMES } from "./palettes.mjs";
 import { FAMILY_PATTERN } from "../web/text.mjs";
 
-export const SPDX_ALLOWED = Object.freeze(["LicenseRef-agentvfx", "MIT", "BSD-2-Clause", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]);
+export const SPDX_ALLOWED = Object.freeze(["MIT", "BSD-2-Clause", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]);
 export const INPUT_TYPES = Object.freeze(["float", "long", "bool", "color", "point2D", "image", "audio", "audioFFT", "event"]);
 export const TEMPLATE_INPUT_KINDS = Object.freeze(["generative", "footage", "either"]);
 export const FLASH_KINDS = Object.freeze(["none", "possible", "strobe"]);
@@ -286,7 +286,7 @@ export function validateScore(score, lib) {
       }
     }
   }
-  // On-screen credit (licence attribution): a small corner mark on by default; the score may opt out.
+  // On-screen credit: a small corner mark on by default; the score may opt out.
   const credit = { overlay: true };
   if (score.credit !== undefined) {
     if (!isObj(score.credit)) err("credit", "must be { overlay? }");

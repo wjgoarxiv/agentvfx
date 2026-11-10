@@ -1,4 +1,10 @@
-agentvfx is licensed under the agentvfx licence (see LICENSE), except for the portions adapted from mexicat/pdoom-video. Those stay under the MIT License printed below, and any of them may be taken out and reused under that licence, including for commercial use.
+agentvfx
+Copyright 2026 Woojin Go (https://github.com/wjgoarxiv/agentvfx)
+
+Licensed under the Apache License, Version 2.0 (see LICENSE). Version 0.3.5 is the first release under it; earlier
+releases carry their own LICENSE file.
+
+The portions adapted from mexicat/pdoom-video stay under the MIT License printed below.
 
 Adapted from mexicat/pdoom-video (MIT, Giacomo Magnanini), listed from the source-file header comments:
   engine/core/util.mjs
@@ -7,7 +13,7 @@ Adapted from mexicat/pdoom-video (MIT, Giacomo Magnanini), listed from the sourc
   engine/web/scale.mjs
   engine/node/chrome.mjs
 
-Copied and adapted from LitClaude lit-typographic-motion 1.0.45 (MIT, (c) 2026 wjgoarxiv, the same author). It stays MIT in its own repository, its pdoom-video portions keep the notice below, and the copies here are offered under the agentvfx licence:
+Copied and adapted from LitClaude lit-typographic-motion 1.0.45 (MIT, (c) 2026 wjgoarxiv, the same author). It stays MIT in its own repository, its pdoom-video portions keep the notice below, and the copies here are offered under the Apache License 2.0:
   engine/core/constants.mjs
   engine/core/flash.mjs
   engine/node/board.mjs

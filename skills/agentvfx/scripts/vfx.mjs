@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// agentvfx (agentvfx licence, see LICENSE). Command-line entry: `vfx.mjs <subcommand> ...`.
+// agentvfx (Apache-2.0, see LICENSE). Command-line entry: `vfx.mjs <subcommand> ...`.
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";

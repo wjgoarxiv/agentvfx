@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/encode.mjs.
+// agentvfx (Apache-2.0, see LICENSE). Adapted from lit-typographic-motion 1.0.45 engine/node/encode.mjs.
 // ffmpeg is always the last stage and always a separately installed host binary: the master is one
 // pinned encode (BT.709 matrix and tags, tv range, CRF 16, tune grain). The preview walks the encoder
 // ladder (ffmpeg libwebp_anim, then img2webp, then GIF) over PNG frames the renderer wrote.

@@ -21,7 +21,7 @@
     "id": "mosh-melt",
     "family": "psychedelic",
     "input": "footage",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "possible",
     "fps": 30,
     "palette": true,

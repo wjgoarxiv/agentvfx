@@ -390,7 +390,7 @@
     "id": "bars-mirror",
     "family": "spectrum",
     "input": "either",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "strobe",
     "fps": 30,
     "palette": true,

@@ -4,7 +4,7 @@
   "CATEGORIES": ["test"],
   "INPUTS": [{ "NAME": "gain", "TYPE": "float", "MIN": 0, "MAX": 1, "DEFAULT": 1 }],
   "X_AGENTVFX": {
-    "id": "test-text-probe", "family": "_test", "input": "generative", "spdx": "LicenseRef-agentvfx", "flash": "none",
+    "id": "test-text-probe", "family": "_test", "input": "generative", "spdx": "Apache-2.0", "flash": "none",
     "presets": { "a": { "gain": 1 }, "b": { "gain": 0.5 }, "c": { "gain": 0.8 } },
     "text": [
       { "key": "title", "default": "TRACK TITLE", "x": 0.06, "y": 0.1, "size": 0.16, "font": "display", "style": "outline", "box": "tab" },

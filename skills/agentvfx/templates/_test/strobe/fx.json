@@ -7,7 +7,7 @@
     { "NAME": "red", "TYPE": "bool", "DEFAULT": false }
   ],
   "X_AGENTVFX": {
-    "id": "test-strobe", "family": "_test", "input": "generative", "spdx": "LicenseRef-agentvfx", "flash": "strobe",
+    "id": "test-strobe", "family": "_test", "input": "generative", "spdx": "Apache-2.0", "flash": "strobe",
     "presets": { "hold": { "rate": 0 }, "slow": { "rate": 2 }, "fast": { "rate": 12 } },
     "safeSubstitute": { "template": "test-identity", "params": { "rate": 1 } }
   }

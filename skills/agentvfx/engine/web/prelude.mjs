@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). The GLSL prelude prepended to every template pass, and the program source
+// agentvfx (Apache-2.0, see LICENSE). The GLSL prelude prepended to every template pass, and the program source
 // builder. Contract: references/template-format.md. Importable in Node (tests) and in the page.
 // Helper credits: value noise and fbm after The Book of Shaders ch.11/13 (https://thebookofshaders.com),
 // cosine palette after Inigo Quilez (https://iquilezles.org/articles/palettes/), hsv conversions after

@@ -33,7 +33,7 @@ A template is a folder `templates/<family>/<id>/` with:
     "id": "sacred",
     "family": "psychedelic",
     "input": "footage",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "none",
     "fps": 30,
     "palette": true,
@@ -48,7 +48,7 @@ A template is a folder `templates/<family>/<id>/` with:
 - INPUT types: `float`, `long` (int; optional `VALUES` / `LABELS`), `bool`, `color` (`[r,g,b,a]` 0..1, sRGB),
   `point2D`, `image`, `audio`, `audioFFT`.
 - `X_AGENTVFX.input`: `generative` (no clip), `footage` (needs `input.video`), `either`.
-- `spdx`: LicenseRef-agentvfx (the agentvfx licence, the library's own), MIT, BSD-2-Clause, BSD-3-Clause, Apache-2.0 or CC0-1.0 only. Shaders are written fresh;
+- `spdx`: Apache-2.0 (the library's own), MIT, BSD-2-Clause, BSD-3-Clause or CC0-1.0 only. Shaders are written fresh;
   algorithms are credited by name and URL in `credits` and in comments. No Shadertoy ports, no Lygia, no
   hydra-synth, no MilkDrop presets.
 - `flash`: `none`, `possible` (can flash at some settings) or `strobe` (flashes by design).

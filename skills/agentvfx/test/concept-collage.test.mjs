@@ -44,7 +44,7 @@ test("collage validates, ships 4 presets incl. release 0.06 and 0.12, and a demo
   const rel = (p) => ({ ...Object.fromEntries(tpl.fx.INPUTS.map((i) => [i.NAME, i.DEFAULT])), ...presets[p] }).release;
   const values = Object.keys(presets).map(rel);
   assert.ok(values.includes(0.06) && values.includes(0.12), `release values ${values}`);
-  assert.equal(tpl.fx.X_AGENTVFX.spdx, "LicenseRef-agentvfx");
+  assert.equal(tpl.fx.X_AGENTVFX.spdx, "Apache-2.0");
   assert.ok(tpl.fx.X_AGENTVFX.safeSubstitute);
   for (const d of readdirSync(tpl.dir).filter((f) => f.startsWith("demo-"))) assert.equal(validateScore(JSON.parse(readFileSync(path.join(tpl.dir, d), "utf8")), lib).ok, true);
 });

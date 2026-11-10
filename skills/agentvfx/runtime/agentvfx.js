@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Live WebGL2 runtime. The exported copy inlines engine/web/prelude.mjs
+// agentvfx (Apache-2.0, see LICENSE). Live WebGL2 runtime. The exported copy inlines engine/web/prelude.mjs
 // at export time so a page does not import the engine. Semantics match engine/web/render.mjs.
 import { OUTPUT_FRAG, VERT, buildFragment, seedToUnit } from "../engine/web/prelude.mjs";
 import { PALETTES, hexToRgb } from "../engine/core/palettes.mjs";

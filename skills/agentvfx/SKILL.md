@@ -1,7 +1,7 @@
 ---
 name: agentvfx
 description: Agent-directed, music-reactive VFX clips from an FX score. WebGL2 shader templates (psychedelic, spectrum, scope, impact, light, glitch, neo-brutalist collage and lattice), optional Blender background plates, a flash audit on every render, silent ping-pong loops, and a web export for live use in apps and sites. Use when someone asks for a VFX clip, a visualizer, a festival or stage loop, a music-reactive background, or a live shader effect for a web page.
-license: LicenseRef-agentvfx. Noncommercial use; see LICENSE for the complete terms.
+license: Apache-2.0. See LICENSE and NOTICE.
 ---
 
 # agentvfx
@@ -49,11 +49,11 @@ Check it without rendering:
 
 Preview small first (640x360), then raise the size for the final. The command prints JSON with the film path, the flash result and the stills. Open `stills/sheet.png` and every strip before you describe the clip to anyone. A render you have not looked at is not done.
 
-Every render burns a small `agentvfx` credit into a corner of the frame (switch it off with `"credit": { "overlay": false }` in the score), writes `CREDIT.txt` and puts the credit line in the MP4 metadata. Crediting agentvfx is a condition of its licence for anything published: while the on-screen credit stays in the frame nothing more is needed; if the overlay is off, or the user hands the clip on without it, the text credit must go in the post, description or credits. When you report a finished clip, give the user the line to paste:
+Every render burns a small `agentvfx` credit into a corner of the frame (switch it off with `"credit": { "overlay": false }` in the score), writes `CREDIT.txt` and puts the credit line in the MP4 metadata. A credit is appreciated but not required. When you report a finished clip, give the user the line in case they want to paste it:
 
     Made with agentvfx by Woojin Go - https://github.com/wjgoarxiv/agentvfx
 
-The licence is the agentvfx licence: Additional Terms plus the PolyForm Noncommercial License 1.0.0 (see LICENSE). An individual (sole proprietors and a band of individuals included) may use the clips they render in their own work, also commercially: their own channel, sponsored content on it, music videos, their own VJ or live set. Employers, companies, client work, output made for someone else to publish, paid rendering services, selling clips or templates on their own, and AI training on the code or templates are not covered and need a commercial licence (or are not allowed). A changed copy shared with others (a fork) must carry a name without "agentvfx" and say it is changed from agentvfx. If the user's request is clearly one of those, say so before rendering. When you hand a clip over to be published, tell the user to keep the on-screen credit or pass the credit line along.
+agentvfx is licensed under the Apache License 2.0 (see LICENSE and NOTICE): any use, including commercial use, is allowed under its terms.
 
 ## 5. Flash safety
 

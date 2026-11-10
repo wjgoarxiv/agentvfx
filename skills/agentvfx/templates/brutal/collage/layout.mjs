@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Collage layout as data: up to 16 cells on a 32 x 18 grid, validated here and packed
+// agentvfx (Apache-2.0, see LICENSE). Collage layout as data: up to 16 cells on a 32 x 18 grid, validated here and packed
 // into the template's integer inputs. Three ints per cell:
 //   cellN  = role * 1e8 + x * 1e6 + y * 1e4 + w * 100 + h          (RRXXYYWWHH, plain decimal)
 //   styleN = variant * 1e4 + tone * 1e3 + fill * 100 + frame * 10 + rot

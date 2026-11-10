@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). Footage ingest: probe a clip, decode the requested window with ffmpeg at a
+// agentvfx (Apache-2.0, see LICENSE). Footage ingest: probe a clip, decode the requested window with ffmpeg at a
 // constant frame rate, scale so the long edge is 1920 (even sizes), convert to RGBA with the clip's
 // colour matrix (BT.709 when untagged), and hand frames to the renderer strictly in order. A request
 // for frame 0 after later frames restarts the decoder (the determinism replay). The window's audio is

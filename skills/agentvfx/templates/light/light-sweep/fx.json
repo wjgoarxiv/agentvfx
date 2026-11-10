@@ -24,7 +24,7 @@
     "id": "light-sweep",
     "family": "light",
     "input": "either",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "possible",
     "fps": 30,
     "palette": true,

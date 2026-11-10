@@ -220,7 +220,7 @@
     "id": "scope-triggered",
     "family": "scope",
     "input": "either",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "possible",
     "safeSubstitute": {
       "params": {

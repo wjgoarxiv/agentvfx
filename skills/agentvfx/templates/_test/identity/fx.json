@@ -4,7 +4,7 @@
   "CATEGORIES": ["test"],
   "INPUTS": [{ "NAME": "gain", "TYPE": "float", "MIN": 0, "MAX": 2, "DEFAULT": 1 }],
   "X_AGENTVFX": {
-    "id": "test-identity", "family": "_test", "input": "either", "spdx": "LicenseRef-agentvfx", "flash": "none",
+    "id": "test-identity", "family": "_test", "input": "either", "spdx": "Apache-2.0", "flash": "none",
     "presets": { "unity": { "gain": 1 }, "half": { "gain": 0.5 }, "double": { "gain": 2 } }
   }
 }

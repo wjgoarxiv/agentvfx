@@ -1,4 +1,4 @@
-// agentvfx (agentvfx licence, see LICENSE). The score compositor's timeline: for each frame, which layers are active
+// agentvfx (Apache-2.0, see LICENSE). The score compositor's timeline: for each frame, which layers are active
 // (base stack, cuts, hits), their parameter values (preset, params, audio bindings) and their local
 // time. Pure and deterministic; the page only draws what this returns.
 import { resolveParams } from "./templates.mjs";

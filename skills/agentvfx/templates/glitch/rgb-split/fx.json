@@ -26,7 +26,7 @@
     "id": "rgb-split",
     "family": "glitch",
     "input": "footage",
-    "spdx": "LicenseRef-agentvfx",
+    "spdx": "Apache-2.0",
     "flash": "possible",
     "fps": 30,
     "palette": false,
