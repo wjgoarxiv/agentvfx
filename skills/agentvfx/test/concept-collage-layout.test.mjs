@@ -169,11 +169,14 @@ test("index: the numeral keeps its shape across all frames while its vermilion f
   const area = Math.max(...stats.map((s) => s.glyph.size));
   assert.ok(area > 3000, `numeral covers pixels: ${area}`);
   assert.ok(Math.max(...reds) > 3 * Math.min(...reds) + 400, `fill range across frames: ${Math.min(...reds)}..${Math.max(...reds)}`);
+  // The red and ink tests cut the anti-aliased edge at different coverage, so a red stroke reads about one pixel wider than
+  // the same stroke in ink. Shape is compared with a 1 px tolerance both ways; a shift of 2 px or more on these 3 px strokes fails.
+  const near = (set, k) => [-W - 1, -W, -W + 1, -1, 0, 1, W - 1, W, W + 1].some((d) => set.has(k + d));
+  const within = (a, b) => { let n = 0; for (const k of a) if (near(b, k)) n += 1; return n / a.size; };
   const base = stats[0].glyph;
   for (const s of stats) {
-    let both = 0;
-    for (const k of s.glyph) if (base.has(k)) both += 1;
-    assert.ok(both / Math.max(s.glyph.size, base.size) > 0.8, `glyph shape overlap ${(both / Math.max(s.glyph.size, base.size)).toFixed(2)}`);
+    const fit = Math.min(within(s.glyph, base), within(base, s.glyph));
+    assert.ok(fit > 0.9, `glyph shape within 1 px: ${fit.toFixed(2)}`);
   }
 });
 
