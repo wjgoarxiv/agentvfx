@@ -1,6 +1,6 @@
 {
   "name": "agentvfx",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Agent-directed, music-reactive VFX clips: the agent writes an FX score, the engine renders WebGL2 templates with optional Blender plates, audits every frame for flashes, and exports silent loops or live web effects.",
   "license": "Apache-2.0",
   "author": "wjgoarxiv",
@@ -18,6 +18,11 @@
     "agent-skill",
     "blender"
   ],
+  "bin": {
+    "agentvfx": "skills/agentvfx/scripts/vfx.mjs",
+    "agentvfx-loop": "skills/agentvfx/scripts/loop.mjs",
+    "agentvfx-plate": "skills/agentvfx/scripts/plate.mjs"
+  },
   "files": [
     "skills/",
     "!skills/agentvfx/out/",

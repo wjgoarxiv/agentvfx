@@ -3,7 +3,7 @@
 // optionally write a small looping WebP preview, and flash-audit the loop played twice so the wrap point is checked too.
 // node loop.mjs <in.mp4> <out.mp4> [--preview out.webp|out.gif] [--audit out.json] [--crf 23] [--maxrate 3500] [--hold 0]
 import { spawn, spawnSync } from "node:child_process";
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, realpathSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -124,6 +124,7 @@ async function main(argv) {
   return audit.pass ? 0 : 3;
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+// realpath, so the check also holds when run through an npm bin symlink (npx agentvfx-loop).
+if (process.argv[1] && realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url))) {
   main(process.argv.slice(2)).then((code) => process.exit(code), (e) => { console.error(e.message); process.exit(1); });
 }
