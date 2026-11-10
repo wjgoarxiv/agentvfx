@@ -1,5 +1,6 @@
-# Publishes the package to npm when a GitHub release is published, using npm trusted publishing (OIDC), so the
-# npm page shows provenance for each version. The release tag must match package.json, e.g. v0.3.5.
+# Stages the package on npm when a GitHub release is published, using npm trusted publishing (OIDC), so each version
+# carries provenance. A staged version goes live only after a maintainer approves it with 2FA on npmjs.com (Staged
+# Packages tab) or with `npm stage approve`. The release tag must match package.json, e.g. v0.3.6.
 name: Publish to npm
 
 on:
@@ -19,8 +20,18 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
-      - name: Use an npm that supports trusted publishing
+          package-manager-cache: false
+      - name: Use an npm that supports staged publishing (11.15.0 or later)
         run: npm install -g npm@latest
       - name: Check the tag matches package.json
-        run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
-      - run: npm publish --provenance --access public
+        id: version
+        run: |
+          v="$(node -p "require('./package.json').version")"
+          test "v$v" = "$GITHUB_REF_NAME"
+          if npm view "agentvfx@$v" version >/dev/null 2>&1; then echo "exists=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Stage the version for approval
+        if: steps.version.outputs.exists != 'true'
+        run: npm stage publish --access public
+      - name: Already on npm
+        if: steps.version.outputs.exists == 'true'
+        run: echo "This version is already on npm; nothing to stage."
